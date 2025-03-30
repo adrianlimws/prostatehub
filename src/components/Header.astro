@@ -1,0 +1,62 @@
+---
+
+---
+
+<header>
+ <div class="header-container">
+   <div class="logo">LOGO</div>
+   <div class="search-container">
+     <input type="text" placeholder="search bar" />
+   </div>
+   <div class="navigation">
+     <button class="menu-button">MENU</button>
+   </div>
+ </div>
+</header>
+
+<style>
+ header {
+   padding: 1rem 0;
+ }
+ 
+ .header-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   padding: 1rem;
+ }
+ 
+ .logo {
+   font-weight: bold;
+   font-size: 1.5rem;
+ }
+ 
+ .search-container {
+   flex-grow: 1;
+   padding: 0 2rem;
+ }
+ 
+ input[type="text"] {
+   width: 100%;
+   padding: 0.5rem;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 1rem;
+ }
+ 
+ .navigation {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+ }
+ 
+ .menu-button {
+   padding: 0.5rem 1rem;
+   background: none;
+   border: none;
+   font-weight: bold;
+   cursor: pointer;
+ }
+</style>
