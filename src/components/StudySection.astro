@@ -2,24 +2,9 @@
 const { title } = Astro.props;
 ---
 
-<section class="study-section">
-  <h2>{title}</h2>
-  <div class="study-content">
+<section class="my-8 p-6 border border-gray-200 rounded-lg">
+  <h2 class="text-xl font-bold mb-6 text-center">{title}</h2>
+  <div class="min-h-[100px]">
     <slot />
   </div>
 </section>
-
-<style>
-  .study-section {
-    margin: 2rem 0;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .study-content {
-    min-height: 100px;
-  }
-</style>
