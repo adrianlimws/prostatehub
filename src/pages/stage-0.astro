@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Accordion from '../components/Accordion.astro';
+---
+
+<BaseLayout title="Prostate Hub - Stage 0">
+  <Header />
+  
+  <main class="my-8">
+    <section class="text-center p-8 mb-8 border border-gray-200 rounded-lg">
+      <h1 class="text-3xl font-bold mb-4">Stage 0: Understanding Prostate Health</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        Educational information designed for younger audiences to build awareness about prostate health and cancer prevention.
+      </p>
+    </section>
+    
+    <div class="mb-8">
+      <Accordion title="General Knowledge About Prostate Cancer" initiallyOpen={true}>
+        <div class="space-y-4">
+          <p>The prostate is a small gland in men that produces seminal fluid to nourish and transport sperm. Prostate cancer occurs when cells in the prostate begin to grow uncontrollably.</p>
+          
+          <p>Understanding prostate health early in life can help with early detection and prevention strategies later on.</p>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Statistics">
+        <div class="space-y-4">
+          <p>In New Zealand, approximately 4,334 men are diagnosed with prostate cancer annually.</p>
+          <p>Around 740 men die from prostate cancer each year in New Zealand, which is more than twice the road toll.</p>
+          <p>1 in 8 men will be diagnosed with prostate cancer in their lifetime.</p>
+          <div class="h-32 border border-gray-200 rounded-lg flex items-center justify-center">
+            [Chart Placeholder: Prostate Cancer Incidence by Age]
+          </div>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Preventative Measures">
+        <div class="space-y-4">
+          <p>While there's no guaranteed way to prevent prostate cancer, certain lifestyle choices may help reduce your risk:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Maintain a healthy diet rich in fruits, vegetables, and whole grains</li>
+            <li>Exercise regularly</li>
+            <li>Maintain a healthy weight</li>
+            <li>Know your family history - men with close relatives who have had prostate cancer are at higher risk</li>
+          </ul>
+        </div>
+      </Accordion>
+      
+      <Accordion title="When to Start Screening">
+        <div class="space-y-4">
+          <p>The Prostate Specific Antigen (PSA) test is a blood test that can help detect prostate cancer early.</p>
+          <p>Consider talking to your doctor about prostate screening if:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>You are over 50 years old</li>
+            <li>You have a family history of prostate cancer</li>
+            <li>You are of African or Caribbean descent (these groups have higher risk)</li>
+          </ul>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Resources for Young Men">
+        <div class="space-y-4">
+          <p>Additional resources for learning about prostate health:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><a href="#" class="text-blue-600 hover:underline">New Zealand Prostate Cancer Foundation</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline">New Zealand Cancer Society</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline">Ministry of Health Guidelines</a></li>
+          </ul>
+        </div>
+      </Accordion>
+    </div>
+    
+    <div class="flex justify-center">
+      <a href="/" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors">
+        Return to Home
+      </a>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>

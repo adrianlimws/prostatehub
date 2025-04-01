@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Accordion from '../components/Accordion.astro';
+---
+
+<BaseLayout title="Prostate Hub - For Family Members">
+  <Header />
+  
+  <main class="my-8">
+    <section class="text-center p-8 mb-8 border border-gray-200 rounded-lg">
+      <h1 class="text-3xl font-bold mb-4">For Family Members and Caregivers</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        Information and resources to help you support your loved one through their prostate cancer journey.
+      </p>
+    </section>
+    
+    <div class="mb-8">
+      <Accordion title="Understanding Your Role" initiallyOpen={true}>
+        <div class="space-y-4">
+          <p>As a family member or caregiver of someone with prostate cancer, you play a crucial role in their cancer journey. This may include:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Providing emotional support</li>
+            <li>Helping navigate the healthcare system</li>
+            <li>Assisting with practical matters</li>
+            <li>Accompanying them to medical appointments</li>
+            <li>Helping them understand treatment options</li>
+            <li>Supporting them through treatment side effects</li>
+          </ul>
+          <p>Remember that while your support is valuable, it's important to encourage independence where possible and respect your loved one's decisions about their care.</p>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Communicating Effectively">
+        <div class="space-y-4">
+          <p>Open communication is essential when supporting someone with prostate cancer:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Listen without judgment</li>
+            <li>Ask how they prefer to be supported</li>
+            <li>Respect their need for privacy</li>
+            <li>Be present without always trying to "fix" things</li>
+            <li>Help them prepare questions for medical appointments</li>
+            <li>Take notes during appointments if they want help</li>
+          </ul>
+          <p>Men may sometimes be reluctant to discuss emotional or intimate concerns related to prostate cancer. Creating a safe space for these conversations is important.</p>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Understanding Treatment Side Effects">
+        <div class="space-y-4">
+          <p>Prostate cancer treatments can have side effects that impact both the patient and their relationships:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Urinary issues:</strong> Incontinence may cause embarrassment and lifestyle changes</li>
+            <li><strong>Erectile dysfunction:</strong> Can affect intimacy and self-image</li>
+            <li><strong>Hormone therapy effects:</strong> May include mood changes, hot flashes, and physical changes</li>
+            <li><strong>Fatigue:</strong> Can limit activities and require additional support</li>
+          </ul>
+          <p>Learning about potential side effects can help you provide better support and understand the challenges your loved one is facing.</p>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Practical Support">
+        <div class="space-y-4">
+          <h3 class="font-semibold text-lg">Day-to-Day Help</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Transportation to medical appointments</li>
+            <li>Meal preparation</li>
+            <li>Medication management</li>
+            <li>Household tasks</li>
+            <li>Managing finances and insurance</li>
+          </ul>
+          
+          <h3 class="font-semibold text-lg mt-6">Care Coordination</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Keeping track of appointments</li>
+            <li>Organising medical records</li>
+            <li>Researching treatment options</li>
+            <li>Communicating with the healthcare team</li>
+            <li>Coordinating care with other family members</li>
+          </ul>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Caring for Yourself">
+        <div class="space-y-4">
+          <p>Caregiver burnout is real. Taking care of yourself is essential so you can continue to support your loved one:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Accept help from others</li>
+            <li>Set realistic expectations about what you can do</li>
+            <li>Join a support group for caregivers</li>
+            <li>Maintain your own health with regular exercise, proper nutrition, and sufficient sleep</li>
+            <li>Continue activities that bring you joy</li>
+            <li>Consider respite care options</li>
+          </ul>
+          <p>Remember that seeking support for yourself is not selfish—it's necessary for sustainable caregiving.</p>
+        </div>
+      </Accordion>
+      
+      <Accordion title="New Zealand Support Resources">
+        <div class="space-y-4">
+          <p>Resources specifically for family members and caregivers in New Zealand:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><a href="#" class="text-blue-600 hover:underline">Caregiver Support Groups</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline">Financial Assistance Programs</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline">Respite Care Services</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline">Counseling Services</a></li>
+            <li><a href="#" class="text-blue-600 hover:underline">Educational Resources</a></li>
+          </ul>
+        </div>
+      </Accordion>
+    </div>
+    
+    <div class="flex justify-center">
+      <a href="/" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors">
+        Return to Home
+      </a>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>

@@ -16,10 +16,12 @@ const toggleMenu = () => {
     
     <div v-if="isMenuOpen" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-20">
       <ul>
-        <li><a href="/stage1" class="block p-3 hover:bg-gray-100">Stage 1</a></li>
-        <li><a href="/stage2" class="block p-3 hover:bg-gray-100">Stage 2</a></li>
-        <li><a href="/stage3" class="block p-3 hover:bg-gray-100">Stage 3</a></li>
-        <li><a href="/stage4" class="block p-3 hover:bg-gray-100">Stage 4</a></li>
+        <li><a href="/" class="block p-3 hover:bg-gray-100">Home</a></li>
+        <li><a href="/stage-1" class="block p-3 hover:bg-gray-100">Stage 1</a></li>
+        <li><a href="/stage-2" class="block p-3 hover:bg-gray-100">Stage 2</a></li>
+        <li><a href="/stage-3" class="block p-3 hover:bg-gray-100">Stage 3</a></li>
+        <li><a href="/stage-4" class="block p-3 hover:bg-gray-100">Stage 4</a></li>
+        <li><a href="/stage-0" class="block p-3 hover:bg-gray-100">Stage 0</a></li>
         <li><a href="/support-groups" class="block p-3 hover:bg-gray-100">Support Groups</a></li>
         <li><a href="/resources" class="block p-3 hover:bg-gray-100">Resources</a></li>
         <li><a href="/contact" class="block p-3 hover:bg-gray-100">Contact</a></li>
