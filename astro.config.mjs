@@ -9,6 +9,7 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
   integrations: [vue()],
   server: {host: true, port: 3000 },
 
