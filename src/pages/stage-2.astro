@@ -15,22 +15,10 @@ import Accordion from '../components/Accordion.astro';
         Information about Stage 2 prostate cancer, treatment options, and support resources for patients and their families.
       </p>
     </section>
-    
-    <div class="mb-8">
-      <Accordion title="What is Stage 2 Prostate Cancer?" initiallyOpen={true}>
-        <div class="space-y-4">
-          <p>Stage 2 prostate cancer means the cancer is still confined to the prostate but is larger than in Stage 1. At this stage:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>The cancer may be felt during a digital rectal exam</li>
-            <li>The cancer may be visible on imaging tests</li>
-            <li>PSA levels are usually between 10-20 ng/mL</li>
-            <li>The Gleason score is typically 7</li>
-          </ul>
-          <p>Stage 2 is further divided into 2A and 2B, based on how much of the prostate is affected and the Gleason score.</p>
-        </div>
-      </Accordion>
-      
-      <Accordion title="Statistics">
+
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="md:w-1/3 border border-gray-200 rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-4">Statistics</h2>
         <div class="space-y-4">
           <p>Stage 2 prostate cancer has a 5-year survival rate of approximately 95-99%.</p>
           <p>About 44% of men diagnosed with prostate cancer fall into the medium-risk group, which includes many Stage 2 cases.</p>
@@ -38,70 +26,86 @@ import Accordion from '../components/Accordion.astro';
             [Chart Placeholder: Stage 2 Progression Data]
           </div>
         </div>
-      </Accordion>
-      
-      <Accordion title="Treatment Options">
-        <div class="space-y-4">
-          <h3 class="font-semibold text-lg">Active Surveillance</h3>
-          <p>For some Stage 2 patients with lower Gleason scores, active surveillance may still be an option, particularly for older men or those with other health conditions.</p>
-          
-          <h3 class="font-semibold text-lg mt-6">Radical Prostatectomy</h3>
-          <p>Surgical removal of the prostate gland is a common treatment for Stage 2 cancer. This can be performed through:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Open surgery</li>
-            <li>Laparoscopic surgery</li>
-            <li>Robotic-assisted surgery</li>
-          </ul>
-          
-          <h3 class="font-semibold text-lg mt-6">Radiation Therapy</h3>
-          <p>Often recommended for Stage 2 patients and may include:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>External beam radiation therapy (EBRT)</li>
-            <li>Brachytherapy (internal radiation seeds)</li>
-            <li>Sometimes combined with hormone therapy</li>
-          </ul>
-          
-          <h3 class="font-semibold text-lg mt-6">Hormone Therapy</h3>
-          <p>Sometimes used in combination with radiation therapy. Also called androgen deprivation therapy (ADT).</p>
-        </div>
-      </Accordion>
-      
-      <Accordion title="Side Effects and Management">
-        <div class="space-y-4">
-          <p>Common side effects of treatments may include:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Urinary incontinence</li>
-            <li>Erectile dysfunction</li>
-            <li>Bowel problems</li>
-            <li>Fatigue</li>
-          </ul>
-          <p>Management strategies include pelvic floor exercises, medications, and specialist consultations.</p>
-        </div>
-      </Accordion>
-      
-      <Accordion title="Support Options">
-        <div class="space-y-4">
-          <p>Support resources specifically for Stage 2 patients:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li><a href="#" class="text-blue-600 hover:underline">Regional Support Group Information</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Counseling Services</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Patient Stories and Experiences</a></li>
-          </ul>
-        </div>
-      </Accordion>
-      
-      <Accordion title="New Zealand Medical Resources">
-        <div class="space-y-4">
-          <p>Reliable New Zealand-specific resources for Stage 2 prostate cancer:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li><a href="#" class="text-blue-600 hover:underline">New Zealand Urological Society Guidelines</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Cancer Treatment Centers in New Zealand</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Clinical Trials Information</a></li>
-          </ul>
-        </div>
-      </Accordion>
-    </div>
-    
+      </div>
+      <div class="md:w-2/3">
+        <Accordion title="What is Stage 2 Prostate Cancer?" initiallyOpen={true}>
+          <div class="space-y-4">
+            <p>Stage 2 prostate cancer means the cancer is still confined to the prostate but is larger than in Stage 1. At this stage:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>The cancer may be felt during a digital rectal exam</li>
+              <li>The cancer may be visible on imaging tests</li>
+              <li>PSA levels are usually between 10-20 ng/mL</li>
+              <li>The Gleason score is typically 7</li>
+            </ul>
+            <p>Stage 2 is further divided into 2A and 2B, based on how much of the prostate is affected and the Gleason score.</p>
+          </div>
+        </Accordion>
+              
+        <Accordion title="Treatment Options">
+          <div class="space-y-4">
+            <h3 class="font-semibold text-lg">Active Surveillance</h3>
+            <p>For some Stage 2 patients with lower Gleason scores, active surveillance may still be an option, particularly for older men or those with other health conditions.</p>
+            
+            <h3 class="font-semibold text-lg mt-6">Radical Prostatectomy</h3>
+            <p>Surgical removal of the prostate gland is a common treatment for Stage 2 cancer. This can be performed through:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Open surgery</li>
+              <li>Laparoscopic surgery</li>
+              <li>Robotic-assisted surgery</li>
+            </ul>
+            
+            <h3 class="font-semibold text-lg mt-6">Radiation Therapy</h3>
+            <p>Often recommended for Stage 2 patients and may include:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>External beam radiation therapy (EBRT)</li>
+              <li>Brachytherapy (internal radiation seeds)</li>
+              <li>Sometimes combined with hormone therapy</li>
+            </ul>
+            
+            <h3 class="font-semibold text-lg mt-6">Hormone Therapy</h3>
+            <p>Sometimes used in combination with radiation therapy. Also called androgen deprivation therapy (ADT).</p>
+          </div>
+        </Accordion>
+        
+        <Accordion title="Side Effects and Management">
+          <div class="space-y-4">
+            <p>Common side effects of treatments may include:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Urinary incontinence</li>
+              <li>Erectile dysfunction</li>
+              <li>Bowel problems</li>
+              <li>Fatigue</li>
+            </ul>
+            <p>Management strategies include pelvic floor exercises, medications, and specialist consultations.</p>
+          </div>
+        </Accordion>
+        
+        <Accordion title="Support Options">
+          <div class="space-y-4">
+            <p>Support resources specifically for Stage 2 patients:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><a href="#" class="text-blue-600 hover:underline">Regional Support Group Information</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">Counseling Services</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">Patient Stories and Experiences</a></li>
+            </ul>
+          </div>
+        </Accordion>
+        
+        <Accordion title="New Zealand Medical Resources">
+          <div class="space-y-4">
+            <p>Reliable New Zealand-specific resources for Stage 2 prostate cancer:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><a href="#" class="text-blue-600 hover:underline">New Zealand Urological Society Guidelines</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">Cancer Treatment Centers in New Zealand</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">Clinical Trials Information</a></li>
+            </ul>
+          </div>
+        </Accordion>
+      </div>
+    </div> 
+
+
+
     <div class="flex justify-center">
       <a href="/" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors">
         Return to Home
