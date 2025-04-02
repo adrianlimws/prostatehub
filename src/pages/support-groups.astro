@@ -2,12 +2,15 @@
 import BaseLayout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+import supportGroupsData from '../data/support-groups-json.json';
 ---
 
 <BaseLayout title="Prostate Hub - Support Groups">
   <Header />
   
   <main class="my-8">
+    <!-- Header section remains the same -->
     <section class="text-center p-8 mb-8 border border-gray-200 rounded-lg">
       <h1 class="text-3xl font-bold mb-4">Prostate Cancer Support Groups</h1>
       <p class="text-lg max-w-3xl mx-auto">
@@ -16,110 +19,24 @@ import Footer from '../components/Footer.astro';
     </section>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-      <!-- Auckland Region -->
-      <div class="border border-gray-200 rounded-lg p-6">
-        <h2 class="text-xl font-bold mb-4">Auckland Region</h2>
-        
-        <div class="mb-6">
-          <h3 class="font-semibold text-lg">Auckland Central</h3>
-          <p class="mb-2"><strong>Meeting Times:</strong> First Monday of each month, 7:00 PM</p>
-          <p class="mb-2"><strong>Location:</strong> Auckland City Hospital, Support Building, Room 202</p>
-          <p class="mb-2"><strong>Coordinator:</strong> John Smith</p>
-          <p class="mb-2"><strong>Contact:</strong> 021-555-1234 or <a href="mailto:auckland@prostate.org.nz" class="text-blue-600 hover:underline">auckland@prostate.org.nz</a></p>
+      {supportGroupsData.regions.map((region) => (
+        <div class="border border-gray-200 rounded-lg p-6">
+          <h2 class="text-xl font-bold mb-4">{region.name} Region</h2>
+          
+          {region.groups.map((group) => (
+            <div class="mb-6">
+              <h3 class="font-semibold text-lg">{group.location}</h3>
+              <p class="mb-2"><strong>Coordinator:</strong> {group.coordinator}</p>
+              <p class="mb-2"><strong>Contact:</strong> {group.phone} or 
+                <a href={`mailto:${group.email}`} class="text-blue-600 hover:underline">
+                  {group.email}
+                </a>
+              </p>
+            </div>
+          ))}
         </div>
-        
-        <div>
-          <h3 class="font-semibold text-lg">North Shore</h3>
-          <p class="mb-2"><strong>Meeting Times:</strong> Second Thursday of each month, 6:30 PM</p>
-          <p class="mb-2"><strong>Location:</strong> North Shore Hospital, Community Wing</p>
-          <p class="mb-2"><strong>Coordinator:</strong> Mike Johnson</p>
-          <p class="mb-2"><strong>Contact:</strong> 021-555-5678 or <a href="mailto:northshore@prostate.org.nz" class="text-blue-600 hover:underline">northshore@prostate.org.nz</a></p>
-        </div>
-      </div>
-      
-      <!-- Wellington Region -->
-      <div class="border border-gray-200 rounded-lg p-6">
-        <h2 class="text-xl font-bold mb-4">Wellington Region</h2>
-        
-        <div class="mb-6">
-          <h3 class="font-semibold text-lg">Wellington Central</h3>
-          <p class="mb-2"><strong>Meeting Times:</strong> Third Wednesday of each month, 7:00 PM</p>
-          <p class="mb-2"><strong>Location:</strong> Wellington Regional Hospital, Education Center</p>
-          <p class="mb-2"><strong>Coordinator:</strong> David Williams</p>
-          <p class="mb-2"><strong>Contact:</strong> 021-555-9012 or <a href="mailto:wellington@prostate.org.nz" class="text-blue-600 hover:underline">wellington@prostate.org.nz</a></p>
-        </div>
-        
-        <div>
-          <h3 class="font-semibold text-lg">Lower Hutt</h3>
-          <p class="mb-2"><strong>Meeting Times:</strong> First Tuesday of each month, 6:00 PM</p>
-          <p class="mb-2"><strong>Location:</strong> Hutt Hospital, Community Room</p>
-          <p class="mb-2"><strong>Coordinator:</strong> Sarah Thompson</p>
-          <p class="mb-2"><strong>Contact:</strong> 021-555-3456 or <a href="mailto:lowerhutt@prostate.org.nz" class="text-blue-600 hover:underline">lowerhutt@prostate.org.nz</a></p>
-        </div>
-      </div>
-      
-      <!-- Christchurch Region -->
-      <div class="border border-gray-200 rounded-lg p-6">
-        <h2 class="text-xl font-bold mb-4">Christchurch Region</h2>
-        
-        <div class="mb-6">
-          <h3 class="font-semibold text-lg">Christchurch Central</h3>
-          <p class="mb-2"><strong>Meeting Times:</strong> Second Tuesday of each month, 7:00 PM</p>
-          <p class="mb-2"><strong>Location:</strong> Christchurch Hospital, Oncology Wing, Room 105</p>
-          <p class="mb-2"><strong>Coordinator:</strong> Robert Brown</p>
-          <p class="mb-2"><strong>Contact:</strong> 021-555-7890 or <a href="mailto:christchurch@prostate.org.nz" class="text-blue-600 hover:underline">christchurch@prostate.org.nz</a></p>
-        </div>
-        
-        <div class="mb-6">
-          <h3 class="font-semibold text-lg">Christchurch West</h3>
-          <p class="mb-2"><strong>Meeting Times:</strong> Last Thursday of each month, 6:30 PM</p>
-          <p class="mb-2"><strong>Location:</strong> West Community Centre, Main Hall</p>
-          <p class="mb-2"><strong>Coordinator:</strong> James Wilson</p>
-          <p class="mb-2"><strong>Contact:</strong> 021-555-2468 or <a href="mailto:chch.west@prostate.org.nz" class="text-blue-600 hover:underline">chch.west@prostate.org.nz</a></p>
-        </div>
-        
-        <div>
-          <h3 class="font-semibold text-lg">Christchurch East</h3>
-          <p class="mb-2"><strong>Meeting Times:</strong> First Monday of each month, 7:00 PM</p>
-          <p class="mb-2"><strong>Location:</strong> Parklands Community Centre</p>
-          <p class="mb-2"><strong>Coordinator:</strong> Thomas Lee</p>
-          <p class="mb-2"><strong>Contact:</strong> 021-555-1357 or <a href="mailto:chch.east@prostate.org.nz" class="text-blue-600 hover:underline">chch.east@prostate.org.nz</a></p>
-        </div>
-      </div>
-      
-      <!-- Dunedin Region -->
-      <div class="border border-gray-200 rounded-lg p-6">
-        <h2 class="text-xl font-bold mb-4">Dunedin Region</h2>
-        
-        <div>
-          <h3 class="font-semibold text-lg">Dunedin Central</h3>
-          <p class="mb-2"><strong>Meeting Times:</strong> Third Monday of each month, 7:00 PM</p>
-          <p class="mb-2"><strong>Location:</strong> Dunedin Hospital, Education Centre</p>
-          <p class="mb-2"><strong>Coordinator:</strong> William Taylor</p>
-          <p class="mb-2"><strong>Contact:</strong> 021-555-8642 or <a href="mailto:dunedin@prostate.org.nz" class="text-blue-600 hover:underline">dunedin@prostate.org.nz</a></p>
-        </div>
-      </div>
+      ))}
     </div>
-    
-    <div class="my-8 p-6 border border-gray-200 rounded-lg">
-      <h2 class="text-xl font-bold mb-4 text-center">Online Support Resources</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <h3 class="font-semibold text-lg">Virtual Support Groups</h3>
-          <p class="mb-2">For those unable to attend in-person meetings, virtual support groups are available:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li><strong>National Zoom Meeting:</strong> Every second Thursday, 7:00 PM</li>
-            <li><strong>Registration:</strong> <a href="mailto:zoom@prostate.org.nz" class="text-blue-600 hover:underline">zoom@prostate.org.nz</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="font-semibold text-lg">Online Forum</h3>
-          <p class="mb-2">Join our moderated online forum to connect with others, share experiences, and ask questions:</p>
-          <p><a href="/forum" class="text-blue-600 hover:underline">Visit Forum</a></p>
-        </div>
-      </div>
     </div>
     
     <div class="flex justify-center">

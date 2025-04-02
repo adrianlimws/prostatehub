@@ -1,0 +1,332 @@
+{
+  "regions": [
+    {
+      "name": "Northland",
+      "groups": [
+        {
+          "location": "Kaitaia",
+          "coordinator": "Raewyn Paviour",
+          "phone": "0800 660 0800",
+          "email": "kaitaia@prostate.org.nz"
+        },
+        {
+          "location": "Whangarei",
+          "coordinator": "Raewyn Paviour",
+          "phone": "027 274 2435 or 027 293 9920",
+          "email": "whangarei@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Auckland",
+      "groups": [
+        {
+          "location": "Auckland - Rodney",
+          "coordinator": "Doug Cresswell",
+          "phone": "0274958157",
+          "email": "rodney@prostate.org.nz"
+        },
+        {
+          "location": "Auckland - North Shore",
+          "coordinator": "Bruce Cochrane",
+          "phone": "021 650 289",
+          "email": "aucklandnorth@prostate.org.nz"
+        },
+        {
+          "location": "Auckland - Central",
+          "coordinator": "Raewyn Paviour",
+          "phone": "0800 66 0800",
+          "email": "aucklandcentral@prostate.org.nz"
+        },
+        {
+          "location": "Auckland - East",
+          "coordinator": "Ruben Naidoo",
+          "phone": "0272413668",
+          "email": "aucklandeast@prostate.org.nz"
+        },
+        {
+          "location": "Auckland - West",
+          "coordinator": "John and Lilian Woodards",
+          "phone": "021 208 2089",
+          "email": "aucklandwest@prostate.org.nz"
+        },
+        {
+          "location": "Auckland Women's Group",
+          "coordinator": "Raewyn Paviour",
+          "phone": "09 414 46100 or 027 293 9920",
+          "email": "womensakl@prostate.org.nz"
+        },
+        {
+          "location": "Auckland - South",
+          "coordinator": "Raewyn Paviour",
+          "phone": "0800 66 0800",
+          "email": "aucklandsouth@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Waikato",
+      "groups": [
+        {
+          "location": "Cambridge",
+          "coordinator": "Ron Greenwood",
+          "phone": "07 823 5877 or 027 276 0336",
+          "email": "cambridge@prostate.org.nz"
+        },
+        {
+          "location": "Whangamata",
+          "coordinator": "Ian Hunt and Ross Falconer",
+          "phone": "027 479 1768 (Ian) or 021 894 832 (Ross)",
+          "email": "whangamata@prostate.org.nz"
+        },
+        {
+          "location": "Waihi",
+          "coordinator": "Raewyn Paviour",
+          "phone": "0800 66 0800",
+          "email": "waihi@prostate.org.nz"
+        },
+        {
+          "location": "Hamilton",
+          "coordinator": "Brent Wood",
+          "phone": "027 222 2575",
+          "email": "hamilton@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Bay of Plenty",
+      "groups": [
+        {
+          "location": "Katikati",
+          "coordinator": "Rod Calver",
+          "phone": "07 5490363 or 027 590 9710",
+          "email": "katikati@prostate.org.nz"
+        },
+        {
+          "location": "Tauranga",
+          "coordinator": "Mike Lane and Mike Jolly",
+          "phone": "021 054 4660 (Mike Lane) 0275 868 789 (Mike Jolly)",
+          "email": "tauranga@prostate.org.nz"
+        },
+        {
+          "location": "Rotorua",
+          "coordinator": "Heinz Fett",
+          "phone": "027 570 7601",
+          "email": "rotorua@prostate.org.nz"
+        },
+        {
+          "location": "Whakatane",
+          "coordinator": "Mark Wootton",
+          "phone": "027 273 1437",
+          "email": "whakatane@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Gisborne",
+      "groups": [
+        {
+          "location": "Gisborne",
+          "coordinator": "Darrington Slater",
+          "phone": "021 063 4515",
+          "email": "gisborne@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Hawke's Bay",
+      "groups": [
+        {
+          "location": "Hawke's Bay Partners",
+          "coordinator": "Heather Osborne",
+          "phone": "021 252 6534",
+          "email": "hawkesbaypartners@prostate.org.nz"
+        },
+        {
+          "location": "Hawke's Bay",
+          "coordinator": "Venn and Trish Plummer",
+          "phone": "06 834 6302 or 021 487 373 (Ven)",
+          "email": "hawkesbay@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Taranaki",
+      "groups": [
+        {
+          "location": "New Plymouth",
+          "coordinator": "Paul Klenner and Dennis Hardie",
+          "phone": "021 084 30914 (Dennis) or 022 413 1994 (Paul)",
+          "email": "newplymouth@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Wanganui-Manawatu",
+      "groups": [
+        {
+          "location": "Wanganui",
+          "coordinator": "Brian Deadman",
+          "phone": "06 348 7115 or 027 555 0338",
+          "email": "wanganui@prostate.org.nz"
+        },
+        {
+          "location": "Palmerston North",
+          "coordinator": "Bruce Avery",
+          "phone": "021 625 180",
+          "email": "manawatu@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Wellington",
+      "groups": [
+        {
+          "location": "Masterton",
+          "coordinator": "Robert and Susan Brader",
+          "phone": "06 370 8699 or 027 272 1892",
+          "email": "masterton@prostate.org.nz"
+        },
+        {
+          "location": "Wellington Pals",
+          "coordinator": "Graeme Coutts",
+          "phone": "022 674 7832",
+          "email": "lowerhutt@prostate.org.nz"
+        },
+        {
+          "location": "Lower Hutt",
+          "coordinator": "Bill Guthrie",
+          "phone": "027 247 5427",
+          "email": "lowerehutt@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Marlborough",
+      "groups": [
+        {
+          "location": "Marlborough",
+          "coordinator": "Murray Eyles",
+          "phone": "027 608 5667",
+          "email": "marlborough@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Nelson-Tasman",
+      "groups": [
+        {
+          "location": "Nelson",
+          "coordinator": "Bill Fergie",
+          "phone": "03 544 8635 or 021 062 0427",
+          "email": "nelson@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Canterbury",
+      "groups": [
+        {
+          "location": "Greymouth/Westport",
+          "coordinator": "David and Ruth Clarke",
+          "phone": "027 877 8070",
+          "email": "westport@prostate.org.nz"
+        },
+        {
+          "location": "Rangiora",
+          "coordinator": "Dean and Lois Farrow",
+          "phone": "021 0224 6078 (Dean)",
+          "email": "rangiora@prostate.org.nz"
+        },
+        {
+          "location": "Christchurch AM Group",
+          "coordinator": "Derek Goring",
+          "phone": "021 277 7639",
+          "email": "christchurch.am@prostate.org.nz"
+        },
+        {
+          "location": "Christchurch PM Group",
+          "coordinator": "Russell George",
+          "phone": "022 697 3614",
+          "email": "christchurch.pm@prostate.org.nz"
+        },
+        {
+          "location": "Selwyn",
+          "coordinator": "Chris and Dianne Ward",
+          "phone": "(03) 321 7046, 027 437 1254 (Chris) or 021 371 254 (Dianne)",
+          "email": "selwyn@prostate.org.nz"
+        },
+        {
+          "location": "Ashburton",
+          "coordinator": "Doug Collie",
+          "phone": "0727 5100 556",
+          "email": "ashburton@prostate.org.nz"
+        },
+        {
+          "location": "Timaru",
+          "coordinator": "Chris Ward",
+          "phone": "027 437 1254",
+          "email": "timaru@prostate.org.nz"
+        },
+        {
+          "location": "Selwyn Men's Coffee Chat Group",
+          "coordinator": "Chris Ward",
+          "phone": "027 437 1254",
+          "email": "selwyn@prostate.org.nz"
+        },
+        {
+          "location": "Selwyn Women's Coffee Chat Group",
+          "coordinator": "Dianne Ward",
+          "phone": "021 371 254",
+          "email": "selwyn@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Otago",
+      "groups": [
+        {
+          "location": "Dunedin",
+          "coordinator": "Geoff Gray",
+          "phone": "021 959 591",
+          "email": "dunedin@prostate.org.nz"
+        },
+        {
+          "location": "Dunedin Partners Network",
+          "coordinator": "Angela Melrose",
+          "phone": "027 406 2948",
+          "email": "support@prostate.org.nz"
+        },
+        {
+          "location": "Central Otago 'Alexandra'",
+          "coordinator": "David and Ruth Clarke",
+          "phone": "027 877 8070",
+          "email": "alexandra@prostate.org.nz"
+        },
+        {
+          "location": "Central Otago 'Roxburgh'",
+          "coordinator": "David and Ruth Clarke",
+          "phone": "027 877 8070",
+          "email": "roxburgh@prostate.org.nz"
+        },
+        {
+          "location": "Central Otago 'Queenstown'",
+          "coordinator": "David and Ruth Clarke",
+          "phone": "027 877 8070",
+          "email": "alexandra@prostate.org.nz"
+        }
+      ]
+    },
+    {
+      "name": "Southland",
+      "groups": [
+        {
+          "location": "Invercargill",
+          "coordinator": "Trish and Terry Wright",
+          "phone": "021 029 32711 (Terry) or 021 110 9103 (Trish)",
+          "email": "invercargill@prostate.org.nz"
+        }
+      ]
+    }
+  ]
+}
