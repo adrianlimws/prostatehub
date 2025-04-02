@@ -24,7 +24,7 @@ const toggleMenu = () => {
         <li><a href="/stage-4" class="block p-3 hover:bg-gray-100">Stage 4</a></li>
         <li><a href="/family-member" class="block p-3 hover:bg-gray-100">Family Support</a></li>
         <li><a href="/studies" class="block p-3 hover:bg-gray-100">Studies</a></li>
-        <li><a href="/support-groups" class="block p-3 hover:bg-gray-100">Support Services</a></li>
+        <li><a href="/support-groups" class="block p-3 hover:bg-gray-100">Support Groups</a></li>
         <li><a href="/forum" class="block p-3 hover:bg-gray-100">PFNZ Forum</a></li>
         <li><a href="/donation" class="block p-3 hover:bg-gray-100">PFNZ Donation</a></li>
       </ul>
