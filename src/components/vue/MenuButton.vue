@@ -9,7 +9,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative rounded-sm border-1 p-2">
     <button @click="toggleMenu" class="font-bold">
       MENU
     </button>
