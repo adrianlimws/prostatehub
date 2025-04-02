@@ -4,42 +4,71 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 import supportGroupsData from '../data/support-groups-json.json';
+
+// Get the region from query params or default to the first region
+const regionParam = Astro.url.searchParams.get('region') || supportGroupsData.regions[0].name;
+
+// Get the groups for the selected region
+const selectedRegionData = supportGroupsData.regions.find(r => 
+  r.name.toLowerCase() === regionParam.toLowerCase()
+) || supportGroupsData.regions[0];
 ---
 
 <BaseLayout title="Prostate Hub - Support Groups">
   <Header />
   
   <main class="my-8">
-    <!-- Header section remains the same -->
-    <section class="text-center p-8 mb-8 border border-gray-200 rounded-lg">
-      <h1 class="text-3xl font-bold mb-4">Prostate Cancer Support Groups</h1>
-      <p class="text-lg max-w-3xl mx-auto">
-        Find support groups throughout New Zealand to connect with others on similar journeys.
-      </p>
+    <section class="text-center p-4 mb-8 border border-gray-200 rounded-lg">
+      <h1 class="text-3xl font-bold mb-4">Support Groups Information</h1>
     </section>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-      {supportGroupsData.regions.map((region) => (
-        <div class="border border-gray-200 rounded-lg p-6">
-          <h2 class="text-xl font-bold mb-4">{region.name} Region</h2>
-          
-          {region.groups.map((group) => (
-            <div class="mb-6">
-              <h3 class="font-semibold text-lg">{group.location}</h3>
-              <p class="mb-2"><strong>Coordinator:</strong> {group.coordinator}</p>
-              <p class="mb-2"><strong>Contact:</strong> {group.phone} or 
-                <a href={`mailto:${group.email}`} class="text-blue-600 hover:underline">
-                  {group.email}
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Sidebar with region list -->
+      <aside class="md:w-64 border border-gray-200 rounded-lg p-4">
+        <h2 class="font-bold mb-4">List</h2>
+        <ul class="space-y-2">
+          {supportGroupsData.regions.map((region) => (
+            <li>
+              <a 
+                href={`/support-groups?region=${encodeURIComponent(region.name)}`} 
+                class={`hover:text-blue-600 ${regionParam === region.name ? 'font-bold text-blue-600' : ''}`}
+              >
+                • {region.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+      
+      <!-- Main content with support groups grid -->
+      <div class="flex-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {selectedRegionData.groups.map((group) => (
+            <div class="border border-gray-200 rounded-lg p-4 h-full">
+              <h3 class="font-semibold text-lg text-center mb-2">{group.location}</h3>
+              <p class="mb-2 text-center"><strong>Contact Person</strong><br/>{group.coordinator}</p>
+              <p class="mb-2 text-center"><strong>Phone</strong><br/>{group.phone}</p>
+              <p class="mb-2 text-center">
+                <strong>Email</strong><br/>
+                <a href={`mailto:${group.email}`} class="text-blue-600 hover:underline">{group.email}</a>
+              </p>
+              <p class="mt-4 text-center">
+                <a 
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(group.location + ', New Zealand')}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="text-blue-600 hover:underline"
+                >
+                  Google Map Link
                 </a>
               </p>
             </div>
           ))}
         </div>
-      ))}
-    </div>
+      </div>
     </div>
     
-    <div class="flex justify-center">
+    <div class="flex justify-center mt-8">
       <a href="/" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors">
         Return to Home
       </a>
