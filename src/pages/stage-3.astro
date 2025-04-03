@@ -1,15 +1,15 @@
 ---
 import BaseLayout from '../layouts/Layout.astro'
-import Header     from '../components/astro/Header.astro'
-import Footer     from '../components/astro/Footer.astro'
-import Accordion  from '../components/astro/Accordion.astro'
+import Header from '../components/astro/Header.astro'
+import Footer from '../components/astro/Footer.astro'
+import Accordion from '../components/astro/Accordion.astro'
 ---
 
 <BaseLayout title='Prostate Hub - Stage 3'>
     <Header />
 
-    <main class='my-8'>
-        <section class="text-center p-8 mb-8">
+    <main class='my-8 container mx-auto px-4'>
+        <section class='text-center p-8 mb-8'>
             <h1 class='text-3xl font-bold mb-4'>
                 Stage 3: Locally Advanced Prostate Cancer
             </h1>
@@ -20,7 +20,9 @@ import Accordion  from '../components/astro/Accordion.astro'
         </section>
 
         <div class='flex flex-col md:flex-row gap-8'>
-            <div class='md:w-1/3 border border-gray-200 bg-fuchsia rounded-lg p-4'>
+            <div
+                class='md:w-1/3 border border-gray-200 bg-fuchsia rounded-lg p-4'
+            >
                 <h2 class='text-xl font-bold mb-4'>Statistics</h2>
                 <div class='space-y-4'>
                     <p>
@@ -37,189 +39,178 @@ import Accordion  from '../components/astro/Accordion.astro'
                         [Chart Placeholder: Treatment Success Rates for Stage 3]
                     </div>
                 </div>
-
             </div>
             <div class='md:w-2/3'>
-              <Accordion
-                  title='What is Stage 3 Prostate Cancer?'
-                  initiallyOpen={true}
-              >
-                  <div class='space-y-4'>
-                      <p>
-                          Stage 3 prostate cancer means the cancer has
-                          spread beyond the prostate but has not yet
-                          reached distant parts of the body. At this
-                          stage:
-                      </p>
-                      <ul class='list-disc pl-6 space-y-2'>
-                          <li>
-                              The cancer has extended beyond the outer
-                              layer of the prostate
-                          </li>
-                          <li>
-                              It may have spread to the seminal vesicles
-                              (glands that help produce semen)
-                          </li>
-                          <li>PSA levels are typically above 20 ng/mL</li>
-                          <li>The Gleason score is usually 7-10</li>
-                      </ul>
-                      <p>
-                          Stage 3 is considered "locally advanced" and
-                          requires more aggressive treatment than earlier
-                          stages.
-                      </p>
-                  </div>
-              </Accordion>
+                <Accordion
+                    title='What is Stage 3 Prostate Cancer?'
+                    initiallyOpen={true}
+                >
+                    <div class='space-y-4'>
+                        <p>
+                            Stage 3 prostate cancer means the cancer has spread
+                            beyond the prostate but has not yet reached distant
+                            parts of the body. At this stage:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>
+                                The cancer has extended beyond the outer layer
+                                of the prostate
+                            </li>
+                            <li>
+                                It may have spread to the seminal vesicles
+                                (glands that help produce semen)
+                            </li>
+                            <li>PSA levels are typically above 20 ng/mL</li>
+                            <li>The Gleason score is usually 7-10</li>
+                        </ul>
+                        <p>
+                            Stage 3 is considered "locally advanced" and
+                            requires more aggressive treatment than earlier
+                            stages.
+                        </p>
+                    </div>
+                </Accordion>
 
-              <Accordion title='Treatment Options'>
-                  <div class='space-y-4'>
-                      <h3 class='font-semibold text-lg'>
-                          Combined Approach
-                      </h3>
-                      <p>
-                          Stage 3 typically requires a multi-modal
-                          approach to treatment. Options include:
-                      </p>
+                <Accordion title='Treatment Options'>
+                    <div class='space-y-4'>
+                        <h3 class='font-semibold text-lg'>Combined Approach</h3>
+                        <p>
+                            Stage 3 typically requires a multi-modal approach to
+                            treatment. Options include:
+                        </p>
 
-                      <h3 class='font-semibold text-lg mt-6'>
-                          External Beam Radiation with Hormone Therapy
-                      </h3>
-                      <p>
-                          Often the primary treatment for Stage 3. This
-                          usually involves:
-                      </p>
-                      <ul class='list-disc pl-6 space-y-2'>
-                          <li>2-3 years of hormone therapy</li>
-                          <li>6-8 weeks of radiation therapy</li>
-                      </ul>
+                        <h3 class='font-semibold text-lg mt-6'>
+                            External Beam Radiation with Hormone Therapy
+                        </h3>
+                        <p>
+                            Often the primary treatment for Stage 3. This
+                            usually involves:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>2-3 years of hormone therapy</li>
+                            <li>6-8 weeks of radiation therapy</li>
+                        </ul>
 
-                      <h3 class='font-semibold text-lg mt-6'>
-                          Radical Prostatectomy with Additional Treatments
-                      </h3>
-                      <p>Surgery may be performed, often followed by:</p>
-                      <ul class='list-disc pl-6 space-y-2'>
-                          <li>
-                              Radiation therapy if cancer is found at the
-                              surgical margins
-                          </li>
-                          <li>
-                              Hormone therapy to reduce risk of recurrence
-                          </li>
-                      </ul>
+                        <h3 class='font-semibold text-lg mt-6'>
+                            Radical Prostatectomy with Additional Treatments
+                        </h3>
+                        <p>Surgery may be performed, often followed by:</p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>
+                                Radiation therapy if cancer is found at the
+                                surgical margins
+                            </li>
+                            <li>
+                                Hormone therapy to reduce risk of recurrence
+                            </li>
+                        </ul>
 
-                      <h3 class='font-semibold text-lg mt-6'>
-                          Advanced Hormone Therapy
-                      </h3>
-                      <p>
-                          May include newer generation medications such
-                          as:
-                      </p>
-                      <ul class='list-disc pl-6 space-y-2'>
-                          <li>Abiraterone</li>
-                          <li>Enzalutamide</li>
-                          <li>Other androgen pathway inhibitors</li>
-                      </ul>
-                  </div>
-              </Accordion>
+                        <h3 class='font-semibold text-lg mt-6'>
+                            Advanced Hormone Therapy
+                        </h3>
+                        <p>May include newer generation medications such as:</p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>Abiraterone</li>
+                            <li>Enzalutamide</li>
+                            <li>Other androgen pathway inhibitors</li>
+                        </ul>
+                    </div>
+                </Accordion>
 
-              <Accordion title='Managing Side Effects'>
-                  <div class='space-y-4'>
-                      <p>
-                          Treatment side effects at Stage 3 can be
-                          significant and may include:
-                      </p>
-                      <ul class='list-disc pl-6 space-y-2'>
-                          <li>Hot flashes from hormone therapy</li>
-                          <li>Loss of bone density</li>
-                          <li>Fatigue</li>
-                          <li>Sexual dysfunction</li>
-                          <li>Changes in body composition</li>
-                          <li>Mood changes</li>
-                      </ul>
-                      <p>
-                          Discuss side effect management strategies with
-                          your healthcare team, which may include
-                          medications, exercise, diet modifications, and
-                          supportive care.
-                      </p>
-                  </div>
-              </Accordion>
+                <Accordion title='Managing Side Effects'>
+                    <div class='space-y-4'>
+                        <p>
+                            Treatment side effects at Stage 3 can be significant
+                            and may include:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>Hot flashes from hormone therapy</li>
+                            <li>Loss of bone density</li>
+                            <li>Fatigue</li>
+                            <li>Sexual dysfunction</li>
+                            <li>Changes in body composition</li>
+                            <li>Mood changes</li>
+                        </ul>
+                        <p>
+                            Discuss side effect management strategies with your
+                            healthcare team, which may include medications,
+                            exercise, diet modifications, and supportive care.
+                        </p>
+                    </div>
+                </Accordion>
 
-              <Accordion title='Support Options'>
-                  <div class='space-y-4'>
-                      <p>
-                          Support is crucial for patients with Stage 3
-                          prostate cancer:
-                      </p>
-                      <ul class='list-disc pl-6 space-y-2'>
-                          <li>
-                              <a
-                                  href='#'
-                                  class='text-blue-600 hover:underline'
-                                  >Advanced Cancer Support Groups</a>
-                          </li>
-                          <li>
-                              <a
-                                  href='#'
-                                  class='text-blue-600 hover:underline'
-                                  >Mental Health Resources</a>
-                          </li>
-                          <li>
-                              <a
-                                  href='#'
-                                  class='text-blue-600 hover:underline'
-                                  >Family Support Services</a>
-                          </li>
-                      </ul>
-                      <p>
-                          Regular communication with your healthcare team
-                          is essential as treatment plans may need
-                          adjustment based on your response and side
-                          effects.
-                      </p>
-                  </div>
-              </Accordion>
+                <Accordion title='Support Options'>
+                    <div class='space-y-4'>
+                        <p>
+                            Support is crucial for patients with Stage 3
+                            prostate cancer:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>
+                                <a
+                                    href='#'
+                                    class='text-blue-600 hover:underline'
+                                    >Advanced Cancer Support Groups</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href='#'
+                                    class='text-blue-600 hover:underline'
+                                    >Mental Health Resources</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href='#'
+                                    class='text-blue-600 hover:underline'
+                                    >Family Support Services</a
+                                >
+                            </li>
+                        </ul>
+                        <p>
+                            Regular communication with your healthcare team is
+                            essential as treatment plans may need adjustment
+                            based on your response and side effects.
+                        </p>
+                    </div>
+                </Accordion>
 
-              <Accordion title='Clinical Trials'>
-                  <div class='space-y-4'>
-                      <p>
-                          Clinical trials may offer access to newer
-                          treatments not yet widely available:
-                      </p>
-                      <ul class='list-disc pl-6 space-y-2'>
-                          <li>
-                              <a
-                                  href='#'
-                                  class='text-blue-600 hover:underline'
-                                  >New Zealand Clinical Trials Registry</a>
-                          </li>
-                          <li>
-                              <a
-                                  href='#'
-                                  class='text-blue-600 hover:underline'
-                                  >International Trial Participation
-                                  Information</a>
-                          </li>
-                          <li>
-                              <a
-                                  href='#'
-                                  class='text-blue-600 hover:underline'
-                                  >How to Discuss Trial Participation with
-                                  Your Doctor</a>
-                          </li>
-                      </ul>
-                  </div>
-              </Accordion>
-          </div>
+                <Accordion title='Clinical Trials'>
+                    <div class='space-y-4'>
+                        <p>
+                            Clinical trials may offer access to newer treatments
+                            not yet widely available:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>
+                                <a
+                                    href='#'
+                                    class='text-blue-600 hover:underline'
+                                    >New Zealand Clinical Trials Registry</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href='#'
+                                    class='text-blue-600 hover:underline'
+                                    >International Trial Participation
+                                    Information</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href='#'
+                                    class='text-blue-600 hover:underline'
+                                    >How to Discuss Trial Participation with
+                                    Your Doctor</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </Accordion>
+            </div>
         </div>
-        <div class='flex justify-center'>
-          <a
-              href='/'
-              class='px-6 py-3 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors'
-          >
-              Return to Home
-          </a>
-      </div>
-        <Footer />
-    </main></BaseLayout
->
+    </main>
+    <Footer />
+</BaseLayout>
