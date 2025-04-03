@@ -4,12 +4,12 @@ import MenuButton from '../vue/MenuButton.vue';
 ---
 
 <header class="bg-blue">
-  <div class="flex items-center justify-between p-4  text-white">
-    <div class="font-bold text-xl"> <a href="/">Prostate Hub</a></div>
-    <div class="flex-grow px-8">
+  <div class="flex items-center justify-between p-4 text-white">
+    <div class="hidden lg:block font-bold text-xl font-quicksand uppercase "> <a href="/">Prostate Hub</a></div>
+    <div class="flex-grow px-8 font-quicksand">
       <SearchBar client:load />
     </div>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 font-quicksand">
       <MenuButton client:load />
     </div>
   </div>

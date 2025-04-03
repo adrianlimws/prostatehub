@@ -1,9 +1,12 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap');
 
 @theme {
     --color-blue:    #324Ea2;
     --color-green:   #57B286;
-    --color-brown:   #624C38;
     --color-fuchsia: #F4EDED;
     --color-black:   #202020;
+    --font-comfortaa: "Comfortaa", sans-serif;
+    --font-lora:      "Lora", serif;
+    --font-quicksand: "Quicksand", sans-serif;
 }
