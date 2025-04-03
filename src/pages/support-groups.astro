@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header     from '../components/astro/Header.astro';
+import Footer     from '../components/astro/Footer.astro';
 
 import supportGroupsData from '../data/support-groups-json.json';
 
@@ -16,7 +16,7 @@ const selectedRegionData = supportGroupsData.regions.find(r =>
   <Header />
   
   <main class="my-8">
-    <section class="text-center p-4 mb-8 border border-gray-200 rounded-lg">
+    <section class="text-center p-8 mb-8">
       <h1 class="text-3xl font-bold mb-4">Support Groups Information</h1>
     </section>
     
