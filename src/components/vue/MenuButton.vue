@@ -14,7 +14,18 @@ const toggleMenu = () => {
       MENU
     </button>
     
-    <div v-if="isMenuOpen" class="absolute right-0 mt-2 w-48 bg-blue border border-blue-200 rounded shadow-lg z-20">
+    <!-- Fixed overlay when menu is open -->
+    <div v-if="isMenuOpen" class="fixed inset-0 bg-black bg-opacity-50 z-40" @click="toggleMenu"></div>
+
+    <!-- Sliding menu panel -->
+    <div 
+      class="fixed top-0 right-0 h-full w-64 bg-blue border-l border-blue-200 shadow-lg z-50 transform transition-transform duration-300 ease-in-out"
+      :class="isMenuOpen ? 'translate-x-0' : 'translate-x-full'"
+    >
+      <div class="flex justify-between items-center p-4 border-b border-blue-200">
+        <span class="text-white font-bold">Menu</span>
+        <button @click="toggleMenu" class="text-white font-bold text-xl">&times;</button>
+      </div>
       <ul>
         <li><a href="/"               class="block p-3 text-white hover:bg-blue-500">Home</a></li>
         <li><a href="/stage-0"        class="block p-3 text-white hover:bg-blue-500">Stage 0</a></li>
