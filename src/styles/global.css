@@ -6,7 +6,7 @@
     --color-green:   #57B286;
     --color-fuchsia: #F4EDED;
     --color-black:   #202020;
-    --font-comfortaa: "Comfortaa", sans-serif;
-    --font-lora:      "Lora", serif;
-    --font-quicksand: "Quicksand", sans-serif;
+    --font-sans:     "Comfortaa", sans-serif;
+    --font-serif:    "Lora", serif;
+    --font-mono:     "Quicksand", sans-serif;
 }

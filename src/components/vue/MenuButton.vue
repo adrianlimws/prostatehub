@@ -9,7 +9,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <div class="relative rounded-sm p-2 text-white bg-blue-500 hover:bg-blue">
+  <div class="relative rounded-sm p-2 text-white bg-blue hover:bg-green font-mono">
     <button @click="toggleMenu" class="font-bold">
       MENU
     </button>

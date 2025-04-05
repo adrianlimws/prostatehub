@@ -2,9 +2,9 @@
 const { title } = Astro.props;
 ---
 
-<section class="my-8 p-6">
-  <h2 class="text-xl font-bold mb-6 text-center">{title}</h2>
+<a href="/studies" class="gap-4 mt-6 p-6 max-w-[380px] shadow-md bg-fuchsia rounded-lg hover:bg-green transition font-comfortaa">
+  <h2 class="text-xl font-bold mb-6">{title}</h2>
   <div class="min-h-[100px]">
     <slot />
   </div>
-</section>
+</a>

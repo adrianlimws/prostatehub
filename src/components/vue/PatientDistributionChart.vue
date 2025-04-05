@@ -23,8 +23,8 @@ const renderChart = () => {
   
   // Create SVG
   const width = 300;
-  const height = 150;
-  const radius = Math.min(width, height) / 2 * 0.8;
+  const height = 350;
+  const radius = Math.min(width, height) / 2 * 1;
   
   const svg = d3.select(chartRef.value)
     .append('svg')
@@ -94,5 +94,5 @@ watch(() => [props.label, props.percentage], renderChart);
 </script>
 
 <template> 
-  <div ref="chartRef" class="w-full h-32 flex items-center justify-center"></div>
+  <div ref="chartRef" class="w-full flex items-center justify-center"></div>
 </template>

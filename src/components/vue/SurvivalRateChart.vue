@@ -22,8 +22,8 @@ const renderChart = () => {
   d3.select(chartRef.value).selectAll("*").remove();
   
   // Create SVG
-  const width = 300;
-  const height = 180;
+  const width = 350;
+  const height = 200;
   const margin = { top: 30, right: 30, bottom: 40, left: 40 };
   
   const svg = d3.select(chartRef.value)
