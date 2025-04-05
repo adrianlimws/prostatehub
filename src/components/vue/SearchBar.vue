@@ -33,18 +33,18 @@ const performSearch = () => {
       v-model="searchQuery" 
       @input="performSearch"
       placeholder="search bar" 
-      class="w-full p-2 border border-white rounded"
+      class="w-full p-2 border border-black rounded"
     />
     
     <div 
       v-if="searchResults.length > 0" 
-      class="absolute top-full left-0 right-0 mt-1 bg-green border border-green-600 rounded shadow-lg z-10"
+      class="absolute top-full left-0 right-0 mt-1 bg-blue-100 border border-blue rounded shadow-lg z-10"
     >
       <ul>
         <li v-for="result in searchResults" :key="result.url">
           <a 
             :href="result.url" 
-            class="block p-2 hover:bg-green-600"
+            class="block p-2 hover:bg-green-300"
           >
             {{ result.title }}
           </a>
