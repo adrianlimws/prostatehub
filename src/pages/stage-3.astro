@@ -1,8 +1,9 @@
 ---
-import BaseLayout from '../layouts/Layout.astro'
-import Header from '../components/astro/Header.astro'
-import Footer from '../components/astro/Footer.astro'
-import Accordion from '../components/astro/Accordion.astro'
+import BaseLayout        from '../layouts/Layout.astro'
+import Header            from '../components/astro/Header.astro'
+import Footer            from '../components/astro/Footer.astro'
+import Accordion         from '../components/astro/Accordion.astro'
+import SurvivalRateChart from '../components/vue/SurvivalRateChart.vue'
 ---
 
 <BaseLayout title='Prostate Hub - Stage 3'>
@@ -34,9 +35,9 @@ import Accordion from '../components/astro/Accordion.astro'
                         into the high-risk group, which includes Stage 3.
                     </p>
                     <div
-                        class='h-32 border border-gray-200 rounded-lg flex items-center justify-center'
+                        class='mt-10'
                     >
-                        [Chart Placeholder: Treatment Success Rates for Stage 3]
+                        <SurvivalRateChart client:load stage="3" survivalRate={85} />
                     </div>
                 </div>
             </div>

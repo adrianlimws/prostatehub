@@ -1,8 +1,9 @@
 ---
-import BaseLayout from '../layouts/Layout.astro';
-import Header     from '../components/astro/Header.astro';
-import Footer     from '../components/astro/Footer.astro';
-import Accordion  from '../components/astro/Accordion.astro';
+import BaseLayout               from '../layouts/Layout.astro';
+import Header                   from '../components/astro/Header.astro';
+import Footer                   from '../components/astro/Footer.astro';
+import Accordion                from '../components/astro/Accordion.astro';
+import PatientDistributionChart from '../components/vue/PatientDistributionChart.vue';
 ---
 
 <BaseLayout title="Prostate Hub - Stage 2">
@@ -22,8 +23,8 @@ import Accordion  from '../components/astro/Accordion.astro';
         <div class="space-y-4">
           <p>Stage 2 prostate cancer has a 5-year survival rate of approximately 95-99%.</p>
           <p>About 44% of men diagnosed with prostate cancer fall into the medium-risk group, which includes many Stage 2 cases.</p>
-          <div class="h-32 border border-gray-200 rounded-lg flex items-center justify-center">
-            [Chart Placeholder: Stage 2 Progression Data]
+          <div class="items-center justify-center">
+            <PatientDistributionChart client:load label="Medium Risk" percentage={44} />          
           </div>
         </div>
       </div>

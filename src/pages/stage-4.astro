@@ -1,8 +1,9 @@
 ---
-import BaseLayout from '../layouts/Layout.astro';
-import Header     from '../components/astro/Header.astro';
-import Footer     from '../components/astro/Footer.astro';
-import Accordion  from '../components/astro/Accordion.astro';
+import BaseLayout             from '../layouts/Layout.astro';
+import Header                 from '../components/astro/Header.astro';
+import Footer                 from '../components/astro/Footer.astro';
+import Accordion              from '../components/astro/Accordion.astro';
+import TreatmentResponseChart from '../components/vue/TreatmentResponseChart.vue';
 ---
 
 <BaseLayout title="Prostate Hub - Stage 4">
@@ -23,7 +24,7 @@ import Accordion  from '../components/astro/Accordion.astro';
           <p>The 5-year survival rate for metastatic prostate cancer is around 30%, though newer treatments are improving these outcomes.</p>
           <p>In New Zealand, approximately 350 men are diagnosed with de novo Stage 4 prostate cancer annually.</p>
           <div class="h-32 border border-gray-200 rounded-lg flex items-center justify-center">
-            [Chart Placeholder: Treatment Response in Stage 4]
+            <TreatmentResponseChart client:load stage="4" />
           </div>
         </div>
       </div>

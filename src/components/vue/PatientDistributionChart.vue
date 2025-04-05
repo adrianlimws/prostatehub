@@ -72,7 +72,7 @@ const renderChart = () => {
   
   // Add title
   svg.append('text')
-    .attr('y', -height/2 + 15)
+    .attr('y', -height/2 + 10)
     .attr('text-anchor', 'middle')
     .style('font-size', '14px')
     .style('font-weight', 'bold')
