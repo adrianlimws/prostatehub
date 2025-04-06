@@ -3,9 +3,9 @@ import SearchBar  from '../vue/SearchBar.vue';
 import MenuButton from '../vue/MenuButton.vue';
 ---
 
-<header class="bg-white fixed top-0 left-0 right-0 z-50 shadow-md font-mono">
+<header class="bg-white fixed top-0 left-0 right-0 z-50 border-b-1 border-gray-300 shadow-xs font-mono">
   <div class="flex items-center justify-between p-4">
-    <div class="hidden lg:block font-bold text-xl font-quicksand uppercase "> <a href="/">Prostate Hub</a></div>
+    <div class="hidden lg:block font-bold text-xl uppercase "> <a href="/">Prostate Hub</a></div>
     <div class="flex-grow px-8 font-quicksand">
       <SearchBar client:load />
     </div>
