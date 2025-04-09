@@ -40,7 +40,7 @@ const selectedRegionData = supportGroupsData.regions.find(r =>
       <div class="flex-1">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {selectedRegionData.groups.map((group) => (
-            <div class="border border-gray-200 rounded-lg shadow-md p-4 h-full">
+            <div class="border-b shadow-md p-4 h-full">
               <h3 class="font-semibold text-lg mb-2">{group.location}</h3>
               <p class="mb-2 underline underline-offset-1"><strong>Contact Person</strong></p>
               <p>{group.coordinator}</p>
@@ -49,7 +49,7 @@ const selectedRegionData = supportGroupsData.regions.find(r =>
               <p class="mb-2 underline underline-offset-1">
                 <strong>Email</strong><br/>
               </p>
-              <p><a href={`mailto:${group.email}`} class="text-blue-600 hover:underline">{group.email}</a></p>
+              <p class="text-pretty"><a href={`mailto:${group.email}`} class="text-blue-600 hover:underline">{group.email}</a></p>
               <p class="mt-4">
                 <a 
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(group.location + ', New Zealand')}`} 
