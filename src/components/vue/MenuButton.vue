@@ -36,8 +36,8 @@ const toggleMenu = () => {
         <li><a href="/family-member"  class="block p-3 hover:bg-green hover:text-white transition">Family Support</a></li>
         <li><a href="/studies"        class="block p-3 hover:bg-green hover:text-white transition">Studies</a></li>
         <li><a href="/support-groups" class="block p-3 hover:bg-green hover:text-white transition">Support Groups</a></li> 
-        <li><a href="/forum"          class="block p-3 hover:bg-green hover:text-white transition">PFNZ Forum</a></li> 
-        <li><a href="/donation"       class="block p-3 hover:bg-green hover:text-white transition">PFNZ Donation</a></li>
+        <li><a href="https://prostate.org.nz/online-forum" target="_blank" class="block p-3 hover:bg-green hover:text-white transition">PFNZ Forum</a></li> 
+        <li><a href="https://prostate.org.nz/donations" target="_blank" class="block p-3 hover:bg-green hover:text-white transition">PFNZ Donation</a></li>
       </ul>
     </div>
   </div>
