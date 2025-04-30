@@ -3,11 +3,15 @@ import BaseLayout from '../layouts/Layout.astro';
 import Header     from '../components/astro/Header.astro';
 import Footer     from '../components/astro/Footer.astro';
 import Accordion  from '../components/astro/Accordion.astro';
+import { Breadcrumbs } from "astro-breadcrumbs";
+
+import "astro-breadcrumbs/breadcrumbs.css";
+
+
 ---
 
 <BaseLayout title="Prostate Hub - For Family Members">
   <Header />
-  
   <main class="my-8 container mx-auto px-4">
     <section class="text-center p-8 mb-8">
       <h1 class="text-3xl font-bold mb-4">For Family Members and Caregivers</h1>
@@ -15,6 +19,22 @@ import Accordion  from '../components/astro/Accordion.astro';
         Information and resources to help you support your loved one through their prostate cancer journey.
       </p>
     </section>
+    
+    <Breadcrumbs separatorAriaHidden={false}>
+      <svg
+        slot="separator"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </Breadcrumbs>
     
     <div class="mb-8">
       <Accordion title="Understanding Your Role" initiallyOpen={true}>
