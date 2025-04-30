@@ -33,7 +33,7 @@ const toggleMenu = () => {
         <li><a href="/stage-2"        class="block p-3 hover:bg-green hover:text-white transition">Stage 2</a></li>
         <li><a href="/stage-3"        class="block p-3 hover:bg-green hover:text-white transition">Stage 3</a></li>
         <li><a href="/stage-4"        class="block p-3 hover:bg-green hover:text-white transition">Stage 4</a></li>
-        <li><a href="/family-member"  class="block p-3 hover:bg-green hover:text-white transition">Family Support</a></li>
+        <li><a href="/family-support" class="block p-3 hover:bg-green hover:text-white transition">Family Support</a></li>
         <li><a href="/studies"        class="block p-3 hover:bg-green hover:text-white transition">Studies</a></li>
         <li><a href="/support-groups" class="block p-3 hover:bg-green hover:text-white transition">Support Groups</a></li> 
         <li><a href="https://prostate.org.nz/online-forum" target="_blank" class="block p-3 hover:bg-green hover:text-white transition">PFNZ Forum</a></li> 
