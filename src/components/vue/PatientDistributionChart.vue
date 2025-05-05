@@ -22,7 +22,7 @@ const renderChart = () => {
   d3.select(chartRef.value).selectAll("*").remove();
   
   // Create SVG
-  const width = 300;
+  const width = 280;
   const height = 350;
   const radius = Math.min(width, height) / 2 * 1;
   

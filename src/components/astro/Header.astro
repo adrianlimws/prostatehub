@@ -1,19 +1,153 @@
 ---
-import MenuButton from '../vue/MenuButton.vue';
+import MobileMenuButton from '../vue/MobileMenuButton.vue';
 import Search from "astro-pagefind/components/Search";
 
+// Get current URL path for highlighting active page
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="bg-white fixed top-0 left-0 right-0 z-50 border-b-1 border-gray-300 shadow-xs font-mono">
-  <div class="flex items-center justify-between p-4">
-    <div class="hidden lg:block font-bold text-xl uppercase "> <a href="/">Prostate Hub</a></div>
-    <div class="flex-grow px-8">
-      <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+  <div class="flex flex-col w-full">
+    <!-- Main header row -->
+    <div class="flex items-center justify-between p-4">
+      <div class="font-bold text-xl uppercase"> 
+        <a href="/">Prostate Hub</a>
+      </div>
+      
+      <!-- Desktop Navigation - Hidden on mobile -->
+      <nav class="hidden md:flex items-center space-x-4">
+        <a href="/stage-0"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-0" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 0</a>
+        <a href="/stage-1"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-1" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 1</a>
+        <a href="/stage-2"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-2" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 2</a>
+        <a href="/stage-3"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-3" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 3</a>
+        <a href="/stage-4"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-4" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 4</a>
+        <a href="/family-support" class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/family-support" ? "bg-green rounded transition font-bold" : ""}`}>Family Support</a>
+        <a href="/studies"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/studies" ?        "bg-green rounded transition font-bold" : ""}`}>Studies</a>
+        <a href="/support-groups" class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/support-groups" ? "bg-green rounded transition font-bold" : ""}`}>Support Groups</a>
+      </nav>
+      
+      <!-- Search Button -->
+      <div class="flex items-center">
+        <button id="search-toggle" class="px-4 py-2 bg-blue text-white rounded hover:bg-green transition mx-2">
+          <span>Search</span>
+        </button>
+        
+        <!-- Mobile Menu Button - Only visible on mobile -->
+        <div class="md:hidden">
+          <MobileMenuButton client:load />
+        </div>
+      </div>
     </div>
-    <div class="flex items-center gap-4">
-      <MenuButton client:load />
+    
+    <!-- Search Row - Hidden by default, shown when search is clicked -->
+    <div id="search-container" class="hidden w-full pb-4 px-4">
+      <div class="relative w-full">
+        <Search id="search" className="pagefind-ui pagefind-ui--fullwidth" uiOptions={{ showImages: false }} />
+      </div>
     </div>
   </div>
 </header>
 
 <div class="h-16"></div>
+
+<script>
+  // Show/hide search
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchToggle = document.getElementById('search-toggle');
+    const searchContainer = document.getElementById('search-container');
+
+    searchToggle?.addEventListener('click', () => {
+      if (searchContainer?.classList.contains('hidden')) {
+        searchContainer.classList.remove('hidden');
+        // Focus the search input
+        setTimeout(() => {
+          const searchInput = document.querySelector('.pagefind-ui__search-input');
+          if (searchInput) {
+            searchInput.focus();
+          }
+        }, 100);
+      } else {
+        searchContainer?.classList.add('hidden');
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      
+      // Don't close if click is inside search container or search toggle
+      const isClickInsideSearch = target.closest('#search-container') || target.closest('#search-toggle');
+      
+      // Don't close if click is on 'load more' button or other pagefind UI controls
+      const isClickOnSearchControls = 
+        target.closest('.pagefind-ui__button') || 
+        target.closest('.pagefind-ui__result-link') ||
+        target.closest('.pagefind-ui__result-title') ||
+        target.closest('.pagefind-ui__result-excerpt') ||
+        target.closest('.pagefind-ui__results-pagination') ||
+        target.closest('.pagefind-ui__message');
+        
+      // Only close if it's a click outside the search area AND not on search UI controls
+      if (!isClickInsideSearch && !isClickOnSearchControls && !searchContainer?.classList.contains('hidden')) {
+        searchContainer?.classList.add('hidden');
+      }
+    }, { capture: true }); // Use capture to get the event before it propagates
+  });
+</script>
+
+<style is:global>
+  /* Style the pagefind UI for full width results */
+  .pagefind-ui--fullwidth .pagefind-ui__drawer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #F4EDED;
+    z-index: 100;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 1rem;
+  }
+
+  .pagefind-ui--fullwidth .pagefind-ui__results-container {
+    max-width: 100%;
+  }
+
+  .pagefind-ui--fullwidth .pagefind-ui__result {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #202020;
+  }
+
+  .pagefind-ui--fullwidth .pagefind-ui__message {
+    padding: 1rem;
+  }
+
+  /* Customize search input */
+  .pagefind-ui--fullwidth .pagefind-ui__search-input {
+    padding: 0.75rem 2rem;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    width: 100%;
+  }
+
+  /* Make sure search form spans full width */
+  .pagefind-ui--fullwidth .pagefind-ui__form {
+    width: 100%;
+  }
+  
+  /* Style for load more button */
+  .pagefind-ui__button {
+    background-color: #324Ea2;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .pagefind-ui__button:hover {
+    background-color: #57B286;
+  }
+</style>
