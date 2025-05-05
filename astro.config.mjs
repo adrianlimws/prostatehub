@@ -11,7 +11,7 @@ import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
+  output: 'hybrid',
   build: {
     format: "file",
   },
