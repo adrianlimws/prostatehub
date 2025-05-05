@@ -16,7 +16,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
     <section class="text-center p-8 mb-8">
       <h1 class="text-3xl font-bold mb-4">Stage 4: Metastatic Prostate Cancer</h1>
       <p class="text-lg max-w-3xl mx-auto">
-        Comprehensive information about Stage 4 prostate cancer, treatment approaches, and support resources for patients and families.
+        Comprehensive information about Stage 4 prostate cancer, treatment approaches, and support resources for patients and families in New Zealand.
       </p>
     </section>
     <div class="mb-2">
@@ -39,12 +39,13 @@ import "astro-breadcrumbs/breadcrumbs.css";
     <div class="flex flex-col md:flex-row gap-8">
       <div class="md:w-1/3 p-4">
         <div class="space-y-4 text-center ">
-          <p class="text-2xl font-serif">Approximately 8% of men are diagnosed with Stage 4 prostate cancer, called "de novo" metastatic disease.</p>
+          <p class="text-2xl font-serif">Approximately 8% of men in New Zealand are diagnosed with Stage 4 prostate cancer, called "de novo" metastatic disease.</p>
           <p class="text-2xl font-serif">The 5-year survival rate for metastatic prostate cancer is around 30%, though newer treatments are improving these outcomes.</p>
           <div class="mt-10 mb-6">
             <TreatmentResponseChart client:load stage="4" />
           </div>
           <p class="text-2xl font-serif">In New Zealand, approximately 350 men are diagnosed with de novo Stage 4 prostate cancer annually.</p>
+          <p class="text-2xl font-serif mt-6">About 63% of patients with metastatic prostate cancer in New Zealand receive hormone therapy (ADT) as their primary treatment.</p>
         </div>
       </div>
 
@@ -63,102 +64,195 @@ import "astro-breadcrumbs/breadcrumbs.css";
             <li><strong>Stage 4A:</strong> Cancer has spread to nearby lymph nodes but not to distant organs</li>
             <li><strong>Stage 4B:</strong> Cancer has spread to distant lymph nodes, bones, or other organs</li>
           </ul>
-          <p>While Stage 4 prostate cancer is not typically curable, many men live for years with good quality of life with proper treatment.</p>
+          <p>In New Zealand, approximately 8% of prostate cancer diagnoses are metastatic (Stage 4) at the time of diagnosis. This equates to about 350 men annually diagnosed with what doctors call "de novo" metastatic disease, meaning they are diagnosed at Stage 4 without having gone through earlier stages.</p>
+          <p>While Stage 4 prostate cancer is not typically curable, many men live for years with good quality of life with proper treatment and management.</p>
         </div>
       </Accordion>
       
-      <Accordion title="Treatment Approaches">
+      <Accordion title="Treatment Approaches in New Zealand">
         <div class="space-y-4">
-          <h3 class="font-semibold text-lg">Androgen Deprivation Therapy (ADT)</h3>
-          <p>The foundation of treatment for metastatic prostate cancer, including:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>LHRH agonists/antagonists (e.g., Goserelin, Degarelix)</li>
-            <li>Anti-androgens (e.g., Bicalutamide)</li>
-            <li>Complete androgen blockade (combination therapy)</li>
-          </ul>
+          <p>Based on New Zealand patient data, the following treatments are commonly used for Stage 4 prostate cancer:</p>
           
-          <h3 class="font-semibold text-lg mt-6">Advanced Hormone Therapies</h3>
-          <p>Second-generation hormone therapies that may be effective even when cancer becomes resistant to initial ADT:</p>
+          <h3 class="font-semibold text-lg">Hormone Therapy (ADT)</h3>
+          <p>The foundation of treatment for metastatic prostate cancer, used in about 63% of metastatic cases in New Zealand. This includes:</p>
           <ul class="list-disc pl-6 space-y-2">
-            <li>Abiraterone acetate</li>
-            <li>Enzalutamide</li>
-            <li>Apalutamide</li>
+            <li>LHRH agonists like Goserelin (Zoladex) - given as a 12-week implant in the abdomen</li>
+            <li>Anti-androgens like Bicalutamide - typically taken as tablets</li>
+            <li>Combined androgen blockade approaches</li>
           </ul>
+          <p>Treatment is usually administered by oncology nurses at cancer centers throughout New Zealand, with implants typically given every three months.</p>
+          
+          <h3 class="font-semibold text-lg mt-6">Radiation Therapy with Hormone Therapy</h3>
+          <p>About 31% of metastatic patients in New Zealand receive radiation combined with hormone therapy, which can help:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Control symptoms from the primary tumor</li>
+            <li>Relieve pain from bone metastases</li>
+            <li>Slow disease progression</li>
+          </ul>
+          <p>The Canterbury Regional Cancer and Haematology Service and other cancer centers in New Zealand provide radiation therapy services.</p>
           
           <h3 class="font-semibold text-lg mt-6">Chemotherapy</h3>
-          <p>Often given alongside hormone therapy:</p>
+          <p>Often given alongside hormone therapy for metastatic disease:</p>
           <ul class="list-disc pl-6 space-y-2">
-            <li>Docetaxel - usually the first chemotherapy option</li>
-            <li>Cabazitaxel - may be used when docetaxel is no longer effective</li>
+            <li>Docetaxel (Taxotere) - usually the first chemotherapy option</li>
+            <li>Given as intravenous infusions at cancer centers</li>
+            <li>Typically administered in a six-cycle program over 18 weeks</li>
           </ul>
-          
-          <h3 class="font-semibold text-lg mt-6">Radiation Therapy</h3>
-          <p>May be used to:</p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Treat the primary tumor in newly diagnosed metastatic disease</li>
-            <li>Relieve pain from bone metastases</li>
-            <li>Target specific problematic metastases</li>
-          </ul>
+          <p>Before starting chemotherapy, patients often have dental checks and other preparations to reduce potential side effects.</p>
           
           <h3 class="font-semibold text-lg mt-6">Bone-Targeted Therapies</h3>
           <p>To strengthen bones and prevent complications:</p>
           <ul class="list-disc pl-6 space-y-2">
-            <li>Bisphosphonates (e.g., Zoledronic acid)</li>
-            <li>Denosumab</li>
-            <li>Radium-223 for bone metastases</li>
+            <li>Bisphosphonates like zoledronic acid - given as intravenous infusions</li>
+            <li>Typically administered every 12 weeks</li>
+            <li>Requires drinking plenty of water before treatment</li>
+          </ul>
+          
+          <h3 class="font-semibold text-lg mt-6">Advanced Hormone Therapies</h3>
+          <p>Second-generation hormone therapies:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Abiraterone acetate (Zytiga) - now available in New Zealand but may not be fully funded for all patients</li>
+            <li>Often reserved for when standard hormone therapy is no longer effective</li>
           </ul>
         </div>
       </Accordion>
       
       <Accordion title="Managing Side Effects">
         <div class="space-y-4">
-          <p>Treatment for Stage 4 prostate cancer can cause significant side effects:</p>
+          <p>Based on data from New Zealand patients, people with Stage 4 prostate cancer reported these experiences one year after diagnosis:</p>
+          
+          <h3 class="font-semibold text-lg">Hormone Therapy Side Effects</h3>
           <ul class="list-disc pl-6 space-y-2">
-            <li>Hot flashes and night sweats</li>
-            <li>Loss of bone density and increased fracture risk</li>
-            <li>Fatigue</li>
-            <li>Sexual dysfunction</li>
-            <li>Changes in body composition</li>
-            <li>Cognitive changes</li>
-            <li>Cardiovascular effects</li>
-            <li>Chemotherapy-specific side effects (nausea, hair loss, neuropathy)</li>
+            <li>Lack of energy (36% of patients)</li>
+            <li>Sexual function issues (34% reported as a problem)</li>
+            <li>Very few patients (6%) reported having fair-to-good erections</li>
+            <li>Emotional changes (14% reported feeling depressed)</li>
+            <li>Urinary issues (13% reported urinary function as a problem)</li>
+            <li>Hot flashes and night sweats (not quantified but commonly reported)</li>
           </ul>
-          <p>Discuss a comprehensive side effect management plan with your healthcare team.</p>
+          
+          <h3 class="font-semibold text-lg mt-6">Chemotherapy Specific Side Effects</h3>
+          <p>Docetaxel chemotherapy can cause additional side effects:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Lowered immune system - increasing risk of infection</li>
+            <li>Taste changes - affecting many foods for up to 6 months</li>
+            <li>Peripheral neuropathy - numbness or tingling in fingers and toes</li>
+            <li>Nail changes - including possible loss of toenails</li>
+            <li>Hair loss - affecting head and body hair</li>
+          </ul>
+          
+          <h3 class="font-semibold text-lg mt-6">Managing Side Effects</h3>
+          <p>New Zealand cancer centers provide comprehensive support including:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Anti-nausea medications for chemotherapy side effects</li>
+            <li>Medications for managing hot flashes</li>
+            <li>Regular monitoring of blood tests</li>
+            <li>Emergency access to oncology services if side effects become severe</li>
+            <li>Green cards for emergency access through hospital oncology departments</li>
+            <li>24-hour phone access to nursing support</li>
+          </ul>
+          <p>Before starting treatment, take note of the side effect monitoring protocol provided by your medical team. Always check your temperature if you feel unwell and contact your oncology team immediately if your temperature is 38°C or above.</p>
         </div>
       </Accordion>
       
       <Accordion title="New Zealand Support Resources">
         <div class="space-y-4">
-          <p>Support is crucial for Stage 4 patients and their families:</p>
+          <p>Support is crucial for Stage 4 patients and their families in New Zealand:</p>
+          
+          <h3 class="font-semibold text-lg">Medical Support Services</h3>
           <ul class="list-disc pl-6 space-y-2">
-            <li><a href="#" class="text-blue-600 hover:underline">Stage 4 Support Groups in New Zealand</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Psychological Support Services</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Palliative Care Services</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Financial Support and Benefits Information</a></li>
+            <li><strong>Cancer Society New Zealand:</strong> Located on many hospital campuses with information and support services</li>
+            <li><strong>Prostate Cancer Foundation NZ:</strong> Provides support groups throughout New Zealand</li>
+            <li><strong>District Health Board Services:</strong> Including:
+              <ul class="list-disc pl-6 mt-2">
+                <li>Dietitians - for nutrition advice during treatment</li>
+                <li>Social Workers - for psychosocial support and financial assistance</li>
+                <li>Occupational Therapists - to help maintain independence</li>
+                <li>Physiotherapists - to assist with mobility and exercise programs</li>
+                <li>Cancer Psychological and Social Support Service - specialist support</li>
+              </ul>
+            </li>
+            <li><strong>Leukaemia & Blood Cancer NZ:</strong> Also provides resources and support for some prostate cancer patients</li>
+          </ul>
+          
+          <h3 class="font-semibold text-lg mt-6">Practical Support</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Financial Assistance:</strong> Work and Income New Zealand (0800 559 009) may provide financial assistance for those unable to work</li>
+            <li><strong>Travel & Accommodation:</strong> The National Travel Assistance programme helps with travel and accommodation costs for treatment</li>
+            <li><strong>Cancer Society Accommodation:</strong> May be able to assist with accommodation for those traveling to Christchurch for treatment</li>
+            <li><strong>Home Support Services:</strong> Available through DHB referrals</li>
+          </ul>
+          
+          <p>For immediate concerns during treatment, you can contact the oncology department at (03) 364 0020 to speak with a nurse 24 hours a day.</p>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Living with Stage 4 Prostate Cancer">
+        <div class="space-y-4">
+          <h3 class="font-semibold text-lg">Day-to-Day Life</h3>
+          <p>While Stage 4 prostate cancer requires ongoing management, many men maintain good quality of life:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Continue normal activities as much as you feel able</li>
+            <li>Any amount of activity, no matter how small, can help maintain strength</li>
+            <li>Maintain good nutrition and hydration</li>
+            <li>Take medications as prescribed</li>
+            <li>Report any unusual symptoms promptly</li>
+            <li>Accept help from others when needed</li>
+          </ul>
+          
+          <h3 class="font-semibold text-lg mt-6">Family Involvement</h3>
+          <p>Communication with family is important:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Consider bringing a family member to appointments to help remember information</li>
+            <li>Discuss your care preferences with those close to you</li>
+            <li>If you have children, age-appropriate information can help them understand</li>
+            <li>Family members can also access support services</li>
+          </ul>
+          
+          <h3 class="font-semibold text-lg mt-6">Medical Care</h3>
+          <p>Ongoing medical management includes:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Regular PSA testing to monitor treatment response</li>
+            <li>Scheduled appointments with your oncology team</li>
+            <li>Additional blood tests to monitor treatment effects</li>
+            <li>Regular assessments for any new symptoms</li>
+            <li>Possible adjustments to treatment as needed</li>
           </ul>
         </div>
       </Accordion>
       
-      <Accordion title="Clinical Trials and Research">
+      <Accordion title="When to Contact Your Medical Team">
         <div class="space-y-4">
-          <p>New treatments are constantly being developed for metastatic prostate cancer:</p>
+          <p>Contact the Oncology Service immediately (24 hours) if:</p>
           <ul class="list-disc pl-6 space-y-2">
-            <li><a href="#" class="text-blue-600 hover:underline">Current Clinical Trials in New Zealand</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">International Trial Access Programs</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Emerging Therapies and Research Updates</a></li>
+            <li>You begin to feel unwell or are unexpectedly unwell</li>
+            <li>You start to feel muddled or confused</li>
+            <li>Your temperature is 38°C or more</li>
+            <li>Your temperature is less than 35.5°C</li>
+            <li>You have uncontrolled shaking or shivering</li>
+            <li>You have large and/or frequent diarrhoea/loose bowel motions</li>
+            <li>You have chest heaviness/tightness or chest pain</li>
+            <li>You notice any bleeding or unusual bruising</li>
+            <li>You have sensory changes (numbness, tingling) that are worsening</li>
           </ul>
+          <p>If you experience chest discomfort of any sort and/or difficulty breathing, call an ambulance immediately as this is a medical emergency.</p>
+          <p>You can reach the Canterbury Regional Cancer and Haematology Service at (03) 364 0020 to talk to a nurse 24 hours a day. Similar services are available at other regional cancer centers throughout New Zealand.</p>
         </div>
       </Accordion>
       
-      <Accordion title="Planning for the Future">
+      <Accordion title="New Zealand Medical Resources">
         <div class="space-y-4">
-          <p>Important considerations for Stage 4 patients:</p>
+          <p>Reliable New Zealand-specific resources for Stage 4 prostate cancer:</p>
           <ul class="list-disc pl-6 space-y-2">
-            <li>Advance care planning</li>
-            <li>Legal and financial planning</li>
-            <li>Communication with family about wishes and preferences</li>
-            <li>Quality of life considerations in treatment decisions</li>
+            <li><a href="https://www.health.govt.nz/" class="text-blue-600 hover:underline" target="_blank">Ministry of Health</a></li>
+            <li><a href="https://www.cdhb.health.nz/hospitals-health-facilities/christchurch-hospital/canterbury-regional-cancer-and-haematology-service/" class="text-blue-600 hover:underline" target="_blank">Canterbury Regional Cancer and Haematology Service</a></li>
+            <li><a href="https://www.cancernz.org.nz/" class="text-blue-600 hover:underline" target="_blank">Cancer Society of New Zealand</a></li>
+            <li><a href="https://prostate.org.nz/" class="text-blue-600 hover:underline" target="_blank">Prostate Cancer Foundation NZ</a></li>
+            <li><a href="https://www.healthinfo.org.nz/" class="text-blue-600 hover:underline" target="_blank">HealthInfo</a> - For Canterbury-specific health information</li>
+            <li><a href="https://www.leukaemia.org.nz/" class="text-blue-600 hover:underline" target="_blank">Leukaemia & Blood Cancer NZ</a></li>
+            <li><a href="https://www.workandincome.govt.nz/" class="text-blue-600 hover:underline" target="_blank">Work and Income New Zealand</a></li>
           </ul>
+          <p>For concerns about treatment side effects, contact your oncology team at any time by telephoning (03) 364 0020 (Canterbury) or your local cancer center.</p>
         </div>
       </Accordion>
     </div>
