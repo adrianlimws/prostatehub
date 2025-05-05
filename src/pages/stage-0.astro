@@ -45,7 +45,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
             <PatientDistributionChart client:load label="Risk (1 in 8)" percentage={12.5} />
           </div>
           <p class="text-2xl font-serif">1 in 8 men will be diagnosed with prostate cancer in their lifetime.</p>
-
         </div>
       </div>
 
@@ -54,7 +53,23 @@ import "astro-breadcrumbs/breadcrumbs.css";
         <div class="space-y-4">
           <p>The prostate is a small gland in men that produces seminal fluid to nourish and transport sperm. Prostate cancer occurs when cells in the prostate begin to grow uncontrollably.</p>
           
-          <p>Understanding prostate health early in life can help with early detection and prevention strategies later on.</p>
+          <p>Understanding prostate health early in life can help with early detection and prevention strategies later on. In New Zealand, prostate cancer is the most common cancer in men.</p>
+          
+          <p>Prostate cancer risk increases with age, with most diagnoses occurring in men over 50. However, awareness should begin earlier, especially for those with family history or other risk factors.</p>
+        </div>
+      </Accordion>
+      
+      <Accordion title="Prostate Cancer Risk Groups">
+        <div class="space-y-4">
+          <p>When diagnosed, prostate cancer is categorized into risk groups based on how likely it is to grow or spread:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Low risk (19% of cases):</strong> Cancer that is least likely to grow or spread</li>
+            <li><strong>Intermediate risk (44% of cases):</strong> Mid-range likelihood of growing or spreading</li>
+            <li><strong>High risk (26% of cases):</strong> Higher likelihood of growing or spreading</li>
+            <li><strong>Regional (8% of cases):</strong> Cancer has spread to nearby lymph nodes or surrounding areas</li>
+            <li><strong>Metastatic (3% of cases):</strong> Cancer has spread to distant parts of the body</li>
+          </ul>
+          <p>Early detection significantly improves treatment outcomes, with high success rates in early stages.</p>
         </div>
       </Accordion>
       
@@ -66,6 +81,8 @@ import "astro-breadcrumbs/breadcrumbs.css";
             <li>Exercise regularly</li>
             <li>Maintain a healthy weight</li>
             <li>Know your family history - men with close relatives who have had prostate cancer are at higher risk</li>
+            <li>Limit processed foods and red meat consumption</li>
+            <li>Stay informed about your health and get regular check-ups</li>
           </ul>
         </div>
       </Accordion>
@@ -76,20 +93,30 @@ import "astro-breadcrumbs/breadcrumbs.css";
           <p>Consider talking to your doctor about prostate screening if:</p>
           <ul class="list-disc pl-6 space-y-2">
             <li>You are over 50 years old</li>
-            <li>You have a family history of prostate cancer</li>
+            <li>You have a family history of prostate cancer (consider starting at 40-45)</li>
             <li>You are of African or Caribbean descent (these groups have higher risk)</li>
+            <li>You have certain genetic predispositions (discuss with your doctor)</li>
           </ul>
+          <p>PSA levels are typically measured in nanograms per milliliter (ng/mL) of blood. Normal ranges vary by age, but generally:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Under 4.0 ng/mL is considered normal</li>
+            <li>Between 4.0 and 10.0 ng/mL suggests possible prostate concerns</li>
+            <li>Over 10.0 ng/mL indicates higher risk of prostate cancer</li>
+          </ul>
+          <p>Remember that PSA levels can be affected by factors other than cancer, so discuss results with your healthcare provider.</p>
         </div>
       </Accordion>
       
-      <Accordion title="Resources for Young Men">
+      <Accordion title="Resources for Young Men in New Zealand">
         <div class="space-y-4">
-          <p>Additional resources for learning about prostate health:</p>
+          <p>Additional resources for learning about prostate health in New Zealand:</p>
           <ul class="list-disc pl-6 space-y-2">
-            <li><a href="#" class="text-blue-600 hover:underline">New Zealand Prostate Cancer Foundation</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">New Zealand Cancer Society</a></li>
-            <li><a href="#" class="text-blue-600 hover:underline">Ministry of Health Guidelines</a></li>
+            <li><a href="https://prostate.org.nz/" class="text-blue-600 hover:underline" target="_blank">Prostate Cancer Foundation New Zealand</a></li>
+            <li><a href="https://www.cancer.org.nz/cancer/types-of-cancer/prostate-cancer/" class="text-blue-600 hover:underline" target="_blank">Cancer Society of New Zealand</a></li>
+            <li><a href="https://www.health.govt.nz/" class="text-blue-600 hover:underline" target="_blank">Ministry of Health Guidelines</a></li>
+            <li><a href="https://www.healthnavigator.org.nz/health-a-z/p/prostate-cancer/" class="text-blue-600 hover:underline" target="_blank">Health Navigator NZ</a></li>
           </ul>
+          <p>If you have questions about prostate health, consult with your general practitioner or healthcare provider.</p>
         </div>
       </Accordion>
     </div>
