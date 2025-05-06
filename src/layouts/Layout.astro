@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import TextResizer from '../components/vue/TextResizer.vue';
 
 const { title } = Astro.props;
 ---
@@ -9,8 +10,44 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <!-- Inline script runs immediately to prevent flash of unstyled content -->
+    <script is:inline>
+      (function() {
+        const savedSize = localStorage.getItem('preferredFontSize') || 'normal';
+        document.documentElement.classList.add(`font-size-${savedSize}`);
+      })();
+    </script>
   </head>
   <body class="min-h-screen">
+      <!-- Screen reader announcement element for accessibility -->
+      <div id="text-size-announcement" class="sr-announcer" aria-live="polite" aria-atomic="true"></div>
+      
+      <!-- TextResizer as an Astro Island with client:load directive -->
+      <TextResizer client:load />
+      
+      <!-- No-JS fallback (hidden when JS is enabled) -->
+      <noscript>
+        <style>
+          .font-size-control-fallback { display: none; }
+          @media (max-width: 768px) {
+            .font-size-control-fallback {
+              display: block;
+              position: fixed;
+              bottom: 16px;
+              right: 16px;
+              background: white;
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              border: 1px solid #e5e7eb;
+            }
+          }
+        </style>
+        <div class="font-size-control-fallback">
+          <span style="font-size: 0.75rem; color: #6b7280;">For text sizing, please enable JavaScript</span>
+        </div>
+      </noscript>
+      
       <slot />
   </body>
 </html>
