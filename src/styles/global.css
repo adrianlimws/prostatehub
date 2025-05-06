@@ -13,18 +13,3 @@
 h1, h2, h3 {
     font-size: 2rem
 }
-/*   
-.nav-active {
-    color: var(--color-green);
-    font-weight: bold;
-    border-bottom: 2px solid var(--color-green);
-  }
-  
-  @media (max-width: 768px) {
-    .nav-active {
-      background-color: var(--color-green);
-      color: white;
-      border-bottom: none;
-    }
-  }
-   */
