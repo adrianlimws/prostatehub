@@ -3,7 +3,13 @@ import MobileMenuButton from '../vue/MobileMenuButton.vue';
 import Search from "astro-pagefind/components/Search";
 
 // Get current URL path for highlighting active page
-const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const currentPath = Astro.url.pathname;
+
+function isActive(path) {
+  const normalizedCurrentPath = currentPath.replace(/\/$/, '');
+  const normalizedPath = path.replace(/\/$/, '');
+  return normalizedCurrentPath === normalizedPath;
+}
 ---
 
 <header class="bg-white fixed top-0 left-0 right-0 z-50 font-sans shadow-md">
