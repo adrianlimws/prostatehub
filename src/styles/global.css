@@ -10,6 +10,91 @@
     --font-serif:    "Lora", serif;
     --font-mono:     "Quicksand", sans-serif;
 }
-h1, h2, h3 {
-    font-size: 2rem
-}
+
+/* Base font size variables for text scaling */
+:root {
+    --base-font-size: 1rem;
+    --line-height-factor: 1.5;
+  }
+  
+  /* Normal text size (default) */
+  .font-size-normal {
+    --base-font-size: 1rem;
+  }
+  
+  /* Large text size (1.25x normal) */
+  .font-size-large {
+    --base-font-size: 1.25rem;
+  }
+  
+  /* Extra large text size (1.5x normal) */
+  .font-size-x-large {
+    --base-font-size: 1.5rem;
+  }
+  
+  /* Apply scaling to common text elements */
+  body {
+    font-size: var(--base-font-size);
+    line-height: calc(var(--base-font-size) * var(--line-height-factor));
+  }
+  
+  p, li, a, span, div, button, input, select, textarea {
+    font-size: var(--base-font-size);
+  }
+  
+  h1 {
+    font-size: calc(var(--base-font-size) * 2);
+  }
+  
+  h2 {
+    font-size: calc(var(--base-font-size) * 1.75);
+  }
+  
+  h3 {
+    font-size: calc(var(--base-font-size) * 1.5);
+  }
+  
+  h4 {
+    font-size: calc(var(--base-font-size) * 1.25);
+  }
+  
+  h5, h6 {
+    font-size: calc(var(--base-font-size) * 1.1);
+  }
+  
+  .text-sm {
+    font-size: calc(var(--base-font-size) * 0.875);
+  }
+  
+  .text-xs {
+    font-size: calc(var(--base-font-size) * 0.75);
+  }
+  
+  .text-lg {
+    font-size: calc(var(--base-font-size) * 1.125);
+  }
+  
+  .text-xl {
+    font-size: calc(var(--base-font-size) * 1.25);
+  }
+  
+  .text-2xl {
+    font-size: calc(var(--base-font-size) * 1.5);
+  }
+  
+  .text-3xl {
+    font-size: calc(var(--base-font-size) * 1.875);
+  }
+  
+  /* Hidden for screen reader announcements */
+  .sr-announcer {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
