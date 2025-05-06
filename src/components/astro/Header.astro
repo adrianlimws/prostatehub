@@ -6,29 +6,29 @@ import Search from "astro-pagefind/components/Search";
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-white fixed top-0 left-0 right-0 z-50 border-b-1 border-gray-300 shadow-xs font-mono">
+<header class="bg-white fixed top-0 left-0 right-0 z-50 font-mono">
   <div class="flex flex-col w-full">
     <!-- Main header row -->
-    <div class="flex items-center justify-between p-4">
+    <div class="flex items-center justify-between">
       <div class="font-bold text-xl uppercase"> 
-        <a href="/">Prostate Hub</a>
+        <a href="/" class={`px-4 py-7 bg-blue hover:bg-green text-white transition ${currentPath === "/" ? "px-4 py-7 bg-green transition" : ""}`}>Prostate Hub</a>
       </div>
       
       <!-- Desktop Navigation - Hidden on mobile -->
-      <nav class="hidden md:flex items-center space-x-4">
-        <a href="/stage-0"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-0" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 0</a>
-        <a href="/stage-1"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-1" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 1</a>
-        <a href="/stage-2"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-2" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 2</a>
-        <a href="/stage-3"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-3" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 3</a>
-        <a href="/stage-4"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/stage-4" ?        "bg-green rounded transition font-bold" : ""}`}>Stage 4</a>
-        <a href="/family-support" class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/family-support" ? "bg-green rounded transition font-bold" : ""}`}>Family Support</a>
-        <a href="/studies"        class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/studies" ?        "bg-green rounded transition font-bold" : ""}`}>Studies</a>
-        <a href="/support-groups" class={`hover:bg-green hover:text-white p-2 rounded transition ${currentPath === "/support-groups" ? "bg-green rounded transition font-bold" : ""}`}>Support Groups</a>
+      <nav class="hidden md:flex items-center space-x-4 text-lg">
+        <a href="/stage-0"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-0" ?        "bg-green text-white transition" : ""}`}>Stage 0</a>
+        <a href="/stage-1"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-1" ?        "bg-green text-white transition" : ""}`}>Stage 1</a>
+        <a href="/stage-2"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-2" ?        "bg-green text-white transition" : ""}`}>Stage 2</a>
+        <a href="/stage-3"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-3" ?        "bg-green text-white transition" : ""}`}>Stage 3</a>
+        <a href="/stage-4"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-4" ?        "bg-green text-white transition" : ""}`}>Stage 4</a>
+        <a href="/family-support" class={`p-2 rounded hover:underline transition ${currentPath === "/family-support" ? "bg-green text-white transition" : ""}`}>Family Support</a>
+        <a href="/studies"        class={`p-2 rounded hover:underline transition ${currentPath === "/studies" ?        "bg-green text-white transition" : ""}`}>Studies</a>
+        <a href="/support-groups" class={`p-2 rounded hover:underline transition ${currentPath === "/support-groups" ? "bg-green text-white transition" : ""}`}>Support Groups</a>
       </nav>
       
       <!-- Search Button -->
       <div class="flex items-center">
-        <button id="search-toggle" class="px-4 py-2 bg-blue text-white rounded hover:bg-green transition mx-2">
+        <button id="search-toggle" class="px-4 py-7 bg-blue text-white hover:bg-green transition">
           <span>Search</span>
         </button>
         
@@ -74,7 +74,7 @@ const currentPath = Astro.url.pathname;
     document.addEventListener('click', (event) => {
       const target = event.target;
       
-      // Don't close if click is inside search container or search toggle
+      // Don't close if click is inside search container
       const isClickInsideSearch = target.closest('#search-container') || target.closest('#search-toggle');
       
       // Don't close if click is on 'load more' button or other pagefind UI controls
@@ -126,9 +126,10 @@ const currentPath = Astro.url.pathname;
 
   /* Customize search input */
   .pagefind-ui--fullwidth .pagefind-ui__search-input {
+    margin: 1rem 0;
     padding: 0.75rem 2rem;
     border-radius: 0.375rem;
-    border: 1px solid #d1d5db;
+    border: 2px solid #d1d5db;
     width: 100%;
   }
 
