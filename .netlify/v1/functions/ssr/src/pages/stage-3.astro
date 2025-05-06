@@ -1,0 +1,347 @@
+---
+import BaseLayout        from '../layouts/Layout.astro'
+import Header            from '../components/astro/Header.astro'
+import Footer            from '../components/astro/Footer.astro'
+import Accordion         from '../components/astro/Accordion.astro'
+import SurvivalRateChart from '../components/vue/SurvivalRateChart.vue'
+import { Breadcrumbs }   from "astro-breadcrumbs";
+export const prerender = false;
+import "astro-breadcrumbs/breadcrumbs.css";
+---
+
+<BaseLayout title='Prostate Hub - Stage 3'>
+    <Header />
+    
+    <!-- Improved header section with gradient background -->
+    <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
+      <h1 class="text-3xl font-bold mb-4">Stage 3: Locally Advanced Prostate Cancer</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        Information about Stage 3 prostate cancer, treatment options, and support for patients dealing with locally advanced disease in New Zealand.
+      </p>
+    </section>
+  
+    <main class="my-8 container mx-auto px-4">
+        <!-- Breadcrumbs -->
+        <div class="mb-4 pb-2 border-b-2 border-gray-300">
+            <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
+              <svg
+                slot="separator"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </Breadcrumbs>
+        </div>
+        
+        <!-- Main content with improved layout -->
+        <div class="flex flex-col md:flex-row gap-8 mb-8">
+            <!-- Left column with statistics and chart -->
+            <div class="md:w-1/3">
+                <div class="bg-blue-50 rounded-lg shadow-md p-6">
+                    <div class="space-y-6 text-center">
+                        <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed">
+                            Stage 3 prostate cancer has a 5-year survival rate of approximately 80-90%.
+                        </p>
+                        
+                        <div class="my-8">
+                            <SurvivalRateChart client:load stage="3" survivalRate={85} />
+                        </div>
+                        
+                        <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed">
+                            About 26% of men diagnosed with prostate cancer in New Zealand fall into the high-risk group, which includes Stage 3.
+                        </p>
+                        
+                        <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed mt-6">
+                            In 2021, approximately 46% of men with high-risk prostate cancer in New Zealand received surgery as their primary treatment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right column with accordion sections -->
+            <div class="md:w-2/3">
+                <Accordion title='What is Stage 3 Prostate Cancer?' initiallyOpen={true}>
+                    <div class='space-y-4'>
+                        <p>
+                            Stage 3 prostate cancer means the cancer has spread
+                            beyond the prostate but has not yet reached distant
+                            parts of the body. At this stage:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>
+                                The cancer has extended beyond the outer layer
+                                of the prostate
+                            </li>
+                            <li>
+                                It may have spread to the seminal vesicles
+                                (glands that help produce semen)
+                            </li>
+                            <li>PSA levels are typically above 20 ng/mL</li>
+                            <li>The Gleason score is usually 7-10</li>
+                        </ul>
+                        <p>
+                            Stage 3 is considered "locally advanced" and typically falls into the "high-risk" category. In New Zealand, approximately 26% of men diagnosed with prostate cancer are classified as high-risk.
+                        </p>
+                        <p>
+                            High-risk prostate cancer requires more aggressive treatment approaches than earlier stages, but still has good outcomes with proper treatment.
+                        </p>
+                    </div>
+                </Accordion>
+
+                <Accordion title='Treatment Options in New Zealand'>
+                    <div class='space-y-4'>
+                        <p>Based on New Zealand patient data, there are several treatment approaches for Stage 3 prostate cancer:</p>
+
+                        <h3 class='font-semibold text-lg'>Radical Prostatectomy</h3>
+                        <p>
+                            Surgical removal of the prostate is a common treatment for Stage 3 cancer in New Zealand, with approximately 46% of high-risk patients choosing this option. This approach is particularly common in younger patients, with around 79% of high-risk patients under 60 receiving surgery, compared to only 14% of those over 75.
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>May be followed by additional treatments if cancer is found at surgical margins</li>
+                            <li>Often combined with lymph node removal</li>
+                            <li>Available at major hospitals throughout New Zealand</li>
+                        </ul>
+
+                        <h3 class='font-semibold text-lg mt-6'>
+                            Radiation Therapy with Hormone Therapy
+                        </h3>
+                        <p>
+                            Combined radiation and hormone therapy is used for many high-risk patients, especially older men. About 13% of high-risk patients under 60 and 38% of those over 75 receive this combined treatment. This usually involves:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>External beam radiation therapy targeting the prostate and surrounding areas</li>
+                            <li>Hormone therapy (androgen deprivation therapy or ADT) for 18-36 months</li>
+                            <li>Treatment is available through regional cancer centers like the Canterbury Regional Cancer and Haematology Service</li>
+                        </ul>
+
+                        <h3 class='font-semibold text-lg mt-6'>
+                            Radiation Therapy Alone
+                        </h3>
+                        <p>About 12% of high-risk patients receive radiation therapy without hormone therapy, with this approach being more common in older patients (12% of those over 75 compared to 4% of those under 60).</p>
+
+                        <h3 class='font-semibold text-lg mt-6'>
+                            Hormone Therapy (ADT)
+                        </h3>
+                        <p>Hormone therapy alone is used in approximately 23% of high-risk patients, particularly older men. This may include:</p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>LHRH agonists/antagonists like Goserelin</li>
+                            <li>Anti-androgens like Bicalutamide</li>
+                            <li>Newer generation hormone therapies like Abiraterone</li>
+                        </ul>
+                        <p>The drugs are typically administered as injections every 1-3 months at cancer centers or by GPs.</p>
+                    </div>
+                </Accordion>
+
+                <Accordion title='Managing Side Effects'>
+                    <div class='space-y-4'>
+                        <p>
+                            Based on data from New Zealand patients one year after treatment, here are common side effects for different treatments:
+                        </p>
+                        
+                        <h3 class='font-semibold text-lg'>Surgery Side Effects</h3>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>Urinary issues: 31% needed more than one urinary pad per day, 20% experienced more than one urinary leak per day</li>
+                            <li>Sexual function: 45% reported sexual function as a problem, only 22% reported having fair to very good erections</li>
+                            <li>Other effects: 10% reported feeling depressed, 13% reported lack of energy</li>
+                        </ul>
+                        
+                        <h3 class='font-semibold text-lg mt-4'>Radiation Therapy with Hormone Therapy Side Effects</h3>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>Bowel function: 9% reported bowel habits as a problem</li>
+                            <li>Sexual function: 37% reported sexual function as a problem, only 12% reported having fair to very good erections</li>
+                            <li>Energy levels: 31% reported lack of energy</li>
+                            <li>Emotional effects: 12% reported feeling depressed</li>
+                        </ul>
+                        
+                        <h3 class='font-semibold text-lg mt-4'>Hormone Therapy Side Effects</h3>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>Hot flashes and night sweats</li>
+                            <li>Fatigue (33% report lack of energy)</li>
+                            <li>Sexual dysfunction (30% report sexual function as a problem)</li>
+                            <li>Loss of bone density</li>
+                            <li>Changes in body composition</li>
+                            <li>Emotional changes (12% report feeling depressed)</li>
+                        </ul>
+                        
+                        <p>
+                            The Canterbury Regional Cancer and Haematology Service and other cancer centers in New Zealand provide comprehensive support for managing these side effects, including:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>Medications for specific side effects</li>
+                            <li>Access to dietitians, psychologists, and social workers</li>
+                            <li>Specialist nursing support</li>
+                            <li>Referrals to support groups</li>
+                        </ul>
+                    </div>
+                </Accordion>
+
+                <Accordion title='Support Options in New Zealand'>
+                    <div class='space-y-4'>
+                        <p>
+                            New Zealand offers various support services for Stage 3 prostate cancer patients:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>
+                                <strong>Cancer Society New Zealand:</strong> Located on many hospital campuses with information resources and support services. They can assist in arranging accommodation for those traveling for treatment.
+                            </li>
+                            <li>
+                                <strong>Prostate Cancer Foundation NZ:</strong> Provides support groups throughout New Zealand with regular meetings for patients and families
+                            </li>
+                            <li>
+                                <strong>District Health Board Services:</strong> Including:
+                                <ul class='list-disc pl-6 mt-2'>
+                                    <li>Dietitians - to assist with nutrition during treatment</li>
+                                    <li>Social Workers - for psychosocial support and financial assistance</li>
+                                    <li>Occupational Therapists - to help keep independence</li>
+                                    <li>Physiotherapists - to assist with physical function</li>
+                                    <li>Speech Language Therapists - for any swallowing difficulties</li>
+                                    <li>Cancer Psychological and Social Support Service - specialist support</li>
+                                    <li>Pharmacists - medication management experts</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Financial Support:</strong> Work and Income New Zealand (0800 559 009) may provide financial assistance for those unable to work
+                            </li>
+                            <li>
+                                <strong>Travel Assistance:</strong> The National Travel Assistance programme helps with travel and accommodation costs for those who need to travel for treatment
+                            </li>
+                        </ul>
+                        <p>
+                            For immediate concerns during treatment, you can contact the oncology department at (03) 364 0020 to speak with a nurse 24 hours a day.
+                        </p>
+                    </div>
+                </Accordion>
+
+                <Accordion title='Living with Stage 3 Prostate Cancer'>
+                    <div class='space-y-4'>
+                        <h3 class='font-semibold text-lg'>During Treatment</h3>
+                        <p>While undergoing treatment for Stage 3 prostate cancer:</p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>Continue normal activities as much as you feel able</li>
+                            <li>Maintain good nutrition - a dietitian can provide guidance</li>
+                            <li>Stay hydrated - drink plenty of fluids</li>
+                            <li>Report any unusual symptoms to your care team</li>
+                            <li>Keep track of appointments and medications</li>
+                            <li>Involve family members or friends in your care</li>
+                        </ul>
+                        
+                        <h3 class='font-semibold text-lg mt-4'>After Treatment</h3>
+                        <p>Follow-up care is important:</p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>Regular PSA testing to monitor for recurrence</li>
+                            <li>Scheduled check-ups with your oncology team</li>
+                            <li>Continue general health care with your GP</li>
+                            <li>Report any new symptoms promptly</li>
+                            <li>Consider joining a support group</li>
+                        </ul>
+                        
+                        <h3 class='font-semibold text-lg mt-4'>Practical Considerations</h3>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li><strong>Driving:</strong> In most cases, you can drive to and from treatment appointments, but it's helpful to bring someone to your first appointment</li>
+                            <li><strong>Diet:</strong> No special dietary changes are required during treatment, but maintaining good nutrition is important</li>
+                            <li><strong>Exercise:</strong> Any amount of activity, no matter how small, can help you regain strength</li>
+                            <li><strong>Medications:</strong> Bring a list of all medications to your appointments, including complementary medicines</li>
+                            <li><strong>Dental care:</strong> Maintain good oral health, but discuss timing of dental work with your oncology team</li>
+                        </ul>
+                    </div>
+                </Accordion>
+
+                <Accordion title='New Zealand Medical Resources'>
+                    <div class='space-y-4'>
+                        <p>
+                            Reliable New Zealand-specific resources for Stage 3 prostate cancer:
+                        </p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>
+                                <a
+                                    href="https://www.health.govt.nz/"
+                                    class='text-blue-600 hover:underline'
+                                    target="_blank"
+                                    >Ministry of Health</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.cdhb.health.nz/hospitals-health-facilities/christchurch-hospital/canterbury-regional-cancer-and-haematology-service/"
+                                    class='text-blue-600 hover:underline'
+                                    target="_blank"
+                                    >Canterbury Regional Cancer and Haematology Service</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.cancernz.org.nz/"
+                                    class='text-blue-600 hover:underline'
+                                    target="_blank"
+                                    >Cancer Society of New Zealand</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://prostate.org.nz/"
+                                    class='text-blue-600 hover:underline'
+                                    target="_blank"
+                                    >Prostate Cancer Foundation NZ</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.healthinfo.org.nz/"
+                                    class='text-blue-600 hover:underline'
+                                    target="_blank"
+                                    >HealthInfo</a
+                                > - For Canterbury-specific health information
+                            </li>
+                        </ul>
+                        <p>
+                            For concerns about treatment side effects, contact your oncology team at any time by telephoning (03) 364 0020 (Canterbury) or your local cancer center.
+                        </p>
+                    </div>
+                </Accordion>
+
+                <Accordion title='When to Contact Your Medical Team'>
+                    <div class='space-y-4'>
+                        <p>Contact the Oncology Service immediately (24 hours) if:</p>
+                        <ul class='list-disc pl-6 space-y-2'>
+                            <li>You begin to feel unwell or are unexpectedly unwell</li>
+                            <li>You start to feel muddled or confused</li>
+                            <li>Your temperature is 38°C or more</li>
+                            <li>Your temperature is less than 35.5°C</li>
+                            <li>You have uncontrolled shaking or shivering</li>
+                            <li>You have large and/or frequent diarrhoea/loose bowel motions</li>
+                            <li>You have chest heaviness/tightness or chest pain</li>
+                            <li>You notice any bleeding</li>
+                            <li>You have sensory changes that are worsening</li>
+                        </ul>
+                        <p>
+                            You can reach the Canterbury Regional Cancer and Haematology Service at (03) 364 0020 to speak with a nurse 24 hours a day. Similar services are available at other regional cancer centers.
+                        </p>
+                    </div>
+                </Accordion>
+            </div>
+        </div>
+        
+        <!-- Call to action section for other stages -->
+        <section class="my-12">
+            <h2 class="text-2xl font-bold text-center mb-6">Explore Cancer Stages</h2>
+            <div class="flex justify-center gap-4 mb-6 flex-wrap">
+                <a href="/stage-0" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 0</a>
+                <a href="/stage-1" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 1</a>
+                <a href="/stage-2" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 2</a>
+                <a href="/stage-4" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 4</a>
+            </div>
+            <div class="flex justify-center mt-4">
+                <a href="/family-support" class="min-w-[200px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Family Member Resources</a>
+            </div>
+        </section>
+    </main>
+    
+    <Footer />
+</BaseLayout>
