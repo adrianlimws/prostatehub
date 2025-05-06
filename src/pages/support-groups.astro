@@ -5,6 +5,7 @@ import Footer            from '../components/astro/Footer.astro';
 import supportGroupsData from '../data/support-groups-json.json';
 import { Breadcrumbs }   from "astro-breadcrumbs";
 import "astro-breadcrumbs/breadcrumbs.css";
+export const prerender = false
 
 const regionParam = Astro.url.searchParams.get('region') || supportGroupsData.regions[0].name;
 
