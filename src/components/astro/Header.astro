@@ -6,30 +6,44 @@ import Search from "astro-pagefind/components/Search";
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-white fixed top-0 left-0 right-0 z-50 font-mono shadow-sm">
-  <div class="flex flex-col w-full">
-    <!-- Main header row with improved mobile layout -->
-    <div class="flex items-center justify-between">
-      <div class="font-bold text-2xl uppercase"> 
-        <a href="/" class={`transition ${currentPath === "/" ? "underline" : ""}`}>Prostate Hub</a>
+<header class="bg-white fixed top-0 left-0 right-0 z-50 font-sans shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo and Brand -->
+      <div class="flex items-center">
+        <a href="/" class="flex items-center" aria-label="Home">
+          <!-- Optional: Add logo image here -->
+          <!-- <img src="/images/logo.svg" alt="Prostate Hub Logo" class="h-8 w-auto mr-2"> -->
+          <span class="font-semibold text-xl text-blue-800 hover:text-blue-700 transition-colors">Prostate Hub</span>
+        </a>
       </div>
-      
+
       <!-- Desktop Navigation - Hidden on mobile -->
-      <nav class="hidden md:flex items-center space-x-4 text-lg">
-        <a href="/stage-0"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-0" ?        "bg-green text-white" : ""}`}>Stage 0</a>
-        <a href="/stage-1"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-1" ?        "bg-green text-white" : ""}`}>Stage 1</a>
-        <a href="/stage-2"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-2" ?        "bg-green text-white" : ""}`}>Stage 2</a>
-        <a href="/stage-3"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-3" ?        "bg-green text-white" : ""}`}>Stage 3</a>
-        <a href="/stage-4"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-4" ?        "bg-green text-white" : ""}`}>Stage 4</a>
-        <a href="/family-support" class={`p-2 rounded hover:underline transition-colors ${currentPath === "/family-support" ? "bg-green text-white" : ""}`}>Family Support</a>
-        <a href="/studies"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/studies" ?        "bg-green text-white" : ""}`}>Studies</a>
-        <a href="/support-groups" class={`p-2 rounded hover:underline transition-colors ${currentPath === "/support-groups" ? "bg-green text-white" : ""}`}>Support Groups</a>
+      <nav class="hidden md:flex items-center space-x-1">
+        <!-- Stage-based navigation -->
+        <div class="flex items-center mr-4 border-r pr-4 border-gray-200">
+          <span class="text-gray-500 text-sm font-medium mr-2">Stages:</span>
+          <div class="flex space-x-1">
+            <a href="/stage-0" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPath === "/stage-0" ? "bg-teal-50 text-teal-700 border-b-2 border-teal-600" : "text-gray-700 hover:bg-gray-100"}`}>0</a>
+            <a href="/stage-1" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPath === "/stage-1" ? "bg-blue-50 text-blue-700 border-b-2 border-blue-600" : "text-gray-700 hover:bg-gray-100"}`}>1</a>
+            <a href="/stage-2" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPath === "/stage-2" ? "bg-indigo-50 text-indigo-700 border-b-2 border-indigo-600" : "text-gray-700 hover:bg-gray-100"}`}>2</a>
+            <a href="/stage-3" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPath === "/stage-3" ? "bg-purple-50 text-purple-700 border-b-2 border-purple-600" : "text-gray-700 hover:bg-gray-100"}`}>3</a>
+            <a href="/stage-4" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPath === "/stage-4" ? "bg-red-50 text-red-700 border-b-2 border-red-600" : "text-gray-700 hover:bg-gray-100"}`}>4</a>
+          </div>
+        </div>
+        
+        <!-- Support links -->
+        <a href="/family-support" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPath === "/family-support" ? "bg-blue-50 text-blue-700" : "text-gray-700 hover:bg-gray-100"}`}>Family Support</a>
+        <a href="/studies" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPath === "/studies" ? "bg-blue-50 text-blue-700" : "text-gray-700 hover:bg-gray-100"}`}>Studies</a>
+        <a href="/support-groups" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPath === "/support-groups" ? "bg-blue-50 text-blue-700" : "text-gray-700 hover:bg-gray-100"}`}>Support Groups</a>
       </nav>
       
-      <!-- Search and Mobile Menu Buttons with improved layout -->
+      <!-- Search and Mobile Menu -->
       <div class="flex items-center">
-        <button id="search-toggle" class="px-4 py-7 bg-blue text-white hover:bg-green transition-colors">
-          <span>Search</span>
+        <button id="search-toggle" class="p-2 rounded-full text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mr-2" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
         </button>
         
         <!-- Mobile Menu Button - Only visible on mobile -->
@@ -39,10 +53,10 @@ const currentPath = Astro.url.pathname;
       </div>
     </div>
     
-    <!-- Search Row - Hidden by default, shown when search is clicked -->
-    <div id="search-container" class="hidden w-full pb-4 px-4">
+    <!-- Search Container - Hidden by default -->
+    <div id="search-container" class="hidden w-full py-4">
       <div class="relative w-full">
-        <Search id="search" className="pagefind-ui pagefind-ui--fullwidth" uiOptions={{ showImages: false }} />
+        <Search id="search" className="pagefind-ui pagefind-ui--medical" uiOptions={{ showImages: false }} />
       </div>
     </div>
   </div>
@@ -78,7 +92,7 @@ const currentPath = Astro.url.pathname;
       // Don't close if click is inside search container
       const isClickInsideSearch = target.closest('#search-container') || target.closest('#search-toggle');
       
-      // Don't close if click is on 'load more' button or other pagefind UI controls
+      // Don't close if click is on search UI controls
       const isClickOnSearchControls = 
         target.closest('.pagefind-ui__button') || 
         target.closest('.pagefind-ui__result-link') ||
@@ -87,69 +101,99 @@ const currentPath = Astro.url.pathname;
         target.closest('.pagefind-ui__results-pagination') ||
         target.closest('.pagefind-ui__message');
         
-      // Only close if it's a click outside the search area AND not on search UI controls
+      // Close if it's a click outside the search area
       if (!isClickInsideSearch && !isClickOnSearchControls && !searchContainer?.classList.contains('hidden')) {
         searchContainer?.classList.add('hidden');
       }
-    }, { capture: true }); // Use capture to get the event before it propagates
+    }, { capture: true });
   });
 </script>
 
 <style is:global>
-  /* Style the pagefind UI for full width results */
-  .pagefind-ui--fullwidth .pagefind-ui__drawer {
+  /* Modern search styling for medical context */
+  .pagefind-ui--medical .pagefind-ui__drawer {
     position: absolute;
     left: 0;
     right: 0;
     width: 100%;
     max-height: 80vh;
     overflow-y: auto;
-    background: #F4EDED;
+    background: #fff;
     z-index: 100;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border-radius: 0 0 0.5rem 0.5rem;
-    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
   }
 
-  .pagefind-ui--fullwidth .pagefind-ui__results-container {
+  .pagefind-ui--medical .pagefind-ui__results-container {
     max-width: 100%;
   }
 
-  .pagefind-ui--fullwidth .pagefind-ui__result {
+  .pagefind-ui--medical .pagefind-ui__result {
     padding: 1rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid #202020;
-  }
-
-  .pagefind-ui--fullwidth .pagefind-ui__message {
-    padding: 1rem;
-  }
-
-  /* Customize search input */
-  .pagefind-ui--fullwidth .pagefind-ui__search-input {
-    margin: 1rem 0;
-    padding: 0.75rem 2rem;
-    border-radius: 0.375rem;
-    border: 2px solid #d1d5db;
-    width: 100%;
-  }
-
-  /* Make sure search form spans full width */
-  .pagefind-ui--fullwidth .pagefind-ui__form {
-    width: 100%;
-  }
-  
-  /* Style for load more button */
-  .pagefind-ui__button {
-    background-color: #324Ea2;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
     transition: background-color 0.2s;
   }
   
-  .pagefind-ui__button:hover {
-    background-color: #57B286;
+  .pagefind-ui--medical .pagefind-ui__result:hover {
+    background-color: #f9fafb;
+  }
+
+  .pagefind-ui--medical .pagefind-ui__message {
+    padding: 1rem;
+    color: #4b5563;
+  }
+
+  /* Professional search input */
+  .pagefind-ui--medical .pagefind-ui__search-input {
+    margin: 0.5rem 0;
+    padding: 0.75rem 2.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .pagefind-ui--medical .pagefind-ui__search-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+
+  /* Full width search form */
+  .pagefind-ui--medical .pagefind-ui__form {
+    width: 100%;
+  }
+  
+  /* Professional button styling */
+  .pagefind-ui--medical .pagefind-ui__button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: none;
+  }
+  
+  .pagefind-ui--medical .pagefind-ui__button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Result title styling */
+  .pagefind-ui--medical .pagefind-ui__result-title {
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Result excerpt styling */
+  .pagefind-ui--medical .pagefind-ui__result-excerpt {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 </style>
