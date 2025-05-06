@@ -12,26 +12,49 @@ import Footer           from '../components/astro/Footer.astro';
 <BaseLayout title="Prostate Hub">
   <Header />
   
-  <main>
+  <main class="min-h-screen">
     <WelcomeSection />
     
-    <CallToActionMenu />
-    
-    <div class="flex justify-center gap-4 mb-6 flex-wrap font-comfortaa">
-        <StudySection title="Studies: Kegel Exercises">
-          Kegel exercises strengthen pelvic floor muscles that support bladder control and sexual function. Research shows these exercises significantly improve urinary continence following prostate surgery and may enhance erectile function. Regular practice can speed recovery after prostatectomy and provide long-term benefits for prostate health.
-        </StudySection>
+    <div class="container mx-auto px-4 md:px-8 mb-16">
+      <div class="my-12">
+        <h2 class="text-2xl font-serif text-center mb-2">Navigate Your Prostate Cancer Journey</h2>
+        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
+          Find information specific to your stage or situation
+        </p>
+        
+        <CallToActionMenu />
+      </div>
+      
+      <div class="my-20">
+        <h2 class="text-2xl font-serif text-center mb-2">Latest Studies</h2>
+        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+          Explore recent research and medical advances
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <StudySection title="Kegel Exercises">
+            Kegel exercises strengthen pelvic floor muscles that support bladder control and sexual function. Research shows these exercises significantly improve urinary continence following prostate surgery and may enhance erectile function. Regular practice can speed recovery after prostatectomy and provide long-term benefits for prostate health.
+          </StudySection>
 
-        <StudySection title="Studies: Kawakawa Tree">
-          The New Zealand Kawakawa tree has been used in traditional Māori medicine for generations. Recent scientific studies validate its anti-inflammatory, antimicrobial, and analgesic properties. Ongoing research explores its potential benefits for metabolic health and possible anticancer effects, making it an interesting area of study for prostate health management.
-        </StudySection>
+          <StudySection title="Kawakawa Tree">
+            The New Zealand Kawakawa tree has been used in traditional Māori medicine for generations. Recent scientific studies validate its anti-inflammatory, antimicrobial, and analgesic properties. Ongoing research explores its potential benefits for metabolic health and possible anticancer effects, making it an interesting area of study for prostate health management.
+          </StudySection>
 
-        <StudySection title="Studies: K9 Medical Detection">
-          K9MD trains dogs to detect prostate cancer through scent in urine samples. Clinical trials in New Zealand show detection rates comparable to conventional tests, and sometimes higher. This non-invasive approach could complement traditional diagnostic methods, potentially reducing the need for invasive procedures while improving early detection.
-        </StudySection>
+          <StudySection title="K9 Medical Detection">
+            K9MD trains dogs to detect prostate cancer through scent in urine samples. Clinical trials in New Zealand show detection rates comparable to conventional tests, and sometimes higher. This non-invasive approach could complement traditional diagnostic methods, potentially reducing the need for invasive procedures while improving early detection.
+          </StudySection>
+        </div>
+      </div>
+      
+      <div class="my-20">
+        <h2 class="text-2xl font-serif text-center mb-2">Additional Resources</h2>
+        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+          Connect with the community and support organizations
+        </p>
+        
+        <LinkButtons />
+      </div>
     </div>
-   
-    <LinkButtons />
   </main>
   
   <Footer />
