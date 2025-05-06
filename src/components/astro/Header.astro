@@ -1,7 +1,7 @@
 ---
 import MobileMenuButton from '../vue/MobileMenuButton.vue';
 import Search from "astro-pagefind/components/Search";
-export const prerender = false;
+
 const q = Astro.url.searchParams.get("q") ?? undefined;
 // Get current URL path for highlighting active page
 const currentPath = Astro.url.pathname;
