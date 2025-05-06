@@ -9,10 +9,14 @@ onMounted(() => {
   
   // Close menu when clicking outside
   document.addEventListener('click', handleClickOutside);
+  
+  // Close menu when window is resized to desktop size
+  window.addEventListener('resize', handleResize);
 });
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside);
+  window.removeEventListener('resize', handleResize);
 });
 
 const toggleMenu = (event) => {
@@ -30,6 +34,13 @@ const handleClickOutside = (event) => {
     isMenuOpen.value = false;
   }
 };
+
+const handleResize = () => {
+  // Close mobile menu if screen becomes larger than md breakpoint
+  if (window.innerWidth >= 768 && isMenuOpen.value) {
+    isMenuOpen.value = false;
+  }
+};
 </script>
 
 <template>
@@ -37,16 +48,18 @@ const handleClickOutside = (event) => {
     <button 
       id="mobile-menu-button"
       @click="toggleMenu"
-      class="p-7 bg-blue hover:bg-green text-white font-bold"
+      class="p-7 bg-blue hover:bg-green text-white font-bold transition-colors"
+      aria-label="Toggle mobile menu"
+      aria-expanded="isMenuOpen"
     >
       MENU
     </button>
     
-    <!-- Dropdown menu -->
+    <!-- Dropdown menu with improved positioning -->
     <div 
       id="mobile-menu-content"
       v-show="isMenuOpen" 
-      class="absolute top-full right-0 mt-1 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-50"
+      class="absolute top-full right-0 mt-1 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-50 max-h-[80vh] overflow-y-auto"
     >
       <div class="py-1">
         <a 
@@ -63,14 +76,14 @@ const handleClickOutside = (event) => {
           ]" 
           :key="index"
           :href="item.path"
-          class="block px-4 py-2 hover:bg-green hover:text-white transition"
-          :class="{ 'bg-green-100 text-green-800 font-bold': currentPath === item.path }"
+          class="block px-4 py-3 hover:bg-green hover:text-white transition-colors text-base"
+          :class="{ 'bg-green text-white font-bold': currentPath === item.path }"
         >
           {{ item.label }}
         </a>
         <div class="border-t border-gray-200 my-1"></div>
-        <a href="https://prostate.org.nz/online-forum" target="_blank" class="block px-4 py-2 hover:bg-green hover:text-white transition">PFNZ Forum</a>
-        <a href="https://prostate.org.nz/donations" target="_blank" class="block px-4 py-2 hover:bg-green hover:text-white transition">PFNZ Donation</a>
+        <a href="https://prostate.org.nz/online-forum" target="_blank" class="block px-4 py-3 hover:bg-green hover:text-white transition-colors text-base">PFNZ Forum</a>
+        <a href="https://prostate.org.nz/donations" target="_blank" class="block px-4 py-3 hover:bg-green hover:text-white transition-colors text-base">PFNZ Donation</a>
       </div>
     </div>
   </div>

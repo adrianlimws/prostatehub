@@ -6,29 +6,29 @@ import Search from "astro-pagefind/components/Search";
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-white fixed top-0 left-0 right-0 z-50 font-mono">
+<header class="bg-white fixed top-0 left-0 right-0 z-50 font-mono shadow-sm">
   <div class="flex flex-col w-full">
-    <!-- Main header row -->
+    <!-- Main header row with improved mobile layout -->
     <div class="flex items-center justify-between">
-      <div class="font-bold text-xl uppercase"> 
-        <a href="/" class={`px-2 py-7 bg-blue hover:bg-green text-white transition ${currentPath === "/" ? "bg-green transition" : ""}`}>Prostate Hub</a>
+      <div class="font-bold text-2xl uppercase"> 
+        <a href="/" class={`transition ${currentPath === "/" ? "underline" : ""}`}>Prostate Hub</a>
       </div>
       
       <!-- Desktop Navigation - Hidden on mobile -->
       <nav class="hidden md:flex items-center space-x-4 text-lg">
-        <a href="/stage-0"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-0" ?        "bg-green text-white transition" : ""}`}>Stage 0</a>
-        <a href="/stage-1"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-1" ?        "bg-green text-white transition" : ""}`}>Stage 1</a>
-        <a href="/stage-2"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-2" ?        "bg-green text-white transition" : ""}`}>Stage 2</a>
-        <a href="/stage-3"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-3" ?        "bg-green text-white transition" : ""}`}>Stage 3</a>
-        <a href="/stage-4"        class={`p-2 rounded hover:underline transition ${currentPath === "/stage-4" ?        "bg-green text-white transition" : ""}`}>Stage 4</a>
-        <a href="/family-support" class={`p-2 rounded hover:underline transition ${currentPath === "/family-support" ? "bg-green text-white transition" : ""}`}>Family Support</a>
-        <a href="/studies"        class={`p-2 rounded hover:underline transition ${currentPath === "/studies" ?        "bg-green text-white transition" : ""}`}>Studies</a>
-        <a href="/support-groups" class={`p-2 rounded hover:underline transition ${currentPath === "/support-groups" ? "bg-green text-white transition" : ""}`}>Support Groups</a>
+        <a href="/stage-0"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-0" ?        "bg-green text-white" : ""}`}>Stage 0</a>
+        <a href="/stage-1"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-1" ?        "bg-green text-white" : ""}`}>Stage 1</a>
+        <a href="/stage-2"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-2" ?        "bg-green text-white" : ""}`}>Stage 2</a>
+        <a href="/stage-3"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-3" ?        "bg-green text-white" : ""}`}>Stage 3</a>
+        <a href="/stage-4"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/stage-4" ?        "bg-green text-white" : ""}`}>Stage 4</a>
+        <a href="/family-support" class={`p-2 rounded hover:underline transition-colors ${currentPath === "/family-support" ? "bg-green text-white" : ""}`}>Family Support</a>
+        <a href="/studies"        class={`p-2 rounded hover:underline transition-colors ${currentPath === "/studies" ?        "bg-green text-white" : ""}`}>Studies</a>
+        <a href="/support-groups" class={`p-2 rounded hover:underline transition-colors ${currentPath === "/support-groups" ? "bg-green text-white" : ""}`}>Support Groups</a>
       </nav>
       
-      <!-- Search Button -->
+      <!-- Search and Mobile Menu Buttons with improved layout -->
       <div class="flex items-center">
-        <button id="search-toggle" class="px-4 py-7 bg-blue text-white hover:bg-green transition">
+        <button id="search-toggle" class="px-4 py-7 bg-blue text-white hover:bg-green transition-colors">
           <span>Search</span>
         </button>
         
@@ -48,6 +48,7 @@ const currentPath = Astro.url.pathname;
   </div>
 </header>
 
+<!-- Spacer to prevent content from being hidden under fixed header -->
 <div class="h-16"></div>
 
 <script>
