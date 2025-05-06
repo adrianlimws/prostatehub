@@ -12,14 +12,17 @@ import "astro-breadcrumbs/breadcrumbs.css";
 <BaseLayout title="Prostate Hub - Stage 1">
   <Header />
   
-  <main class="my-8 container mx-auto px-4">
-    <section class="text-center p-8 mb-8">
-      <h1 class="text-3xl font-bold mb-4">Stage 1: Early Stage Prostate Cancer</h1>
-      <p class="text-lg max-w-3xl mx-auto">
-        Information about Stage 1 prostate cancer, treatment options, and resources for newly diagnosed patients in New Zealand.
-      </p>
-    </section>
-    <div class="mb-2 pb-2 border-b-2 border-gray-300">
+  <!-- Improved header section with gradient background -->
+  <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
+    <h1 class="text-3xl font-bold mb-4">Stage 1: Early Stage Prostate Cancer</h1>
+    <p class="text-lg max-w-3xl mx-auto">
+      Information about Stage 1 prostate cancer, treatment options, and resources for newly diagnosed patients in New Zealand.
+    </p>
+  </section>
+  
+  <main class="container mx-auto px-4">
+    <!-- Breadcrumbs -->
+    <div class="mb-4 pb-2 border-b-2 border-gray-300">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
           slot="separator"
@@ -36,138 +39,170 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </svg>
       </Breadcrumbs>
     </div>
-    <div class="flex flex-col md:flex-row gap-8">
-      <div class="md:w-1/3 p-4">
-        <div class="space-y-4 text-center">
-          <p class="text-2xl font-serif">Stage 1 prostate cancer has a very high 5-year survival rate of over 99%.</p>
-          <p class="text-2xl font-serif">Approximately 19% of men diagnosed with prostate cancer in New Zealand fall into the low-risk group, which includes Stage 1.</p>
-          <p class="text-2xl font-serif mt-6">For low-risk cancer in New Zealand, around 80% of patients are managed with active surveillance.</p>
+    
+    <!-- Main content with improved layout -->
+    <div class="flex flex-col md:flex-row gap-8 mb-8">
+      <!-- Left column with statistics and chart -->
+      <div class="md:w-1/3">
+        <div class="bg-blue-50 rounded-lg shadow-md p-6">
+          <div class="space-y-6 text-center">
+            <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed">
+              Stage 1 prostate cancer has a very high 5-year survival rate of over 99%.
+            </p>
+            
+            <div class="my-8">
+              <SurvivalRateChart client:load stage="1" survivalRate={99} />
+            </div>
+            
+            <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed">
+              Approximately 19% of men diagnosed with prostate cancer in New Zealand fall into the low-risk group, which includes Stage 1.
+            </p>
+            
+            <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed mt-6">
+              For low-risk cancer in New Zealand, around 80% of patients are managed with active surveillance.
+            </p>
+          </div>
         </div>
       </div>
       
+      <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
-          <Accordion title="What is Stage 1 Prostate Cancer?" initiallyOpen={true}>
-            <div class="space-y-4">
-              <p>Stage 1 prostate cancer means the cancer is small and contained entirely within the prostate. At this stage:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>The cancer cannot be felt during a digital rectal exam</li>
-                <li>The cancer is microscopic and only found through a biopsy</li>
-                <li>PSA levels are usually below 10 ng/mL</li>
-                <li>The Gleason score is typically 6 or lower</li>
-              </ul>
-              <p>Stage 1 prostate cancer is part of the "low-risk" category and has an excellent prognosis in New Zealand, with many treatment options available.</p>
-              <p>In New Zealand, most Stage 1 prostate cancers are detected through PSA blood tests, followed by either transperineal or transrectal biopsies. Transperineal biopsy (where the needle passes through the skin between the scrotum and rectum) is now the preferred method in New Zealand due to lower risk of complications.</p>
-            </div>
-          </Accordion>
-          
-          <Accordion title="Treatment Options in New Zealand">
-            <div class="space-y-4">
-              <h3 class="font-semibold text-lg">Active Surveillance</h3>
-              <p>For most Stage 1 patients in New Zealand, doctors recommend active surveillance rather than immediate treatment. This involves:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>Regular PSA tests (every 3-6 months)</li>
-                <li>Digital rectal exams (every 6-12 months)</li>
-                <li>Repeat biopsies (usually every 1-3 years)</li>
-              </ul>
-              <p>Data from New Zealand shows that 80% of low-risk patients are managed with active surveillance, which has increased from 66% in recent years as evidence shows this approach is safe and effective.</p>
-              
-              <h3 class="font-semibold text-lg mt-6">Radical Prostatectomy</h3>
-              <p>Surgical removal of the entire prostate gland and some surrounding tissue. In New Zealand, this may be performed as:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>Open surgery</li>
-                <li>Laparoscopic surgery</li>
-                <li>Robotic-assisted surgery (available at some hospitals)</li>
-              </ul>
-              
-              <h3 class="font-semibold text-lg mt-6">Radiation Therapy</h3>
-              <p>The Canterbury Regional Cancer and Haematology Service and other cancer centers in New Zealand provide radiation therapy options including:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>External beam radiation therapy (EBRT)</li>
-                <li>Brachytherapy (internal radiation)</li>
-              </ul>
-              <p>For low-risk prostate cancer in New Zealand, radiation therapy alone (without hormone therapy) is used in approximately 16% of cases.</p>
-            </div>
-          </Accordion>
-          
-          <Accordion title="Managing Treatment Side Effects">
-            <div class="space-y-4">
-              <p>All treatments may have side effects. Based on data from New Zealand patients one year after treatment:</p>
-              
-              <h3 class="font-semibold text-lg">Active Surveillance Side Effects</h3>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>Generally minimal physical side effects</li>
-                <li>Some patients (7%) report feeling depressed</li>
-                <li>Some patients (12%) report lack of energy</li>
-                <li>Approximately 8% report urinary function as a problem</li>
-                <li>Sexual function concerns affect about 24% of patients</li>
-              </ul>
-              
-              <h3 class="font-semibold text-lg mt-4">Surgery Side Effects</h3>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>About 31% require more than one urinary pad per day</li>
-                <li>Around 45% report sexual function as a problem</li>
-                <li>About 10% report feeling depressed</li>
-                <li>Approximately 13% report lack of energy</li>
-              </ul>
-              
-              <h3 class="font-semibold text-lg mt-4">Radiation Therapy Side Effects</h3>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>About 7% report bowel issues as a problem</li>
-                <li>Around 9% report urinary function as a problem</li>
-                <li>About 34% report sexual function as a problem</li>
-                <li>Approximately 18% report lack of energy</li>
-              </ul>
-              
-              <p>The Canterbury Regional Cancer and Haematology Service and other cancer centers in New Zealand provide comprehensive support for managing these side effects.</p>
-            </div>
-          </Accordion>
-          
-          <Accordion title="Support Options in New Zealand">
-            <div class="space-y-4">
-              <p>New Zealand offers various support services for prostate cancer patients:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li><strong>Cancer Society New Zealand:</strong> Located on hospital campuses with information resources and support services</li>
-                <li><strong>Prostate Cancer Foundation NZ:</strong> Provides support groups throughout New Zealand</li>
-                <li><strong>District Health Board Services:</strong> Including dietitians, social workers, occupational therapists, and psychological support</li>
-                <li><strong>Local Support Groups:</strong> Available in most regions of New Zealand. You can find them <a class="underline hover:bg-green-400" href="/support-groups">here</a></li>
-              </ul>
-              <p>Financial assistance may be available through Work and Income New Zealand and the National Travel Assistance programme for those who need to travel for treatment.</p>
-            </div>
-          </Accordion>
-          
-          <Accordion title="New Zealand Medical Resources">
-            <div class="space-y-4">
-              <p>Reliable New Zealand-specific resources for Stage 1 prostate cancer:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li><a href="https://www.health.govt.nz/" class="text-blue-600 hover:underline" target="_blank">Ministry of Health</a></li>
-                <li><a href="https://www.cdhb.health.nz/hospitals-health-facilities/christchurch-hospital/canterbury-regional-cancer-and-haematology-service/" class="text-blue-600 hover:underline" target="_blank">Canterbury Regional Cancer and Haematology Service</a></li>
-                <li><a href="https://www.cancernz.org.nz/" class="text-blue-600 hover:underline" target="_blank">Cancer Society of New Zealand</a></li>
-                <li><a href="https://prostate.org.nz/" class="text-blue-600 hover:underline" target="_blank">Prostate Cancer Foundation NZ</a></li>
-                <li><a href="https://www.healthinfo.org.nz/" class="text-blue-600 hover:underline" target="_blank">HealthInfo Canterbury</a> - For Canterbury-specific health information</li>
-              </ul>
-            </div>
-          </Accordion>
+        <Accordion title="What is Stage 1 Prostate Cancer?" initiallyOpen={true}>
+          <div class="space-y-4">
+            <p>Stage 1 prostate cancer means the cancer is small and contained entirely within the prostate. At this stage:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>The cancer cannot be felt during a digital rectal exam</li>
+              <li>The cancer is microscopic and only found through a biopsy</li>
+              <li>PSA levels are usually below 10 ng/mL</li>
+              <li>The Gleason score is typically 6 or lower</li>
+            </ul>
+            <p>Stage 1 prostate cancer is part of the "low-risk" category and has an excellent prognosis in New Zealand, with many treatment options available.</p>
+            <p>In New Zealand, most Stage 1 prostate cancers are detected through PSA blood tests, followed by either transperineal or transrectal biopsies. Transperineal biopsy (where the needle passes through the skin between the scrotum and rectum) is now the preferred method in New Zealand due to lower risk of complications.</p>
+          </div>
+        </Accordion>
+        
+        <Accordion title="Treatment Options in New Zealand">
+          <div class="space-y-4">
+            <h3 class="font-semibold text-lg">Active Surveillance</h3>
+            <p>For most Stage 1 patients in New Zealand, doctors recommend active surveillance rather than immediate treatment. This involves:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Regular PSA tests (every 3-6 months)</li>
+              <li>Digital rectal exams (every 6-12 months)</li>
+              <li>Repeat biopsies (usually every 1-3 years)</li>
+            </ul>
+            <p>Data from New Zealand shows that 80% of low-risk patients are managed with active surveillance, which has increased from 66% in recent years as evidence shows this approach is safe and effective.</p>
+            
+            <h3 class="font-semibold text-lg mt-6">Radical Prostatectomy</h3>
+            <p>Surgical removal of the entire prostate gland and some surrounding tissue. In New Zealand, this may be performed as:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Open surgery</li>
+              <li>Laparoscopic surgery</li>
+              <li>Robotic-assisted surgery (available at some hospitals)</li>
+            </ul>
+            
+            <h3 class="font-semibold text-lg mt-6">Radiation Therapy</h3>
+            <p>The Canterbury Regional Cancer and Haematology Service and other cancer centers in New Zealand provide radiation therapy options including:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>External beam radiation therapy (EBRT)</li>
+              <li>Brachytherapy (internal radiation)</li>
+            </ul>
+            <p>For low-risk prostate cancer in New Zealand, radiation therapy alone (without hormone therapy) is used in approximately 16% of cases.</p>
+          </div>
+        </Accordion>
+        
+        <Accordion title="Managing Treatment Side Effects">
+          <div class="space-y-4">
+            <p>All treatments may have side effects. Based on data from New Zealand patients one year after treatment:</p>
+            
+            <h3 class="font-semibold text-lg">Active Surveillance Side Effects</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Generally minimal physical side effects</li>
+              <li>Some patients (7%) report feeling depressed</li>
+              <li>Some patients (12%) report lack of energy</li>
+              <li>Approximately 8% report urinary function as a problem</li>
+              <li>Sexual function concerns affect about 24% of patients</li>
+            </ul>
+            
+            <h3 class="font-semibold text-lg mt-4">Surgery Side Effects</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>About 31% require more than one urinary pad per day</li>
+              <li>Around 45% report sexual function as a problem</li>
+              <li>About 10% report feeling depressed</li>
+              <li>Approximately 13% report lack of energy</li>
+            </ul>
+            
+            <h3 class="font-semibold text-lg mt-4">Radiation Therapy Side Effects</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>About 7% report bowel issues as a problem</li>
+              <li>Around 9% report urinary function as a problem</li>
+              <li>About 34% report sexual function as a problem</li>
+              <li>Approximately 18% report lack of energy</li>
+            </ul>
+            
+            <p>The Canterbury Regional Cancer and Haematology Service and other cancer centers in New Zealand provide comprehensive support for managing these side effects.</p>
+          </div>
+        </Accordion>
+        
+        <Accordion title="Support Options in New Zealand">
+          <div class="space-y-4">
+            <p>New Zealand offers various support services for prostate cancer patients:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Cancer Society New Zealand:</strong> Located on hospital campuses with information resources and support services</li>
+              <li><strong>Prostate Cancer Foundation NZ:</strong> Provides support groups throughout New Zealand</li>
+              <li><strong>District Health Board Services:</strong> Including dietitians, social workers, occupational therapists, and psychological support</li>
+              <li><strong>Local Support Groups:</strong> Available in most regions of New Zealand. You can find them <a class="text-blue-600 hover:underline" href="/support-groups">here</a></li>
+            </ul>
+            <p>Financial assistance may be available through Work and Income New Zealand and the National Travel Assistance programme for those who need to travel for treatment.</p>
+          </div>
+        </Accordion>
+        
+        <Accordion title="New Zealand Medical Resources">
+          <div class="space-y-4">
+            <p>Reliable New Zealand-specific resources for Stage 1 prostate cancer:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><a href="https://www.health.govt.nz/" class="text-blue-600 hover:underline" target="_blank">Ministry of Health</a></li>
+              <li><a href="https://www.cdhb.health.nz/hospitals-health-facilities/christchurch-hospital/canterbury-regional-cancer-and-haematology-service/" class="text-blue-600 hover:underline" target="_blank">Canterbury Regional Cancer and Haematology Service</a></li>
+              <li><a href="https://www.cancernz.org.nz/" class="text-blue-600 hover:underline" target="_blank">Cancer Society of New Zealand</a></li>
+              <li><a href="https://prostate.org.nz/" class="text-blue-600 hover:underline" target="_blank">Prostate Cancer Foundation NZ</a></li>
+              <li><a href="https://www.healthinfo.org.nz/" class="text-blue-600 hover:underline" target="_blank">HealthInfo Canterbury</a> - For Canterbury-specific health information</li>
+            </ul>
+          </div>
+        </Accordion>
 
-          <Accordion title="Frequently Asked Questions">
-            <div class="space-y-4">
-              <h3 class="font-semibold">Can I drive during treatment?</h3>
-              <p>In most cases, you can drive yourself to and from treatment appointments. However, it's useful to bring someone to your first treatment appointment for support.</p>
-              
-              <h3 class="font-semibold mt-4">Should I restrict my activities or diet?</h3>
-              <p>As long as you feel capable, it's OK to continue with normal activities and diet. You may become more tired than usual, so it's important to look after yourself and avoid excessive tiredness and stress.</p>
-              
-              <h3 class="font-semibold mt-4">Should I continue to take my regular medications?</h3>
-              <p>Please check with your oncology team about any medications you're taking. It's helpful to bring a list of all medications to your appointments.</p>
-              
-              <h3 class="font-semibold mt-4">Can I have immunisations while receiving treatment?</h3>
-              <p>It is safe to have the flu vaccine while on treatment. The shingles vaccine (Zostavax) is a live vaccine and should NOT be given while receiving treatment.</p>
-              
-              <h3 class="font-semibold mt-4">Can I visit my dentist while receiving treatment?</h3>
-              <p>It's important to maintain good oral health. Ideally, any dental problems should be addressed before starting treatment. If you develop problems during treatment, you can still have dental treatment, but timing should be discussed with your oncology specialist.</p>
-            </div>
-          </Accordion>
+        <Accordion title="Frequently Asked Questions">
+          <div class="space-y-4">
+            <h3 class="font-semibold">Can I drive during treatment?</h3>
+            <p>In most cases, you can drive yourself to and from treatment appointments. However, it's useful to bring someone to your first treatment appointment for support.</p>
+            
+            <h3 class="font-semibold mt-4">Should I restrict my activities or diet?</h3>
+            <p>As long as you feel capable, it's OK to continue with normal activities and diet. You may become more tired than usual, so it's important to look after yourself and avoid excessive tiredness and stress.</p>
+            
+            <h3 class="font-semibold mt-4">Should I continue to take my regular medications?</h3>
+            <p>Please check with your oncology team about any medications you're taking. It's helpful to bring a list of all medications to your appointments.</p>
+            
+            <h3 class="font-semibold mt-4">Can I have immunisations while receiving treatment?</h3>
+            <p>It is safe to have the flu vaccine while on treatment. The shingles vaccine (Zostavax) is a live vaccine and should NOT be given while receiving treatment.</p>
+            
+            <h3 class="font-semibold mt-4">Can I visit my dentist while receiving treatment?</h3>
+            <p>It's important to maintain good oral health. Ideally, any dental problems should be addressed before starting treatment. If you develop problems during treatment, you can still have dental treatment, but timing should be discussed with your oncology specialist.</p>
+          </div>
+        </Accordion>
       </div>
     </div>
+    
+    <!-- Call to action section for other stages -->
+    <section class="my-12">
+      <h2 class="text-2xl font-bold text-center mb-6">Explore Cancer Stages</h2>
+      <div class="flex justify-center gap-4 mb-6 flex-wrap">
+        <a href="/stage-0" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 0</a>
+        <a href="/stage-2" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 2</a>
+        <a href="/stage-3" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 3</a>
+        <a href="/stage-4" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 4</a>
+      </div>
+      <div class="flex justify-center mt-4">
+        <a href="/family-support" class="min-w-[200px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Family Member Resources</a>
+      </div>
+    </section>
   </main>
   
   <Footer />

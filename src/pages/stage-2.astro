@@ -12,14 +12,17 @@ import "astro-breadcrumbs/breadcrumbs.css";
 <BaseLayout title="Prostate Hub - Stage 2">
   <Header />
   
-  <main class="my-8 container mx-auto px-4">
-    <section class="text-center p-8 mb-8">
-      <h1 class="text-3xl font-bold mb-4">Stage 2: Localised Prostate Cancer</h1>
-      <p class="text-lg max-w-3xl mx-auto">
-        Information about Stage 2 prostate cancer, treatment options, and support resources for patients and their families in New Zealand.
-      </p>
-    </section>
-    <div class="mb-2 pb-2 border-b-2 border-gray-300">
+  <!-- Improved header section with gradient background -->
+  <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
+    <h1 class="text-3xl font-bold mb-4">Stage 2: Localised Prostate Cancer</h1>
+    <p class="text-lg max-w-3xl mx-auto">
+      Information about Stage 2 prostate cancer, treatment options, and support resources for patients and their families in New Zealand.
+    </p>
+  </section>
+  
+  <main class="container mx-auto px-4">
+    <!-- Breadcrumbs -->
+    <div class="mb-4 pb-2 border-b-2 border-gray-300">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
           slot="separator"
@@ -36,17 +39,33 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </svg>
       </Breadcrumbs>
     </div>
-    <div class="flex flex-col md:flex-row gap-8">
-      <div class="md:w-1/3 p-4">
-        <div class="space-y-4 text-center">
-          <p class="text-2xl font-serif">Stage 2 prostate cancer has a 5-year survival rate of approximately 95-99%.</p>
-          <div class="mt-10">
-            <PatientDistributionChart client:load label="Medium Risk" percentage={44} />          
+    
+    <!-- Main content with improved layout -->
+    <div class="flex flex-col md:flex-row gap-8 mb-8">
+      <!-- Left column with statistics and chart -->
+      <div class="md:w-1/3">
+        <div class="bg-blue-50 rounded-lg shadow-md p-6">
+          <div class="space-y-6 text-center">
+            <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed">
+              Stage 2 prostate cancer has a 5-year survival rate of approximately 95-99%.
+            </p>
+            
+            <div class="my-8">
+              <PatientDistributionChart client:load label="Medium Risk" percentage={44} />
+            </div>
+            
+            <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed">
+              About 44% of men diagnosed with prostate cancer in New Zealand fall into the intermediate-risk group, which includes many Stage 2 cases.
+            </p>
+            
+            <p class="text-xl md:text-2xl font-serif text-blue-800 leading-relaxed mt-6">
+              In 2021, approximately 59% of men with intermediate-risk prostate cancer in New Zealand received surgery as their primary treatment.
+            </p>
           </div>
-          <p class="text-2xl font-serif">About 44% of men diagnosed with prostate cancer in New Zealand fall into the intermediate-risk group, which includes many Stage 2 cases.</p>
-          <p class="text-2xl font-serif mt-6">In 2021, approximately 59% of men with intermediate-risk prostate cancer in New Zealand received surgery as their primary treatment.</p>
         </div>
       </div>
+      
+      <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
         <Accordion title="What is Stage 2 Prostate Cancer?" initiallyOpen={true}>
           <div class="space-y-4">
@@ -61,7 +80,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
             <p>Stage 2 is typically categorized as "intermediate-risk" prostate cancer. In New Zealand, intermediate-risk prostate cancer is the most common risk category at diagnosis, representing about 44% of all diagnoses.</p>
           </div>
         </Accordion>
-              
+        
         <Accordion title="Treatment Options in New Zealand">
           <div class="space-y-4">
             <p>Several treatment options are available for Stage 2 prostate cancer in New Zealand, with the choice depending on factors such as your age, overall health, and personal preferences:</p>
@@ -194,7 +213,21 @@ import "astro-breadcrumbs/breadcrumbs.css";
           </div>
         </Accordion>
       </div>
-    </div> 
+    </div>
+    
+    <!-- Call to action section for other stages -->
+    <section class="my-12">
+      <h2 class="text-2xl font-bold text-center mb-6">Explore Cancer Stages</h2>
+      <div class="flex justify-center gap-4 mb-6 flex-wrap">
+        <a href="/stage-0" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 0</a>
+        <a href="/stage-1" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 1</a>
+        <a href="/stage-3" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 3</a>
+        <a href="/stage-4" class="min-w-[150px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Stage 4</a>
+      </div>
+      <div class="flex justify-center mt-4">
+        <a href="/family-support" class="min-w-[200px] p-4 border text-white bg-blue rounded-lg text-center font-medium hover:bg-green transition-colors">Family Member Resources</a>
+      </div>
+    </section>
   </main>
   
   <Footer />
