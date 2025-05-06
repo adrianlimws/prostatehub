@@ -37,7 +37,7 @@ const handleClickOutside = (event) => {
     <button 
       id="mobile-menu-button"
       @click="toggleMenu"
-      class="p-2 bg-blue hover:bg-green text-white font-bold rounded-md"
+      class="p-7 bg-blue hover:bg-green text-white font-bold"
     >
       MENU
     </button>
