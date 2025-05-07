@@ -85,7 +85,7 @@ const defaultRegion = allRegionsData[0].name;
                   <a 
                     href="#"
                     data-region-link={region.name}
-                    class="block px-3 py-2 rounded-md transition text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-800"
+                    class="block px-3 py-2 rounded-md transition text-sm text-gray-700 hover:bg-green hover:text-white"
                   >
                     {region.name}
                     <span class="float-right bg-gray-200 text-gray-700 rounded-full px-2 py-0.5 text-xs ml-1">
@@ -265,14 +265,14 @@ const defaultRegion = allRegionsData[0].name;
       // Update active state for links
       regionLinks.forEach(link => {
         const isActive = link.getAttribute('data-region-link') === regionName;
-        link.classList.toggle('bg-blue-600', isActive);
+        link.classList.toggle('bg-green', isActive);
         link.classList.toggle('text-white', isActive);
         link.classList.toggle('text-gray-700', !isActive);
         
         // Update badge styling
         const badge = link.querySelector('span');
         if (badge) {
-          badge.classList.toggle('bg-blue-500', isActive);
+          badge.classList.toggle('bg-green-900', isActive);
           badge.classList.toggle('text-white', isActive);
           badge.classList.toggle('bg-gray-200', !isActive);
           badge.classList.toggle('text-gray-700', !isActive);
