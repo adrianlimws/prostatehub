@@ -1,17 +1,19 @@
 <!-- src/components/vue/Chat.vue -->
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { isAuthenticated as checkIsAuthenticated, authenticate } from '../../utils/microsoftAuth';
+import { startConversation, sendMessage as sendChatMessage, getLatestBotMessage, endConversation } from '../../utils/chatService';
 
 // Chat state management
 const isChatOpen = ref(false);
 const messages = ref([]);
 const userInput = ref('');
 const isLoading = ref(false);
-const chatConnection = ref(null);
 const conversationId = ref(null);
 
-// Track if the SDK has been loaded
-const sdkLoaded = ref(false);
+// Track authentication and connection status
+const isAuthenticatedState = ref(false);
+const isConnected = ref(false);
 
 // Element references
 const chatContainer = ref(null);
@@ -24,6 +26,9 @@ const toggleChat = () => {
   // If chat is opened for the first time, initialize
   if (isChatOpen.value && messages.value.length === 0) {
     addBotMessage("Hello! I'm your Prostate Hub assistant. How can I help you today?");
+    
+    // Try to connect to the service
+    initializeChatService();
   }
   
   // Scroll to bottom when opening
@@ -62,6 +67,30 @@ const addUserMessage = (text) => {
   }, 100);
 };
 
+// Initialize the chat service
+const initializeChatService = async () => {
+  try {
+    // Check if we're authenticated
+    if (!isAuthenticatedState.value) {
+      await authenticate();
+      isAuthenticatedState.value = true;
+    }
+    
+    // Initialize a new conversation if needed
+    if (!conversationId.value) {
+      conversationId.value = await startConversation();
+    }
+    
+    isConnected.value = true;
+  } catch (error) {
+    console.error('Failed to initialize chat service:', error);
+    isConnected.value = false;
+    
+    // Add a message about the connection issue
+    addBotMessage("I'm having trouble connecting to my services. I'll do my best to assist you, but some features may be limited.");
+  }
+};
+
 // Send message to the bot
 const sendMessage = async () => {
   if (!userInput.value.trim()) return;
@@ -74,15 +103,23 @@ const sendMessage = async () => {
   isLoading.value = true;
   
   try {
-    if (sdkLoaded.value) {
+    if (isConnected.value) {
       // Send to Microsoft 365 Agents SDK
       await sendToMicrosoftAgent(messageText);
     } else {
-      // Fallback if SDK not loaded
-      setTimeout(() => {
-        addBotMessage("I'm sorry, I'm having trouble connecting to my services. Please try again later.");
-        isLoading.value = false;
-      }, 1000);
+      // Try to initialize again
+      await initializeChatService();
+      
+      if (isConnected.value) {
+        // If we're now connected, send the message
+        await sendToMicrosoftAgent(messageText);
+      } else {
+        // Fallback response if still not connected
+        setTimeout(() => {
+          addBotMessage("I'm still having trouble connecting to my knowledge base. Here's some general information: The Prostate Hub provides evidence-based information about prostate cancer stages, treatment options, and support resources for patients in New Zealand. For specific questions, please try again later when I'm able to connect to my services.");
+          isLoading.value = false;
+        }, 1000);
+      }
     }
   } catch (error) {
     console.error('Error sending message:', error);
@@ -94,103 +131,26 @@ const sendMessage = async () => {
 // Send message to Microsoft 365 Agents
 const sendToMicrosoftAgent = async (text) => {
   try {
-    // If we don't have a conversation ID yet, start a new conversation
-    if (!conversationId.value) {
-      await startNewConversation();
-    }
-    
     // Send the message to the agent
-    const response = await fetch(`https://defaultef475ff37cd14fa3ba77f63824f7c3.7c.environment.api.powerplatform.com/copilotstudio/dataverse-backed/authenticated/bots/cr4d1_agent/conversations/${conversationId.value}/activities?api-version=2022-03-01-preview`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        type: 'message',
-        text: text
-      }),
-      credentials: 'include' // Include cookies for authentication
-    });
+    await sendChatMessage(conversationId.value, text);
     
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
-    }
+    // Wait briefly for the agent to process the message
+    await new Promise(resolve => setTimeout(resolve, 500));
     
     // Get the bot's response
-    const botResponse = await readBotResponse();
-    addBotMessage(botResponse);
+    const botResponse = await getLatestBotMessage(conversationId.value);
+    
+    if (botResponse) {
+      addBotMessage(botResponse);
+    } else {
+      addBotMessage("I'm processing your request. This might take a moment. Please feel free to ask another question.");
+    }
   } catch (error) {
     console.error('Error communicating with agent:', error);
     addBotMessage("I'm having trouble connecting to my knowledge base. Please try again later.");
   } finally {
     isLoading.value = false;
   }
-};
-
-// Start a new conversation with the agent
-const startNewConversation = async () => {
-  try {
-    const response = await fetch('https://defaultef475ff37cd14fa3ba77f63824f7c3.7c.environment.api.powerplatform.com/copilotstudio/dataverse-backed/authenticated/bots/cr4d1_agent/conversations?api-version=2022-03-01-preview', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include' // Include cookies for authentication
-    });
-    
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    conversationId.value = data.id;
-  } catch (error) {
-    console.error('Error starting conversation:', error);
-    throw error;
-  }
-};
-
-// Read bot's response
-const readBotResponse = async () => {
-  try {
-    const response = await fetch(`https://defaultef475ff37cd14fa3ba77f63824f7c3.7c.environment.api.powerplatform.com/copilotstudio/dataverse-backed/authenticated/bots/cr4d1_agent/conversations/${conversationId.value}/activities?api-version=2022-03-01-preview`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include'
-    });
-    
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    
-    // Find the latest bot message
-    const botMessages = data.activities.filter(activity => 
-      activity.from.role === 'bot' && activity.type === 'message'
-    );
-    
-    if (botMessages.length > 0) {
-      // Return the latest bot message
-      return botMessages[botMessages.length - 1].text;
-    } else {
-      return "I'm sorry, I didn't receive a proper response. Can you try asking again?";
-    }
-  } catch (error) {
-    console.error('Error reading bot response:', error);
-    throw error;
-  }
-};
-
-// Load Microsoft 365 Agents SDK
-const loadMicrosoftAgentsSDK = () => {
-  // setting a flag to simulate SDK loading
-  setTimeout(() => {
-    sdkLoaded.value = true;
-    console.log("Microsoft 365 Agents SDK loaded");
-  }, 1000);
 };
 
 // Scroll messages container to bottom
@@ -200,7 +160,7 @@ const scrollToBottom = () => {
   }
 };
 
-// Enter to send message
+// Handle pressing Enter to send message
 const handleKeyPress = (event) => {
   if (event.key === 'Enter' && !event.shiftKey) {
     event.preventDefault();
@@ -208,10 +168,11 @@ const handleKeyPress = (event) => {
   }
 };
 
+// Lifecycle hooks
 onMounted(() => {
   loadMicrosoftAgentsSDK();
   
-  // event listener for keyboard shortcuts
+  // Add event listener for keyboard shortcuts
   document.addEventListener('keydown', (e) => {
     // Alt+C to toggle chat
     if (e.altKey && e.key === 'c') {
@@ -221,6 +182,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  // Clean up
   document.removeEventListener('keydown', (e) => {
     if (e.altKey && e.key === 'c') {
       toggleChat();
@@ -231,7 +193,7 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <!-- Chat button toggle -->
+    <!-- Chat toggle button -->
     <button 
       aria-label="Chat with Prostate Hub Assistant" 
       title="Chat with Prostate Hub Assistant (Alt+C)"
@@ -246,12 +208,14 @@ onUnmounted(() => {
       </svg>
     </button>
 
+    <!-- Chat window -->
     <div 
       v-show="isChatOpen" 
       ref="chatContainer"
       class="fixed bottom-24 right-6 w-full sm:w-96 h-96 bg-white rounded-lg shadow-xl border border-gray-200 z-50 flex flex-col"
       aria-live="polite"
     >
+      <!-- Chat header -->
       <div class="px-4 py-3 bg-blue rounded-t-lg flex justify-between items-center">
         <div class="flex items-center space-x-2">
           <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
@@ -271,6 +235,7 @@ onUnmounted(() => {
         </button>
       </div>
       
+      <!-- Chat messages -->
       <div 
         ref="messagesContainer"
         class="flex-1 p-4 overflow-y-auto"
@@ -291,6 +256,7 @@ onUnmounted(() => {
           </span>
         </div>
         
+        <!-- Loading indicator -->
         <div v-if="isLoading" class="flex items-center space-x-2 text-gray-500 mb-4">
           <div class="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style="animation-delay: 0s;"></div>
           <div class="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style="animation-delay: 0.2s;"></div>
@@ -298,6 +264,7 @@ onUnmounted(() => {
         </div>
       </div>
       
+      <!-- Chat input -->
       <div class="p-3 border-t border-gray-200">
         <div class="flex items-center space-x-2">
           <textarea

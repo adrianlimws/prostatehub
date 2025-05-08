@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import TextResizer from '../components/vue/TextResizer.vue';
+import Chat from '../components/vue/Chat.vue';
 
 const { title } = Astro.props;
 ---
@@ -24,6 +25,9 @@ const { title } = Astro.props;
       
       <!-- TextResizer as an Astro Island with client:load directive -->
       <TextResizer client:load />
+      
+      <!-- Chat component with client:load directive -->
+      <Chat />
       
       <!-- No-JS fallback (hidden when JS is enabled) -->
       <noscript>
