@@ -47,7 +47,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="text-resizer">
+  <div class="text-resizer mr-16 md:mr-0">
     <div class="text-resizer-inner">
       <span class="text-resizer-label">Text Size:</span>
       <div class="text-resizer-controls">
