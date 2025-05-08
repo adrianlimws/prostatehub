@@ -1,0 +1,39 @@
+---
+---
+
+<div id="chat-container" class="fixed bottom-4 right-4 z-50 font-mono">
+ <button id="chat-button" class="bg-blue hover:bg-green text-white rounded-full p-4 shadow-lg transition-colors flex items-center justify-center">
+   <span class="sr-only">Open chat assistant</span>
+   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+   </svg>
+ </button>
+ 
+ <div id="chat-window" class="hidden absolute bottom-16 right-0 w-80 md:w-96 h-96 rounded-lg shadow-xl bg-white overflow-hidden border border-gray-200">
+   <div class="bg-blue text-white p-3 flex justify-between items-center">
+     <h3 class="font-medium">Prostate Hub Assistant</h3>
+     <button id="close-chat" class="text-white hover:text-gray-200">
+       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+       </svg>
+     </button>
+   </div>
+   <iframe src="https://copilotstudio.microsoft.com/environments/Default-ef475ff3-7cd1-4fa3-ba77-f63824f7c37c/bots/cr4d1_agent/webchat?__version__=2" frameborder="0" style="width: 100%; height: calc(100% - 48px);"></iframe>
+ </div>
+</div>
+
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+   const chatButton = document.getElementById('chat-button');
+   const chatWindow = document.getElementById('chat-window');
+   const closeChat = document.getElementById('close-chat');
+   
+   chatButton.addEventListener('click', () => {
+     chatWindow.classList.toggle('hidden');
+   });
+   
+   closeChat.addEventListener('click', () => {
+     chatWindow.classList.add('hidden');
+   });
+ });
+</script>
