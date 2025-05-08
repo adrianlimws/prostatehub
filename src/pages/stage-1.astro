@@ -15,14 +15,14 @@ import "astro-breadcrumbs/breadcrumbs.css";
   <!-- Improved header section with gradient background -->
   <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
     <h1 class="text-3xl font-bold mb-4">Stage 1: Early Stage Prostate Cancer</h1>
-    <p class="text-lg max-w-3xl mx-auto">
+    <p class="text-lg max-w-3xl mx-auto font-serif">
       Information about Stage 1 prostate cancer, treatment options, and resources for newly diagnosed patients in New Zealand.
     </p>
   </section>
   
   <main class="my-8 container mx-auto px-4">
     <!-- Breadcrumbs -->
-    <div class="mb-4 pb-2 border-b-2 border-gray-300">
+    <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
           slot="separator"
@@ -64,7 +64,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
       <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
         <Accordion title="What is Stage 1 Prostate Cancer?" initiallyOpen={true}>
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Stage 1 prostate cancer means the cancer is small and contained entirely within the prostate. At this stage:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li>The cancer cannot be felt during a digital rectal exam</li>
@@ -78,7 +78,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Treatment Options in New Zealand">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <h3 class="font-semibold text-lg">Active Surveillance</h3>
             <p>For most Stage 1 patients in New Zealand, doctors recommend active surveillance rather than immediate treatment. This involves:</p>
             <ul class="list-disc pl-6 space-y-2">
@@ -107,7 +107,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Managing Treatment Side Effects">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>All treatments may have side effects. Based on data from New Zealand patients one year after treatment:</p>
             
             <h3 class="font-semibold text-lg">Active Surveillance Side Effects</h3>
@@ -140,7 +140,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Support Options in New Zealand">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>New Zealand offers various support services for prostate cancer patients:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><strong>Cancer Society New Zealand:</strong> Located on hospital campuses with information resources and support services</li>
@@ -153,7 +153,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="New Zealand Medical Resources">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Reliable New Zealand-specific resources for Stage 1 prostate cancer:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><a href="https://www.health.govt.nz/" class="text-blue-600 hover:underline" target="_blank">Ministry of Health</a></li>
@@ -166,7 +166,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
 
         <Accordion title="Frequently Asked Questions">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <h3 class="font-semibold">Can I drive during treatment?</h3>
             <p>In most cases, you can drive yourself to and from treatment appointments. However, it's useful to bring someone to your first treatment appointment for support.</p>
             
