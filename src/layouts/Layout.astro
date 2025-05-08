@@ -50,5 +50,65 @@ const { title } = Astro.props;
       
       <slot />
       <ChatAssistant />
+
+            <!-- Mouse tracking helper script -->
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                // Create the mouse tracker element
+                const mouseTracker = document.createElement('div');
+                mouseTracker.className = 'mouse-tracker';
+                document.body.appendChild(mouseTracker);
+                
+                // Variables for tracking mouse movement
+                let isMoving = false;
+                let timeoutId = null;
+                
+                // Update mouse tracker position
+                document.addEventListener('mousemove', (e) => {
+                  // Position the tracker at mouse coordinates
+                  mouseTracker.style.left = `${e.clientX}px`;
+                  mouseTracker.style.top = `${e.clientY}px`;
+                  
+                  // Show the tracker
+                  mouseTracker.style.opacity = '0.7';
+                  
+                  // Handle animation for when mouse stops moving
+                  isMoving = true;
+                  mouseTracker.classList.remove('idle');
+                  
+                  // Clear existing timeout
+                  if (timeoutId) {
+                    clearTimeout(timeoutId);
+                  }
+                  
+                  // Set timeout to mark as idle if no movement
+                  timeoutId = setTimeout(() => {
+                    isMoving = false;
+                    mouseTracker.classList.add('idle');
+                  }, 500);
+                });
+                
+                // Hide tracker when mouse leaves window
+                document.addEventListener('mouseleave', () => {
+                  mouseTracker.style.opacity = '0';
+                });
+                
+                // Show tracker when mouse enters window
+                document.addEventListener('mouseenter', () => {
+                  mouseTracker.style.opacity = '0.7';
+                });
+                
+                // Special effect when clicking
+                document.addEventListener('mousedown', () => {
+                  mouseTracker.style.transform = 'translate(-50%, -50%) scale(0.8)';
+                  mouseTracker.style.opacity = '0.9';
+                });
+                
+                document.addEventListener('mouseup', () => {
+                  mouseTracker.style.transform = 'translate(-50%, -50%) scale(1)';
+                  mouseTracker.style.opacity = '0.7';
+                });
+              });
+            </script>
   </body>
 </html>
