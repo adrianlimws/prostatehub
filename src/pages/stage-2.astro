@@ -15,14 +15,14 @@ import "astro-breadcrumbs/breadcrumbs.css";
   <!-- Improved header section with gradient background -->
   <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
     <h1 class="text-3xl font-bold mb-4">Stage 2: Localised Prostate Cancer</h1>
-    <p class="text-lg max-w-3xl mx-auto">
+    <p class="text-lg max-w-3xl mx-auto font-serif">
       Information about Stage 2 prostate cancer, treatment options, and support resources for patients and their families in New Zealand.
     </p>
   </section>
   
   <main class="my-8 container mx-auto px-4">
     <!-- Breadcrumbs -->
-    <div class="mb-4 pb-2 border-b-2 border-gray-300">
+    <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
           slot="separator"
@@ -68,7 +68,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
       <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
         <Accordion title="What is Stage 2 Prostate Cancer?" initiallyOpen={true}>
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Stage 2 prostate cancer means the cancer is still confined to the prostate but is larger than in Stage 1. At this stage:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li>The cancer may be felt during a digital rectal exam</li>
@@ -82,7 +82,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Treatment Options in New Zealand">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Several treatment options are available for Stage 2 prostate cancer in New Zealand, with the choice depending on factors such as your age, overall health, and personal preferences:</p>
             
             <h3 class="font-semibold text-lg">Radical Prostatectomy</h3>
@@ -114,7 +114,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Side Effects and Management">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Based on data from New Zealand patients, here are common side effects reported one year after treatment:</p>
             
             <h3 class="font-semibold text-lg">Surgery Side Effects</h3>
@@ -149,7 +149,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Support Options in New Zealand">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>New Zealand offers various support services for prostate cancer patients:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><strong>Cancer Society New Zealand:</strong> Located on many hospital campuses with information resources and support services</li>
@@ -169,7 +169,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Living With Prostate Cancer">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <h3 class="font-semibold text-lg">Day-to-Day Life</h3>
             <p>Most people can continue normal activities during and after treatment:</p>
             <ul class="list-disc pl-6 space-y-2">
@@ -199,7 +199,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="New Zealand Medical Resources">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Reliable New Zealand-specific resources for Stage 2 prostate cancer:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><a href="https://www.health.govt.nz/" class="text-blue-600 hover:underline" target="_blank">Ministry of Health</a></li>

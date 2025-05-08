@@ -15,14 +15,14 @@ import "astro-breadcrumbs/breadcrumbs.css";
   <!-- Improved header section with gradient background -->
   <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
     <h1 class="text-3xl font-bold mb-4">Stage 4: Metastatic Prostate Cancer</h1>
-    <p class="text-lg max-w-3xl mx-auto">
+    <p class="text-lg max-w-3xl mx-auto font-serif">
       Comprehensive information about Stage 4 prostate cancer, treatment approaches, and support resources for patients and families in New Zealand.
     </p>
   </section>
   
   <main class="my-8 container mx-auto px-4">
     <!-- Breadcrumbs -->
-    <div class="mb-4 pb-2 border-b-2 border-gray-300">
+    <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
           slot="separator"
@@ -72,7 +72,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
       <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
         <Accordion title="What is Stage 4 Prostate Cancer?" initiallyOpen={true}>
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Stage 4 prostate cancer means the cancer has spread beyond the prostate to distant parts of the body. At this stage:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li>The cancer has metastasized to other organs, lymph nodes, or bones</li>
@@ -90,7 +90,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Treatment Approaches in New Zealand">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Based on New Zealand patient data, the following treatments are commonly used for Stage 4 prostate cancer:</p>
             
             <h3 class="font-semibold text-lg">Hormone Therapy (ADT)</h3>
@@ -138,7 +138,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Managing Side Effects">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Based on data from New Zealand patients, people with Stage 4 prostate cancer reported these experiences one year after diagnosis:</p>
             
             <h3 class="font-semibold text-lg">Hormone Therapy Side Effects</h3>
@@ -176,7 +176,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="New Zealand Support Resources">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Support is crucial for Stage 4 patients and their families in New Zealand:</p>
             
             <h3 class="font-semibold text-lg">Medical Support Services</h3>
@@ -208,7 +208,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Living with Stage 4 Prostate Cancer">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <h3 class="font-semibold text-lg">Day-to-Day Life</h3>
             <p>While Stage 4 prostate cancer requires ongoing management, many men maintain good quality of life:</p>
             <ul class="list-disc pl-6 space-y-2">
@@ -242,7 +242,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="When to Contact Your Medical Team">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Contact the Oncology Service immediately (24 hours) if:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li>You begin to feel unwell or are unexpectedly unwell</li>
@@ -261,7 +261,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="New Zealand Medical Resources">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Reliable New Zealand-specific resources for Stage 4 prostate cancer:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><a href="https://www.health.govt.nz/" class="text-blue-600 hover:underline" target="_blank">Ministry of Health</a></li>

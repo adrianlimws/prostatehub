@@ -11,14 +11,14 @@ import "astro-breadcrumbs/breadcrumbs.css";
 <BaseLayout title="Prostate Hub - For Family Members">
   <Header />
 
-    <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
+    <section class="text-center p-10 bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
       <h1 class="text-3xl font-bold mb-4">For Family Members and Caregivers</h1>
-      <p class="text-lg max-w-3xl mx-auto">
+      <p class="text-lg max-w-3xl mx-auto font-serif">
         Information and resources to help you support your loved one through their prostate cancer journey in New Zealand.
       </p>
     </section>
     <main class="my-8 container mx-auto px-4">
-    <div class="mb-2 pb-2 border-b-2 border-gray-300">
+    <div class="mb-2 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
           slot="separator"
@@ -59,7 +59,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
 
       <div class="md:w-2/3">
         <Accordion title="Understanding Your Role" initiallyOpen={true}>
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>As a family member or caregiver of someone with prostate cancer, you play a crucial role in their cancer journey. This may include:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li>Providing emotional support</li>
@@ -74,7 +74,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Communicating Effectively">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Open communication is essential when supporting someone with prostate cancer:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li>Listen without judgment</li>
@@ -89,7 +89,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Understanding Treatment Side Effects">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Prostate cancer treatments can have side effects that impact both the patient and their relationships:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><strong>Urinary issues:</strong> Incontinence may cause embarrassment and lifestyle changes</li>
@@ -102,7 +102,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Practical Support">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <h3 class="font-semibold text-lg">Day-to-Day Help</h3>
             <ul class="list-disc pl-6 space-y-2">
               <li>Transportation to medical appointments</li>
@@ -126,7 +126,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Caring for Yourself">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Caregiver burnout is real. Taking care of yourself is essential so you can continue to support your loved one:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li>Accept help from others</li>
@@ -141,7 +141,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Financial Support and Assistance">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>A cancer diagnosis can bring financial challenges. Here are some New Zealand resources that may help:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><strong>Prostate Cancer Foundation Welfare Grants:</strong> Financial assistance for patients and families experiencing hardship related to prostate cancer treatment</li>
@@ -155,7 +155,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="New Zealand Support Resources">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Resources specifically for family members and caregivers in New Zealand:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><strong><a href="https://prostate.org.nz/support-groups" target="_blank" class="text-blue-600 hover:underline">Prostate Cancer Foundation Support Groups</a>:</strong> A network of support groups throughout New Zealand for patients and their families</li>
@@ -171,7 +171,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Common Questions from Family Members">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <h3 class="font-semibold">How can I best support my loved one emotionally?</h3>
             <p>Being present, listening without judgment, and acknowledging their feelings are powerful ways to provide emotional support. Sometimes simply sitting with them in silence is enough.</p>
             

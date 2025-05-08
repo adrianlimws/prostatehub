@@ -15,14 +15,14 @@ import "astro-breadcrumbs/breadcrumbs.css";
   <!-- Improved header section with gradient background -->
   <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
     <h1 class="text-3xl font-bold mb-4">Stage 0: Understanding Prostate Health</h1>
-    <p class="text-lg max-w-3xl mx-auto">
+    <p class="text-lg max-w-3xl mx-auto font-serif">
       Educational information designed for younger audiences to build awareness about prostate health and cancer prevention.
     </p>
   </section>
   
   <main class="my-8 container mx-auto px-4">
     <!-- Breadcrumbs -->
-    <div class="mb-4 pb-2 border-b-2 border-gray-300">
+    <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
           slot="separator"
@@ -68,7 +68,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
       <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
         <Accordion title="General Knowledge About Prostate Cancer" initiallyOpen={true}>
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>The prostate is a gland about the size of a walnut. It is situated just below the bladder and
               surround the neck of the bladder and the top part of the urethra (tube from the bladder that
               empties the urine). The prostate also contributes to the seminal fluid produced during ejaculation
@@ -77,7 +77,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Prostate Cancer Risk Groups">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>When diagnosed, prostate cancer is categorized into risk groups based on how likely it is to grow or spread:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><strong>Low risk (19% of cases):</strong> Cancer that is least likely to grow or spread</li>
@@ -91,7 +91,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Preventative Measures">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>While there's no guaranteed way to prevent prostate cancer, certain lifestyle choices may help reduce your risk:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li>Maintain a healthy diet rich in fruits, vegetables, and whole grains</li>
@@ -105,7 +105,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="When to Start Screening">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>The Prostate Specific Antigen (PSA) test is a blood test that can help detect prostate cancer early.</p>
             <p>Consider talking to your doctor about prostate screening if:</p>
             <ul class="list-disc pl-6 space-y-2">
@@ -125,7 +125,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </Accordion>
         
         <Accordion title="Resources for Young Men in New Zealand">
-          <div class="space-y-4">
+          <div class="space-y-4 font-serif">
             <p>Additional resources for learning about prostate health in New Zealand:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><a href="https://prostate.org.nz/" class="text-blue-600 hover:underline" target="_blank">Prostate Cancer Foundation New Zealand</a></li>
