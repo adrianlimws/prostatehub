@@ -170,3 +170,40 @@ import "astro-breadcrumbs/breadcrumbs.css";
   
   <Footer />
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const topicParam = urlParams.get('topic');
+    
+    if (topicParam) {
+      // Find accordion with matching title
+      document.querySelectorAll('[data-accordion-header]').forEach(header => {
+        const headerTitle = header.querySelector('span').innerText;
+        
+        // Check for specific matches
+        let isMatch = false;
+        if (topicParam === "Kegel Exercises" && headerTitle.startsWith("Kegel Exercises")) {
+          isMatch = true;
+        } else if (topicParam === "Kawakawa Tree" && headerTitle.startsWith("Kawakawa Tree")) {
+          isMatch = true;
+        } else if (topicParam === "K9 Medical Detection" && headerTitle.includes("K9")) {
+          isMatch = true;
+        }
+        
+        if (isMatch) {
+          // Open accordion if not already open
+          const isExpanded = header.getAttribute('aria-expanded') === 'true';
+          if (!isExpanded) {
+            header.click();
+          }
+          
+          // Scroll to accordion
+          setTimeout(() => {
+            header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      });
+    }
+  });
+</script>
