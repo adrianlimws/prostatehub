@@ -5,6 +5,10 @@ import Footer                   from '../components/astro/Footer.astro';
 import Accordion                from '../components/astro/Accordion.astro';
 import PatientDistributionChart from '../components/vue/PatientDistributionChart.vue';
 import { Breadcrumbs }          from "astro-breadcrumbs";
+import { Image }                from 'astro:assets';
+import kegelImage               from '../assets/kegel.png';
+import kawakawaImage            from '../assets/kawakawa.png';
+import k9Image                  from '../assets/k9.png';
 
 import "astro-breadcrumbs/breadcrumbs.css";
 ---
@@ -76,7 +80,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
               <li>Avoid engaging abdominal or gluteal muscles during the exercise.</li>
               <li>Gradually increase duration and intensity over time for optimal results.</li>
             </ol>
-            
+            <Image src={kegelImage} alt="Kegel Exercises" class="w-full h-auto mt-4 rounded-lg shadow-md" />
             <p class="italic mt-4 text-blue-700">Consult with your healthcare provider before starting any new exercise regimen, especially following prostate surgery.</p>
           </div>
         </Accordion>
@@ -84,8 +88,10 @@ import "astro-breadcrumbs/breadcrumbs.css";
         <Accordion title="Kawakawa Tree Medicinal Properties">
           <div class="space-y-4 font-serif">
             <h3 class="text-xl font-semibold">Traditional Knowledge and Modern Research</h3>
+            <Image src={kawakawaImage} alt="Kawakawa Tree" class="w-full h-auto mt-4 rounded-lg shadow-md" />
+            <i class="mb-5">Image from <a href="https://wilddispensary.co.nz/blogs/news/kawakawa">Wild Dispensary NZ</a></i>
+            <br>
             <p>The New Zealand Kawakawa tree (Piper excelsum) has been utilized in traditional Māori medicine (rongoā Māori) for treating various ailments. Recent scientific studies at Auckland University have begun to validate its medicinal properties, including anti-inflammatory and potential anticancer effects.</p>
-            
             <h3 class="text-xl font-semibold">Scientifically Validated Properties</h3>
             <ul class="list-disc pl-6 space-y-2">
               <li><strong>Anti-inflammatory Effects:</strong> Research demonstrates Kawakawa extracts have significant anti-inflammatory properties through modulation of cytokine pathways such as IL-6 and NF-κB, which are implicated in chronic inflammatory diseases including cancer.</li>
@@ -103,6 +109,9 @@ import "astro-breadcrumbs/breadcrumbs.css";
         
         <Accordion title="K9MD Cancer Detection Dogs">
           <div class="space-y-4 font-serif">
+            <Image src={k9Image} alt="K9 Medical Detection" class="w-full h-auto mt-4 rounded-lg shadow-md" />
+            <i class="mb-5">Image from <a href="https://www.k9md.org.nz/">K9 Medical Detection</a></i>
+            <br>
             <h3 class="text-xl font-semibold">Innovative Non-Invasive Detection</h3>
             <p>K9 Medical Detection (K9MD) is a pioneering New Zealand program that trains dogs to detect cancer and other medical conditions through scent detection of volatile organic compounds (VOCs). This initiative provides non-invasive, early detection methods that complement traditional diagnostic techniques.</p>
             

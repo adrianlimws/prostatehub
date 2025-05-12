@@ -5,6 +5,8 @@ import Footer                   from '../components/astro/Footer.astro';
 import Accordion                from '../components/astro/Accordion.astro';
 import PatientDistributionChart from '../components/vue/PatientDistributionChart.vue';
 import { Breadcrumbs }          from "astro-breadcrumbs";
+import { Image }                from 'astro:assets';
+import prostateImage            from '../assets/prostate.png';
 
 import "astro-breadcrumbs/breadcrumbs.css";
 ---
@@ -73,6 +75,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
               surround the neck of the bladder and the top part of the urethra (tube from the bladder that
               empties the urine). The prostate also contributes to the seminal fluid produced during ejaculation
               and has an important function in fertility.</p>
+              <Image src={prostateImage} alt="Prostate Gland" class="w-full h-auto rounded-lg shadow-md mb-4" />
           </div>
         </Accordion>
         
