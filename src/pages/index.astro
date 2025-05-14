@@ -6,7 +6,7 @@ import WelcomeSection   from '../components/astro/WelcomeSection.astro';
 import CallToActionMenu from '../components/astro/CallToActionMenu.astro';
 import StudySection     from '../components/astro/StudySection.astro';
 import LinkButtons      from '../components/astro/LinkButtons.astro';
-import YoutubeVideo     from '../components/astro/Youtube.astro'; 
+import YoutubeVideo     from '../components/astro/Youtube.astro';
 import Footer           from '../components/astro/Footer.astro';
 ---
 
@@ -14,7 +14,7 @@ import Footer           from '../components/astro/Footer.astro';
   <Header />
   
   <main class="min-h-screen">
-    <WelcomeSection />
+      <WelcomeSection />
     
     <div class="container mx-auto px-4 md:px-8 mb-16">
       <div class="my-12">
@@ -25,38 +25,52 @@ import Footer           from '../components/astro/Footer.astro';
         
         <CallToActionMenu />
       </div>
-      <YoutubeVideo 
-        title="Understanding Prostate Cancer" 
-        videoId="xsNlnz7wJwY" 
-      />
-      <div class="my-20">
+      
+        <YoutubeVideo 
+          title="Understanding Prostate Cancer" 
+          videoId="xsNlnz7wJwY" 
+        />
+      </div>
+      
+      <!-- Studies section title fades up -->
+      <div class="my-20" data-animation="fade-up">
         <h2 class="text-2xl text-center mb-2">Latest Studies</h2>
         <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10 font-serif">
           Explore recent research and medical advances
         </p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          <StudySection title="Kegel Exercises">
-            Kegel exercises strengthen pelvic floor muscles that support bladder control and sexual function. Research shows these exercises significantly improve urinary continence following prostate surgery and may enhance erectile function. Regular practice can speed recovery after prostatectomy and provide long-term benefits for prostate health.
-          </StudySection>
+        <!-- Study cards with staggered animations -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center container mx-auto px-4 md:px-8">
+          <div data-animation="fade-up" data-delay="0">
+            <StudySection title="Kegel Exercises">
+              Kegel exercises strengthen pelvic floor muscles that support bladder control and sexual function. Research shows these exercises significantly improve urinary continence following prostate surgery and may enhance erectile function. Regular practice can speed recovery after prostatectomy and provide long-term benefits for prostate health.
+            </StudySection>
+          </div>
 
-          <StudySection title="Kawakawa Tree">
-            The New Zealand Kawakawa tree has been used in traditional Māori medicine for generations. Recent scientific studies validate its anti-inflammatory, antimicrobial, and analgesic properties. Ongoing research explores its potential benefits for metabolic health and possible anticancer effects, making it an interesting area of study for prostate health management.
-          </StudySection>
+          <div data-animation="fade-up" data-delay="200">
+            <StudySection title="Kawakawa Tree">
+              The New Zealand Kawakawa tree has been used in traditional Māori medicine for generations. Recent scientific studies validate its anti-inflammatory, antimicrobial, and analgesic properties. Ongoing research explores its potential benefits for metabolic health and possible anticancer effects, making it an interesting area of study for prostate health management.
+            </StudySection>
+          </div>
 
-          <StudySection title="K9 Medical Detection">
-            K9MD trains dogs to detect prostate cancer through scent in urine samples. Clinical trials in New Zealand show detection rates comparable to conventional tests, and sometimes higher. This non-invasive approach could complement traditional diagnostic methods, potentially reducing the need for invasive procedures while improving early detection.
-          </StudySection>
+          <div data-animation="fade-up" data-delay="400">
+            <StudySection title="K9 Medical Detection">
+              K9MD trains dogs to detect prostate cancer through scent in urine samples. Clinical trials in New Zealand show detection rates comparable to conventional tests, and sometimes higher. This non-invasive approach could complement traditional diagnostic methods, potentially reducing the need for invasive procedures while improving early detection.
+            </StudySection>
+          </div>
         </div>
       </div>
       
-      <div class="my-20">
+      <!-- Additional resources section with zoom effect -->
+      <div class="my-20" data-animation="zoom-in">
         <h2 class="text-2xl text-center mb-2">Additional Resources</h2>
         <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10 font-serif">
           Connect with the community and support organisations
         </p>
         
-        <LinkButtons />
+        <div data-animation="fade" data-delay="200">
+          <LinkButtons />
+        </div>
       </div>
     </div>
   </main>

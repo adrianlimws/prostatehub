@@ -5,7 +5,7 @@ import ChatAssistant from '../components/astro/ChatBot.astro';
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,64 +51,116 @@ const { title } = Astro.props;
       <slot />
       <ChatAssistant />
 
-            <!-- Mouse tracking helper script -->
-            <script>
-              document.addEventListener('DOMContentLoaded', () => {
-                // Create the mouse tracker element
-                const mouseTracker = document.createElement('div');
-                mouseTracker.className = 'mouse-tracker';
-                document.body.appendChild(mouseTracker);
+      <!-- Animation with Tailwind CSS -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const animatedElements = document.querySelectorAll('[data-animation]');
+          
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const animation = entry.target.dataset.animation;
                 
-                // Variables for tracking mouse movement
-                let isMoving = false;
-                let timeoutId = null;
+                entry.target.classList.remove('opacity-0', '-translate-y-10', 'translate-y-10', 
+                                             'translate-x-10', '-translate-x-10', 'scale-95');
                 
-                // Update mouse tracker position
-                document.addEventListener('mousemove', (e) => {
-                  // Position the tracker at mouse coordinates
-                  mouseTracker.style.left = `${e.clientX}px`;
-                  mouseTracker.style.top = `${e.clientY}px`;
-                  
-                  // Show the tracker
-                  mouseTracker.style.opacity = '0.7';
-                  
-                  // Handle animation for when mouse stops moving
-                  isMoving = true;
-                  mouseTracker.classList.remove('idle');
-                  
-                  // Clear existing timeout
-                  if (timeoutId) {
-                    clearTimeout(timeoutId);
-                  }
-                  
-                  // Set timeout to mark as idle if no movement
-                  timeoutId = setTimeout(() => {
-                    isMoving = false;
-                    mouseTracker.classList.add('idle');
-                  }, 500);
-                });
+                entry.target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0', 'scale-100');
                 
-                // Hide tracker when mouse leaves window
-                document.addEventListener('mouseleave', () => {
-                  mouseTracker.style.opacity = '0';
-                });
-                
-                // Show tracker when mouse enters window
-                document.addEventListener('mouseenter', () => {
-                  mouseTracker.style.opacity = '0.7';
-                });
-                
-                // Special effect when clicking
-                document.addEventListener('mousedown', () => {
-                  mouseTracker.style.transform = 'translate(-50%, -50%) scale(0.8)';
-                  mouseTracker.style.opacity = '0.9';
-                });
-                
-                document.addEventListener('mouseup', () => {
-                  mouseTracker.style.transform = 'translate(-50%, -50%) scale(1)';
-                  mouseTracker.style.opacity = '0.7';
-                });
-              });
-            </script>
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px'
+          });
+          
+          animatedElements.forEach(element => {
+            const animation = element.dataset.animation;
+            const delay = element.dataset.delay || '0';
+            
+            element.style.transitionDelay = `${delay}ms`;
+            
+            element.classList.add('transform', 'transition', 'duration-700', 'opacity-0');
+            
+            switch(animation) {
+              case 'fade-up':
+                element.classList.add('translate-y-10');
+                break;
+              case 'fade-down':
+                element.classList.add('-translate-y-10');
+                break;
+              case 'fade-left':
+                element.classList.add('-translate-x-10');
+                break;
+              case 'fade-right':
+                element.classList.add('translate-x-10');
+                break;
+              case 'zoom-in':
+                element.classList.add('scale-95');
+                break;
+              case 'fade':
+              default:
+                // opacity change for basic fade
+                break;
+            }
+            
+            observer.observe(element);
+          });
+        });
+      </script>
+
+      <!-- Mouse tracking helper-->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const mouseTracker = document.createElement('div');
+          mouseTracker.className = 'mouse-tracker';
+          document.body.appendChild(mouseTracker);
+          
+          let isMoving = false;
+          let timeoutId = null;
+          
+          document.addEventListener('mousemove', (e) => {
+            mouseTracker.style.left = `${e.clientX}px`;
+            mouseTracker.style.top = `${e.clientY}px`;
+            
+            mouseTracker.style.opacity = '0.7';
+            
+            isMoving = true;
+            mouseTracker.classList.remove('idle');
+            
+            // Clear existing timeout
+            if (timeoutId) {
+              clearTimeout(timeoutId);
+            }
+            
+            // Set timeout to mark as idle if no movement
+            timeoutId = setTimeout(() => {
+              isMoving = false;
+              mouseTracker.classList.add('idle');
+            }, 500);
+          });
+          
+          // Hide tracker when mouse leaves window
+          document.addEventListener('mouseleave', () => {
+            mouseTracker.style.opacity = '0';
+          });
+          
+          // Show tracker when mouse enters window
+          document.addEventListener('mouseenter', () => {
+            mouseTracker.style.opacity = '0.7';
+          });
+          
+          // Special effect when clicking
+          document.addEventListener('mousedown', () => {
+            mouseTracker.style.transform = 'translate(-50%, -50%) scale(0.8)';
+            mouseTracker.style.opacity = '0.9';
+          });
+          
+          document.addEventListener('mouseup', () => {
+            mouseTracker.style.transform = 'translate(-50%, -50%) scale(1)';
+            mouseTracker.style.opacity = '0.7';
+          });
+        });
+      </script>
   </body>
 </html>
