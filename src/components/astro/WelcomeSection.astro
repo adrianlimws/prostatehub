@@ -1,14 +1,85 @@
 ---
 ---
 
-<section class="text-center py-16 px-4 md:py-20 bg-gradient-to-r from-blue-500 to-green-600 text-white shadow-lg">
-	<div class="container mx-auto">
-			<h1 class="text-5xl md:text-4xl lg:text-5xl font-bold mb-6 font-sans ">Welcome to Prostate Hub</h1>
-			<p class="text-xl md:text-xl max-w-3xl mx-auto leading-relaxed font-serif">
-					A trusted resource to guide you through your prostate cancer journey
-			</p>
-			<p class="text-lg md:text-lg max-w-2xl mx-auto mt-4 opacity-85 font-serif">
-					Evidence-based information organised by cancer stage to support patients and families in New Zealand
-			</p>
-	</div>
+<section class="relative overflow-hidden text-center py-16 px-4 md:py-20 text-white shadow-lg">
+  <div class="absolute inset-0 bg-blue"></div>
+  
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="lava-blob bg-green-600 opacity-40"></div>
+    <div class="lava-blob bg-green-500 opacity-30 animation-delay-3"></div>
+    <div class="lava-blob bg-green-300 opacity-20 animation-delay-5"></div>
+    <div class="lava-blob bg-green-300 opacity-30 animation-delay-7"></div>
+    
+    <div class="lava-blob small bg-blue-300 opacity-60 animation-delay-2"></div>
+    <div class="lava-blob small bg-blue-300 opacity-60 animation-delay-6"></div>
+    <div class="lava-blob small bg-blue-500 opacity-50 animation-delay-8"></div>
+    <div class="lava-blob small bg-blue-400 opacity-55 animation-delay-4"></div>
+  </div>
+  
+  <div class="container mx-auto relative z-10">
+    <h1 class="text-5xl md:text-4xl lg:text-5xl font-bold mb-6 font-sans">Welcome to Prostate Hub</h1>
+    <p class="text-xl md:text-xl max-w-3xl mx-auto leading-relaxed font-serif">
+      A trusted resource to guide you through your prostate cancer journey
+    </p>
+    <p class="text-lg md:text-lg max-w-2xl mx-auto mt-4 opacity-85 font-serif">
+      Evidence-based information organised by cancer stage to support patients and families in New Zealand
+    </p>
+  </div>
 </section>
+
+<style>
+  .lava-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(30px);
+    width: 400px;
+    height: 400px;
+    mix-blend-mode: screen;
+    transform-origin: center center;
+    animation: float 12s ease-in-out infinite;
+  }
+  
+  .lava-blob.small {
+    width: 200px;
+    height: 200px;
+    animation-duration: 5s;
+  }
+  
+  .lava-blob:nth-child(1) { top: -10%; left: 10%; }
+  .lava-blob:nth-child(2) { top: 20%; right: -5%; }
+  .lava-blob:nth-child(3) { bottom: -15%; left: 30%; }
+  .lava-blob:nth-child(4) { bottom: 10%; right: 15%; }
+  .lava-blob:nth-child(5) { top: 40%; left: 15%; }
+  .lava-blob:nth-child(6) { top: 30%; right: 25%; }
+  .lava-blob:nth-child(7) { bottom: 25%; left: 5%; }
+  .lava-blob:nth-child(8) { bottom: 40%; right: 5%; }
+  
+  .animation-delay-2 { animation-delay: -2s; }
+  .animation-delay-3 { animation-delay: -3s; }
+  .animation-delay-4 { animation-delay: -4s; }
+  .animation-delay-5 { animation-delay: -5s; }
+  .animation-delay-6 { animation-delay: -6s; }
+  .animation-delay-7 { animation-delay: -7s; }
+  .animation-delay-8 { animation-delay: -8s; }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0%, 0%) rotate(0deg) scale(1);
+    }
+    20% {
+      transform: translate(15%, 10%) rotate(40deg) scale(1.1);
+    }
+    40% {
+      transform: translate(-15%, 15%) rotate(70deg) scale(0.9);
+    }
+    60% {
+      transform: translate(10%, -10%) rotate(120deg) scale(1.05);
+    }
+    80% {
+      transform: translate(-5%, 5%) rotate(180deg) scale(0.95);
+    }
+    100% {
+      transform: translate(0%, 0%) rotate(360deg) scale(1);
+    }
+  }
+</style>
