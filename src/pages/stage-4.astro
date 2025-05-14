@@ -3,6 +3,7 @@ import BaseLayout             from '../layouts/Layout.astro';
 import Header                 from '../components/astro/Header.astro';
 import Footer                 from '../components/astro/Footer.astro';
 import Accordion              from '../components/astro/Accordion.astro';
+import PageHeader             from '../components/astro/PageHeader.astro';
 import TreatmentResponseChart from '../components/vue/TreatmentResponseChart.vue';
 import { Breadcrumbs }        from "astro-breadcrumbs";
 
@@ -11,13 +12,10 @@ import "astro-breadcrumbs/breadcrumbs.css";
 
 <BaseLayout title="Prostate Hub - Stage 4">
   <Header />
-  
-  <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
-    <h1 class="text-3xl font-bold mb-4">Stage 4: Metastatic Prostate Cancer</h1>
-    <p class="text-lg max-w-3xl mx-auto font-serif">
-      Comprehensive information about Stage 4 prostate cancer, treatment approaches, and support resources for patients and families in New Zealand.
-    </p>
-  </section>
+  <PageHeader 
+    title = 'Stage 4: Metastatic Prostate Cancer'
+    blurb = 'Comprehensive information about Stage 4 prostate cancer, treatment approaches, and support resources for patients and families in New Zealand.'
+  />
   
   <main class="my-8 container mx-auto px-4">
     <!-- Breadcrumbs -->

@@ -3,6 +3,7 @@ import BaseLayout               from '../layouts/Layout.astro';
 import Header                   from '../components/astro/Header.astro';
 import Footer                   from '../components/astro/Footer.astro';
 import Accordion                from '../components/astro/Accordion.astro';
+import PageHeader               from '../components/astro/PageHeader.astro';
 import PatientDistributionChart from '../components/vue/PatientDistributionChart.vue';
 import { Breadcrumbs }          from "astro-breadcrumbs";
 import { Image }                from 'astro:assets';
@@ -14,14 +15,11 @@ import "astro-breadcrumbs/breadcrumbs.css";
 <BaseLayout title="Prostate Hub - Stage 0">
   <Header />
   
-  <!-- Improved header section with gradient background -->
-  <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
-    <h1 class="text-3xl font-bold mb-4">Stage 0: Understanding Prostate Health</h1>
-    <p class="text-lg max-w-3xl mx-auto font-serif">
-      Educational information designed for younger audiences to build awareness about prostate health and cancer prevention.
-    </p>
-  </section>
-  
+  <PageHeader 
+    title = 'Stage 0: Understanding Prostate Health'
+    blurb = 'Educational information designed for younger audiences to build awareness about prostate health and cancer prevention.'
+  />
+
   <main class="my-8 container mx-auto px-4">
     <!-- Breadcrumbs -->
     <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
