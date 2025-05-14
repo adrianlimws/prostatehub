@@ -3,6 +3,7 @@ import BaseLayout      from '../layouts/Layout.astro';
 import Header          from '../components/astro/Header.astro';
 import Footer          from '../components/astro/Footer.astro';
 import Accordion       from '../components/astro/Accordion.astro';
+import PageHeader      from '../components/astro/PageHeader.astro';
 import { Breadcrumbs } from "astro-breadcrumbs";
 
 import "astro-breadcrumbs/breadcrumbs.css";
@@ -10,13 +11,11 @@ import "astro-breadcrumbs/breadcrumbs.css";
 
 <BaseLayout title="Prostate Hub - For Family Members">
   <Header />
+  <PageHeader 
+    title = 'For Family Members and Caregivers'
+    blurb = 'Information and resources to help you support your loved one through their prostate cancer journey in New Zealand.'
+  />
 
-    <section class="text-center p-10 bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
-      <h1 class="text-3xl font-bold mb-4">For Family Members and Caregivers</h1>
-      <p class="text-lg max-w-3xl mx-auto font-serif">
-        Information and resources to help you support your loved one through their prostate cancer journey in New Zealand.
-      </p>
-    </section>
     <main class="my-8 container mx-auto px-4">
     <div class="mb-2 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">

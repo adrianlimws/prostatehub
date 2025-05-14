@@ -3,6 +3,7 @@ import BaseLayout               from '../layouts/Layout.astro';
 import Header                   from '../components/astro/Header.astro';
 import Footer                   from '../components/astro/Footer.astro';
 import Accordion                from '../components/astro/Accordion.astro';
+import PageHeader               from '../components/astro/PageHeader.astro';
 import PatientDistributionChart from '../components/vue/PatientDistributionChart.vue';
 import { Breadcrumbs }          from "astro-breadcrumbs";
 import { Image }                from 'astro:assets';
@@ -15,14 +16,10 @@ import "astro-breadcrumbs/breadcrumbs.css";
 
 <BaseLayout title="Prostate Hub - Research Studies">
   <Header />
-  
-  <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
-    <h1 class="text-3xl font-bold mb-4">Studies</h1>
-    <p class="text-lg max-w-3xl mx-auto">
-      Evidence-based information and resources about medical studies related to prostate cancer prevention, treatment, and quality of life.
-    </p>
-  </section>
-  
+  <PageHeader 
+    title = 'Studies'
+    blurb = 'Evidence-based information and resources about medical studies related to prostate cancer prevention, treatment, and quality of life.'
+  />
   <main class="my-8 container mx-auto px-4">
     <div class="mb-2 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">

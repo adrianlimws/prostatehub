@@ -1,0 +1,24 @@
+---
+const { title, blurb } = Astro.props;
+---
+
+<section class="pagerheader relative overflow-hidden text-center py-16 px-4 md:py-20 shadow-xl">
+    <div class="absolute inset-0 bg-blue"></div>
+    <div class="container mx-auto relative z-10 text-white">
+        <h1 class="text-3xl font-bold mb-4">{title}</h1>
+        <p class="text-lg max-w-3xl mx-auto font-serif">
+            {blurb}
+        </p>
+    </div>
+</section>
+
+<style>
+    .pagerheader {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 50% 60px;
+    border-bottom-right-radius: 50% 60px;
+    margin-bottom: 10px;
+    }
+
+</style>

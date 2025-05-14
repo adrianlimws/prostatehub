@@ -3,6 +3,7 @@ import BaseLayout        from '../layouts/Layout.astro';
 import Header            from '../components/astro/Header.astro';
 import Footer            from '../components/astro/Footer.astro';
 import supportGroupsData from '../data/support-groups-json.json';
+import PageHeader        from '../components/astro/PageHeader.astro';
 import { Breadcrumbs }   from "astro-breadcrumbs";
 import "astro-breadcrumbs/breadcrumbs.css";
 
@@ -21,13 +22,10 @@ const defaultRegion = allRegionsData[0].name;
 
 <BaseLayout title="Prostate Hub - Support Groups">
   <Header />
-  
-  <section class="text-center p-10 font-comfortaa bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg mb-10">
-    <h1 class="text-3xl font-bold mb-4">Prostate Cancer Support Groups</h1>
-    <p class="text-lg max-w-3xl mx-auto font-serif">
-      Connect with support groups throughout New Zealand to share experiences, gain insights, and find comfort through your prostate cancer journey.
-    </p>
-  </section>
+  <PageHeader 
+  title = 'Prostate Cancer Support Groups'
+  blurb = 'Connect with support groups throughout New Zealand to share experiences, gain insights, and find comfort through your prostate cancer journey.'
+/>
   
   <main class="my-8 container mx-auto px-4">
     <div class="mb-2 pb-2 border-b-2 border-gray-300 font-mono">
