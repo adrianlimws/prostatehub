@@ -18,7 +18,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
   />
   
   <main class="my-8 container mx-auto px-4">
-    <!-- Breadcrumbs -->
     <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
@@ -37,9 +36,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
       </Breadcrumbs>
     </div>
     
-    <!-- Main content with improved layout -->
     <div class="flex flex-col md:flex-row gap-8 mb-8">
-      <!-- Left column with statistics and chart -->
       <div class="md:w-1/3">
         <div class="bg-blue-50 rounded-lg shadow-md p-6">
           <div class="space-y-6 text-center">
@@ -62,7 +59,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </div>
       </div>
       
-      <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
         <Accordion title="What is Stage 2 Prostate Cancer?" initiallyOpen={true}>
           <div class="space-y-4 font-serif">
@@ -77,7 +73,65 @@ import "astro-breadcrumbs/breadcrumbs.css";
             <p>Stage 2 is typically categorised as "intermediate-risk" prostate cancer. In New Zealand, intermediate-risk prostate cancer is the most common risk category at diagnosis, representing about 44% of all diagnoses.</p>
           </div>
         </Accordion>
-        
+        <Accordion title="Māori Men's Health and Stage 2 Prostate Cancer">
+          <div class="space-y-4 font-serif">
+            <h3 class="text-xl font-semibold">Cultural Context for Māori with Stage 2 Prostate Cancer</h3>
+            <p>Stage 2 prostate cancer is particularly significant for Māori men, as research shows Māori are often diagnosed at more advanced stages. The Ministry of Health data indicates Māori men face up to 72% higher mortality rates from prostate cancer compared to non-Māori, despite having similar incidence rates.</p>
+            
+            <h3 class="text-xl font-semibold">Holistic Wellbeing Approach</h3>
+            <p>The Te Whare Tapa Whā model provides a helpful framework for addressing Stage 2 prostate cancer as a Māori patient:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Taha tinana (physical health)</strong> - Understanding treatment options (surgery, radiation therapy) and their physical impacts</li>
+              <li><strong>Taha wairua (spiritual health)</strong> - Incorporating karakia (prayer) and connection to ancestral strength during the treatment journey</li>
+              <li><strong>Taha whānau (family health)</strong> - Engaging extended whānau for practical and emotional support</li>
+              <li><strong>Taha hinengaro (mental health)</strong> - Managing the emotional impact of a Stage 2 diagnosis and treatment decisions</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Treatment Decision Considerations</h3>
+            <p>When considering treatment options for Stage 2 prostate cancer, Māori men may benefit from:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Discussing treatment and follow-up schedules with healthcare teams in the context of whānau, work, and community obligations</li>
+              <li>Requesting a support person or Māori health navigator (kaiāwhina) to attend appointments and help navigate the healthcare system</li>
+              <li>Asking about complementary integration of rongoā Māori (traditional medicine) alongside Western treatments, where appropriate</li>
+              <li>Understanding how treatments might impact cultural roles and responsibilities within whānau and hapū</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Rongoā Māori and Complementary Approaches</h3>
+            <p>While Western medical treatments are the primary approach for Stage 2 prostate cancer, some Māori men integrate traditional healing practices:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Kawakawa preparations used for inflammation and general wellbeing (discuss with your healthcare team before using)</li>
+              <li>Traditional mirimiri (massage) for relaxation and wellbeing</li>
+              <li>Spiritual healing and karakia to support overall wellbeing</li>
+              <li>Wai (water) therapy such as ocean bathing or natural springs</li>
+            </ul>
+            <p>Always discuss integration of traditional practices with your healthcare team to ensure they complement your medical treatment.</p>
+            
+            <h3 class="text-xl font-semibold">Culturally Responsive Support Services</h3>
+            <p>Several organizations provide culturally appropriate support for Māori men with prostate cancer:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><a href="https://maoricancerleadership.org.nz/" class="text-blue-600 hover:underline" target="_blank">Hei Āhuru Mōwai - Māori Cancer Leadership</a>: Provides advocacy and navigation support for Māori cancer patients</li>
+              <li><a href="https://teaho.govt.nz/cancer/equity/maori/" class="text-blue-600 hover:underline" target="_blank">Te Aho o Te Kahu</a>: Offers cancer resources specifically for Māori</li>
+              <li><a href="https://www.cancernz.org.nz/cancer-information/cancer-and-maori/" class="text-blue-600 hover:underline" target="_blank">Cancer Society's Māori Support Services</a>: Provides culturally responsive support and resources</li>
+              <li>Your local DHB may have dedicated Māori health navigators (kaiāwhina) to support your cancer journey</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Communicating with Whānau</h3>
+            <p>Sharing a Stage 2 diagnosis with whānau may follow cultural protocols:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Consider hosting a whānau hui to share information and discuss support plans</li>
+              <li>Acknowledge the impact on the collective wellbeing of the whānau</li>
+              <li>Clarify how whānau can practically support treatment journeys (transport, appointments, home support)</li>
+              <li>Discuss updated roles and responsibilities during treatment and recovery</li>
+            </ul>
+            
+            <blockquote class="bg-blue-50 p-4 italic border-l-4 border-blue-500 my-4">
+              "Ehara taku toa i te toa takitahi, engari he toa takitini."<br>
+              <span class="text-sm">My strength is not that of an individual, but that of the collective.</span>
+            </blockquote>
+            
+            <p class="mt-4">This whakatauki reminds us that healing is a collective journey. With intermediate-risk prostate cancer, the support of whānau, health professionals, and community is essential for successful treatment outcomes.</p>
+          </div>
+        </Accordion>
         <Accordion title="Treatment Options in New Zealand">
           <div class="space-y-4 font-serif">
             <p>Several treatment options are available for Stage 2 prostate cancer in New Zealand, with the choice depending on factors such as your age, overall health, and personal preferences:</p>
