@@ -9,7 +9,6 @@ const q = Astro.url.searchParams.get('q') ?? undefined;
 <header class="bg-white fixed top-0 left-0 right-0 z-50 font-mono shadow-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
-      <!-- Logo and Brand -->
       <div class="flex items-center">
         <a href="/" class="flex items-center" aria-label="Home">
           <!-- Optional: Add logo image here -->
@@ -20,7 +19,6 @@ const q = Astro.url.searchParams.get('q') ?? undefined;
 
       <!-- Desktop Navigation - Hidden on mobile -->
       <nav class="hidden md:flex items-center space-x-1">
-        <!-- Stage-based navigation -->
         <div class="flex items-center mr-4 border-r pr-4 border-gray-200">
           <span class="text-gray-500 text-sm font-medium mr-2">Stages:</span>
           <div class="flex space-x-1">
@@ -32,7 +30,6 @@ const q = Astro.url.searchParams.get('q') ?? undefined;
           </div>
         </div>
         
-        <!-- Support links -->
         <a href="/family-support" data-path="/family-support" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-700 hover:bg-green-200">Family Support</a>
         <a href="/studies" data-path="/studies" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-700 hover:bg-green-200">Studies</a>
         <a href="/support-groups" data-path="/support-groups" class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-700 hover:bg-green-200">Support Groups</a>
@@ -68,29 +65,29 @@ const q = Astro.url.searchParams.get('q') ?? undefined;
 <script>
   // Show/hide search
   document.addEventListener('DOMContentLoaded', () => {
-    const searchToggle = document.getElementById('search-toggle');
-    const searchContainer = document.getElementById('search-container');
+    const searchToggle = document.getElementById('search-toggle')
+    const searchContainer = document.getElementById('search-container')
 
     searchToggle?.addEventListener('click', () => {
       if (searchContainer?.classList.contains('hidden')) {
-        searchContainer.classList.remove('hidden');
+        searchContainer.classList.remove('hidden')
         // Focus the search input
         setTimeout(() => {
-          const searchInput = document.querySelector('.pagefind-ui__search-input');
+          const searchInput = document.querySelector('.pagefind-ui__search-input')
           if (searchInput) {
-            searchInput.focus();
+            searchInput.focus()
           }
-        }, 100);
+        }, 100)
       } else {
-        searchContainer?.classList.add('hidden');
+        searchContainer?.classList.add('hidden')
       }
     });
 
     document.addEventListener('click', (event) => {
-      const target = event.target;
+      const target = event.target
       
       // Don't close if click is inside search container
-      const isClickInsideSearch = target.closest('#search-container') || target.closest('#search-toggle');
+      const isClickInsideSearch = target.closest('#search-container') || target.closest('#search-toggle')
       
       // Don't close if click is on search UI controls
       const isClickOnSearchControls = 
@@ -99,49 +96,48 @@ const q = Astro.url.searchParams.get('q') ?? undefined;
         target.closest('.pagefind-ui__result-title') ||
         target.closest('.pagefind-ui__result-excerpt') ||
         target.closest('.pagefind-ui__results-pagination') ||
-        target.closest('.pagefind-ui__message');
+        target.closest('.pagefind-ui__message')
         
       // Close if it's a click outside the search area
       if (!isClickInsideSearch && !isClickOnSearchControls && !searchContainer?.classList.contains('hidden')) {
-        searchContainer?.classList.add('hidden');
+        searchContainer?.classList.add('hidden')
       }
-    }, { capture: true });
+    }, { capture: true })
     
     // Apply active styles to navigation links based on current path
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname
     
     // Update desktop navigation links
     document.querySelectorAll('.nav-link').forEach(link => {
-      const linkPath = link.getAttribute('data-path');
+      const linkPath = link.getAttribute('data-path')
       if (linkPath === currentPath) {
         // Apply active styles based on the path
         if (linkPath === '/stage-0') {
-          link.classList.add('bg-teal-50', 'text-teal-700', 'border-b-2', 'border-teal-600');
-          link.classList.remove('text-gray-700', 'hover:bg-gray-100');
+          link.classList.add('bg-teal-50', 'text-teal-700', 'border-b-2', 'border-teal-600')
+          link.classList.remove('text-gray-700', 'hover:bg-gray-100')
         } else if (linkPath === '/stage-1') {
-          link.classList.add('bg-blue-50', 'text-blue-700', 'border-b-2', 'border-blue-600');
-          link.classList.remove('text-gray-700', 'hover:bg-gray-100');
+          link.classList.add('bg-blue-50', 'text-blue-700', 'border-b-2', 'border-blue-600')
+          link.classList.remove('text-gray-700', 'hover:bg-gray-100')
         } else if (linkPath === '/stage-2') {
-          link.classList.add('bg-indigo-50', 'text-indigo-700', 'border-b-2', 'border-indigo-600');
-          link.classList.remove('text-gray-700', 'hover:bg-gray-100');
+          link.classList.add('bg-indigo-50', 'text-indigo-700', 'border-b-2', 'border-indigo-600')
+          link.classList.remove('text-gray-700', 'hover:bg-gray-100')
         } else if (linkPath === '/stage-3') {
-          link.classList.add('bg-purple-50', 'text-purple-700', 'border-b-2', 'border-purple-600');
-          link.classList.remove('text-gray-700', 'hover:bg-gray-100');
+          link.classList.add('bg-purple-50', 'text-purple-700', 'border-b-2', 'border-purple-600')
+          link.classList.remove('text-gray-700', 'hover:bg-gray-100')
         } else if (linkPath === '/stage-4') {
-          link.classList.add('bg-red-50', 'text-red-700', 'border-b-2', 'border-red-600');
-          link.classList.remove('text-gray-700', 'hover:bg-gray-100');
+          link.classList.add('bg-red-50', 'text-red-700', 'border-b-2', 'border-red-600')
+          link.classList.remove('text-gray-700', 'hover:bg-gray-100')
         } else {
           // For other links like family-support, studies, etc.
-          link.classList.add('bg-blue-50', 'text-blue-700');
-          link.classList.remove('text-gray-700', 'hover:bg-gray-100');
+          link.classList.add('bg-blue-50', 'text-blue-700')
+          link.classList.remove('text-gray-700', 'hover:bg-gray-100')
         }
       }
-    });
-  });
+    })
+  })
 </script>
 
 <style is:global>
-  /* Modern search styling for medical context */
   .pagefind-ui--medical .pagefind-ui__drawer {
     position: absolute;
     left: 0;
