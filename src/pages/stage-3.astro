@@ -18,7 +18,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
     />
   
     <main class="my-8 container mx-auto px-4">
-        <!-- Breadcrumbs -->
         <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
             <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
               <svg
@@ -37,9 +36,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
             </Breadcrumbs>
         </div>
         
-        <!-- Main content with improved layout -->
         <div class="flex flex-col md:flex-row gap-8 mb-8">
-            <!-- Left column with statistics and chart -->
             <div class="md:w-1/3">
                 <div class="bg-blue-50 rounded-lg shadow-md p-6">
                     <div class="space-y-6 text-center">
@@ -62,7 +59,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
                 </div>
             </div>
             
-            <!-- Right column with accordion sections -->
             <div class="md:w-2/3">
                 <Accordion title='What is Stage 3 Prostate Cancer?' initiallyOpen={true}>
                     <div class='space-y-4 font-serif'>
@@ -91,7 +87,74 @@ import "astro-breadcrumbs/breadcrumbs.css";
                         </p>
                     </div>
                 </Accordion>
-
+                <Accordion title="Māori Men's Health and Stage 3 Prostate Cancer">
+                <div class="space-y-4 font-serif">
+                    <h3 class="text-xl font-semibold">Understanding Stage 3 Prostate Cancer from a Māori Perspective</h3>
+                    <p>Stage 3 prostate cancer presents significant challenges for Māori men, who are often diagnosed at more advanced stages compared to non-Māori. Research from Te Aho o Te Kahu (Cancer Control Agency) indicates Māori men have a 70% higher mortality rate from prostate cancer, despite similar overall incidence rates, largely due to later diagnosis and treatment barriers.</p>
+                    
+                    <h3 class="text-xl font-semibold">Intensive Treatment Journey and Cultural Wellbeing</h3>
+                    <p>Stage 3 prostate cancer typically requires more aggressive treatment approaches. For Māori men, maintaining cultural connections during this intensive treatment period is vital:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                    <li>Consider how treatment schedules might impact participation in cultural events and responsibilities</li>
+                    <li>Discuss with healthcare providers how to accommodate important cultural ceremonies or gatherings</li>
+                    <li>Maintain connection to whenua (land) and whakapapa (genealogy) as sources of strength</li>
+                    <li>Engage with kaumātua or cultural advisors who can provide spiritual guidance during treatment</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold">Extended Whānau Support Systems</h3>
+                    <p>The concept of whanaungatanga (kinship and connectedness) becomes especially important during Stage 3 treatment. Consider:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                    <li>Organizing a whānau hui to discuss treatment plans and distribute support responsibilities</li>
+                    <li>Identifying specific whānau members to assist with different aspects of care (transportation, meals, home support)</li>
+                    <li>Creating a roster system for accompanying you to treatments and appointments</li>
+                    <li>Establishing clear communication channels to keep extended whānau informed of progress</li>
+                    <li>Discussing with healthcare providers how whānau can be meaningfully involved in care decisions</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold">Navigating Complex Treatments</h3>
+                    <p>Stage a 3 treatments are more complex and may include combinations of surgery, radiation, and hormone therapy. To navigate this effectively:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                    <li>Request a Māori health navigator (kaiāwhina) through your DHB to help coordinate care</li>
+                    <li>Ask for treatment information that acknowledges Māori perspectives on health and wellbeing</li>
+                    <li>Discuss with your oncologist how treatments might be modified to reduce impact on cultural responsibilities</li>
+                    <li>Inquire about supportive care that incorporates Māori healing traditions alongside medical treatments</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold">Side Effect Management with Traditional Approaches</h3>
+                    <p>Managing side effects may incorporate traditional practices alongside medical management:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                    <li>Rongoā practitioners may suggest specific plant medicines like kawakawa to help with inflammation (always discuss with your medical team first)</li>
+                    <li>Traditional mirimiri (massage) may help with muscle tension and relaxation</li>
+                    <li>Karakia (prayer) and waiata (song) can provide spiritual comfort and stress reduction</li>
+                    <li>Connection with wai (water) through ocean or river bathing may provide both physical and spiritual benefits</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold">Advanced Support Services for Māori</h3>
+                    <p>Several organizations provide specialized support for Māori men with advanced prostate cancer:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                    <li><a href="https://www.manawahouora.nz/" class="text-blue-600 hover:underline" target="_blank">Manawa Houora</a>: Provides culturally-grounded cancer support services</li>
+                    <li><a href="https://teaho.govt.nz/cancer/equity/maori/" class="text-blue-600 hover:underline" target="_blank">Te Aho o Te Kahu</a>: Offers resources specifically for Māori patients with advanced cancer</li>
+                    <li><a href="https://www.health.govt.nz/our-work/populations/maori-health/maori-health-providers" class="text-blue-600 hover:underline" target="_blank">Local Māori Health Providers</a>: Can provide holistic support during treatment</li>
+                    <li>Hospice services increasingly incorporate cultural elements for Māori patients requiring palliative care support</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold">Financial and Practical Support</h3>
+                    <p>Advanced cancer treatment often brings financial challenges. Support available includes:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                    <li>Work and Income support payments (some with specific provisions for serious illness)</li>
+                    <li>Māori social service agencies that can assist with practical support</li>
+                    <li>National Travel Assistance for those traveling to treatment centers</li>
+                    <li>Whānau Ora navigators who can help access appropriate support services</li>
+                    </ul>
+                    
+                    <blockquote class="bg-blue-50 p-4 italic border-l-4 border-blue-500 my-4">
+                    "He iti hau marangai e tū te pāhokahoka."<br>
+                    <span class="text-sm">After the storm, the rainbow stands.</span>
+                    </blockquote>
+                    
+                    <p class="mt-4">This whakatauki reminds us that even through the difficulties of Stage 3 prostate cancer treatment, there is hope. The journey may be challenging, but with proper medical care, cultural support, and whānau around you, positive outcomes are still achievable for many men with locally advanced prostate cancer.</p>
+                </div>
+                </Accordion>
                 <Accordion title='Treatment Options in New Zealand'>
                     <div class='space-y-4 font-serif'>
                         <p>Based on New Zealand patient data, there are several treatment approaches for Stage 3 prostate cancer:</p>
