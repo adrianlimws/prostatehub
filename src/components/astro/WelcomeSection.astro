@@ -4,15 +4,15 @@
   <div class="absolute inset-0 bg-blue"></div>
   
   <div class="absolute inset-0 overflow-hidden">
-    <div class="lava-blob bg-green-600 opacity-40"></div>
-    <div class="lava-blob bg-green-500 opacity-30 animation-delay-3"></div>
-    <div class="lava-blob bg-green-300 opacity-20 animation-delay-5"></div>
-    <div class="lava-blob bg-green-300 opacity-30 animation-delay-7"></div>
+    <div class="lava-blob bg-teal-400 opacity-30"></div>
+    <div class="lava-blob bg-red-400 opacity-30 animation-delay-3"></div>
+    <div class="lava-blob bg-purple-400 opacity-30 animation-delay-5"></div>
+    <div class="lava-blob bg-blue-400 opacity-30 animation-delay-7"></div>
     
-    <div class="lava-blob small bg-blue-300 opacity-60 animation-delay-2"></div>
-    <div class="lava-blob small bg-blue-300 opacity-60 animation-delay-6"></div>
-    <div class="lava-blob small bg-blue-500 opacity-50 animation-delay-8"></div>
-    <div class="lava-blob small bg-blue-400 opacity-55 animation-delay-4"></div>
+    <div class="lava-blob small bg-red-600 opacity-60 animation-delay-2"></div>
+    <div class="lava-blob small bg-teal-500 opacity-60 animation-delay-6"></div>
+    <div class="lava-blob small bg-purple-500 opacity-50 animation-delay-8"></div>
+    <div class="lava-blob small bg-green-500 opacity-55 animation-delay-4"></div>
   </div>
   
   <div class="container mx-auto relative z-10">
@@ -36,14 +36,19 @@
   }
 
   .lava-blob {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
     position: absolute;
     border-radius: 50%;
-    filter: blur(30px);
+    filter: blur(15px);
     width: 400px;
     height: 400px;
     mix-blend-mode: screen;
     transform-origin: center center;
-    animation: float 12s ease-in-out infinite;
+    opacity: 0.3;
+    animation: float 12s ease-in-out infinite, rotate 15s linear infinite;
   }
   
   .lava-blob.small {
@@ -69,24 +74,20 @@
   .animation-delay-7 { animation-delay: -7s; }
   .animation-delay-8 { animation-delay: -8s; }
   
-  @keyframes float {
-    0% {
-      transform: translate(0%, 0%) rotate(0deg) scale(1);
-    }
-    20% {
-      transform: translate(15%, 10%) rotate(40deg) scale(1.1);
-    }
-    40% {
-      transform: translate(-15%, 15%) rotate(70deg) scale(0.9);
-    }
-    60% {
-      transform: translate(10%, -10%) rotate(120deg) scale(1.05);
-    }
-    80% {
-      transform: translate(-5%, 5%) rotate(180deg) scale(0.95);
-    }
-    100% {
-      transform: translate(0%, 0%) rotate(360deg) scale(1);
-    }
+@keyframes float {
+  0% {
+    transform: translate(0%, 0%);
   }
+  50% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg) scale(1); }
+  to { transform: rotate(360deg) scale(1.1); }
+}
 </style>
