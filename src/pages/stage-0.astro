@@ -8,6 +8,7 @@ import PatientDistributionChart from '../components/vue/PatientDistributionChart
 import { Breadcrumbs }          from "astro-breadcrumbs";
 import { Image }                from 'astro:assets';
 import prostateImage            from '../assets/prostate.png';
+import PSAImage                 from '../assets/PSA.png';
 
 import "astro-breadcrumbs/breadcrumbs.css";
 ---
@@ -104,6 +105,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
         
         <Accordion title="When to Start Screening">
           <div class="space-y-4 font-serif">
+            <Image src={PSAImage} alt="PSA Level Testing" class="w-full h-auto rounded-lg shadow-md mb-4" />
             <p>The Prostate Specific Antigen (PSA) test is a blood test that can help detect prostate cancer early.</p>
             <p>Consider talking to your doctor about prostate screening if:</p>
             <ul class="list-disc pl-6 space-y-2">
@@ -159,7 +161,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
             <p>This holistic approach can be integrated with Western medical care for better outcomes.</p>
             
             <h3 class="text-xl font-semibold">Māori-Focused Health Services</h3>
-            <p>Several organizations offer culturally responsive services for Māori men:</p>
+            <p>Several organisations offer culturally responsive services for Māori men:</p>
             <ul class="list-disc pl-6 space-y-2">
               <li><a href="https://www.health.govt.nz/our-work/populations/maori-health" class="text-blue-600 hover:underline" target="_blank">Te Aka Whai Ora (Māori Health Authority)</a> - Oversees Māori health services nationwide</li>
               <li><a href="https://teaho.govt.nz/cancer/equity/maori" class="text-blue-600 hover:underline" target="_blank">Te Aho o Te Kahu Cancer Control Agency</a> - Māori cancer pathway resources</li>
@@ -178,7 +180,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
       </div>
     </div>
     
-    <!-- Call to action section for other stages -->
     <section class="my-12">
       <h2 class="text-2xl font-bold text-center mb-6">Explore Cancer Stages</h2>
       <div class="flex justify-center gap-4 mb-6 flex-wrap">

@@ -1,23 +1,25 @@
 ---
-import BaseLayout        from '../layouts/Layout.astro'; 
-import Header            from '../components/astro/Header.astro';
-import Footer            from '../components/astro/Footer.astro';
-import supportGroupsData from '../data/support-groups-json.json';
-import PageHeader        from '../components/astro/PageHeader.astro';
-import { Breadcrumbs }   from "astro-breadcrumbs";
-import "astro-breadcrumbs/breadcrumbs.css";
+import BaseLayout        from '../layouts/Layout.astro'
+import Header            from '../components/astro/Header.astro'
+import Footer            from '../components/astro/Footer.astro'
+import supportGroupsData from '../data/support-groups-json.json'
+import PageHeader        from '../components/astro/PageHeader.astro'
+import { Image }         from 'astro:assets';
+import supportGroupImage from '../assets/supportgroup.png';
+import { Breadcrumbs }   from "astro-breadcrumbs"
+import "astro-breadcrumbs/breadcrumbs.css"
 
 // Change to static rendering for pagefind indexing
-export const prerender = true;
+export const prerender = true
 
 // Load all regions data at build time
-const allRegionsData = supportGroupsData.regions;
+const allRegionsData = supportGroupsData.regions
 
 // Calculate total number of groups across all regions
-const totalGroups = allRegionsData.reduce((acc, region) => acc + region.groups.length, 0);
+const totalGroups = allRegionsData.reduce((acc, region) => acc + region.groups.length, 0)
 
 // Set default region
-const defaultRegion = allRegionsData[0].name;
+const defaultRegion = allRegionsData[0].name
 ---
 
 <BaseLayout title="Prostate Hub - Support Groups">
@@ -46,11 +48,18 @@ const defaultRegion = allRegionsData[0].name;
       </Breadcrumbs>
     </div>
     
-    <!-- Benefits of Support Groups Section -->
     <div class="bg-blue-50 p-6 rounded-lg mb-8 border border-blue-100">
       <h2 class="font-bold text-xl text-blue-800 mb-3">Benefits of Support Groups</h2>
       <div class="md:flex md:gap-8 font-serif">
         <div class="md:w-3/4">
+          <div class="md:w-2/5 mb-4 md:mb-0">
+            <Image 
+              src={supportGroupImage} 
+              alt="Support Groups" 
+              class="w-full h-auto rounded-lg shadow-md object-cover object-center" 
+              loading="lazy"
+            />
+          </div>
           <p class="mb-4">Support groups can be a valuable resource during your prostate cancer journey. Research shows that men who participate in support groups report better emotional well-being and feel more empowered in their treatment decisions.</p>
           <ul class="list-disc pl-6 space-y-2">
             <li>Share experiences with others on the same journey</li>
@@ -60,6 +69,7 @@ const defaultRegion = allRegionsData[0].name;
             <li>Help others by sharing your own experience</li>
           </ul>
         </div>
+
         <div class="md:w-1/4 flex items-center justify-center mt-4 md:mt-0">
           <div class="text-center">
             <div class="text-5xl font-bold text-blue-600" style="font-size: 4rem !important;">{totalGroups}+</div>

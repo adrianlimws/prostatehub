@@ -5,6 +5,8 @@ import Footer            from '../components/astro/Footer.astro'
 import Accordion         from '../components/astro/Accordion.astro'
 import PageHeader        from '../components/astro/PageHeader.astro';
 import SurvivalRateChart from '../components/vue/SurvivalRateChart.vue'
+import { Image }         from 'astro:assets';
+import consultImage      from '../assets/consult.png';
 import { Breadcrumbs }   from "astro-breadcrumbs";
 
 import "astro-breadcrumbs/breadcrumbs.css";
@@ -369,6 +371,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
 
                 <Accordion title='When to Contact Your Medical Team'>
                     <div class='space-y-4 font-serif'>
+                        <Image src={consultImage} alt="Consultation" class="w-full h-auto mb-4 rounded-lg shadow-md" />
                         <p>Contact the Oncology Service immediately (24 hours) if:</p>
                         <ul class='list-disc pl-6 space-y-2'>
                             <li>You begin to feel unwell or are unexpectedly unwell</li>
