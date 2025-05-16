@@ -21,7 +21,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
   />
 
   <main class="my-8 container mx-auto px-4">
-    <!-- Breadcrumbs -->
     <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
@@ -40,9 +39,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
       </Breadcrumbs>
     </div>
     
-    <!-- Main content with improved layout -->
     <div class="flex flex-col md:flex-row gap-8 mb-8">
-      <!-- Left column with statistics and chart -->
       <div class="md:w-1/3">
         <div class="bg-blue-50 rounded-lg shadow-md p-6">
           <div class="space-y-6 text-center">
@@ -65,7 +62,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </div>
       </div>
       
-      <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
         <Accordion title="General Knowledge About Prostate Cancer" initiallyOpen={true}>
           <div class="space-y-4 font-serif">
@@ -135,6 +131,47 @@ import "astro-breadcrumbs/breadcrumbs.css";
               <li><a href="https://www.healthnavigator.org.nz/health-a-z/p/prostate-cancer/" class="text-blue-600 hover:underline" target="_blank">Health Navigator NZ</a></li>
             </ul>
             <p>If you have questions about prostate health, consult with your general practitioner or healthcare provider.</p>
+          </div>
+        </Accordion>
+
+        <Accordion title="Māori Men's Health and Prostate Cancer">
+          <div class="space-y-4 font-serif">
+            <h3 class="text-xl font-semibold">Cultural Context and Risk Factors</h3>
+            <p>Māori men face higher rates of prostate cancer mortality compared to non-Māori men in New Zealand. Research shows that while incidence rates are similar, Māori men are more likely to be diagnosed at a later stage when the disease is more difficult to treat.</p>
+            
+            <h3 class="text-xl font-semibold">Key Facts for Māori Men</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Māori men are 70% more likely to die from prostate cancer after diagnosis compared to non-Māori men</li>
+              <li>Access to screening services can be challenging for those in rural communities</li>
+              <li>Early detection significantly improves outcomes for all men, including Māori</li>
+              <li>Family history (whakapapa) is an important risk factor to consider</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Cultural Approaches to Health</h3>
+            <p>Te Whare Tapa Whā is a Māori health model that views health as a balance of four dimensions:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Taha tinana (physical health)</strong> - Regular check-ups and healthy lifestyle choices</li>
+              <li><strong>Taha wairua (spiritual health)</strong> - Connection to identity and spiritual wellbeing</li>
+              <li><strong>Taha whānau (family health)</strong> - Support from and obligations to whānau</li>
+              <li><strong>Taha hinengaro (mental health)</strong> - Expressing thoughts and feelings about health concerns</li>
+            </ul>
+            <p>This holistic approach can be integrated with Western medical care for better outcomes.</p>
+            
+            <h3 class="text-xl font-semibold">Māori-Focused Health Services</h3>
+            <p>Several organizations offer culturally responsive services for Māori men:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><a href="https://www.health.govt.nz/our-work/populations/maori-health" class="text-blue-600 hover:underline" target="_blank">Te Aka Whai Ora (Māori Health Authority)</a> - Oversees Māori health services nationwide</li>
+              <li><a href="https://teaho.govt.nz/cancer/equity/maori" class="text-blue-600 hover:underline" target="_blank">Te Aho o Te Kahu Cancer Control Agency</a> - Māori cancer pathway resources</li>
+              <li><a href="https://www.cancernz.org.nz/cancer-information/cancer-and-maori/" class="text-blue-600 hover:underline" target="_blank">Cancer Society of New Zealand</a> - Māori cancer support services</li>
+              <li>Local Māori health providers (Hauora) - Many offer navigation services for cancer screening</li>
+            </ul>
+            
+            <blockquote class="bg-blue-50 p-4 italic border-l-4 border-blue-500 my-4">
+              "Mā te kōrero ka mōhio, mā te mōhio ka mārama, mā te mārama ka ora."<br>
+              <span class="text-sm">Through discussion comes knowledge, through knowledge comes understanding, through understanding comes wellbeing.</span>
+            </blockquote>
+            
+            <p class="mt-4">Discussing prostate health with your whānau and healthcare provider is an important step in prevention. Many Māori men find it helpful to bring a support person to appointments.</p>
           </div>
         </Accordion>
       </div>

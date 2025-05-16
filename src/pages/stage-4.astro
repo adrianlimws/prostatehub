@@ -18,7 +18,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
   />
   
   <main class="my-8 container mx-auto px-4">
-    <!-- Breadcrumbs -->
     <div class="mb-4 pb-2 border-b-2 border-gray-300 font-mono">
       <Breadcrumbs separatorAriaHidden={false} linkTextFormat="capitalized">
         <svg
@@ -37,9 +36,7 @@ import "astro-breadcrumbs/breadcrumbs.css";
       </Breadcrumbs>
     </div>
     
-    <!-- Main content with improved layout -->
     <div class="flex flex-col md:flex-row gap-8 mb-8">
-      <!-- Left column with statistics and chart -->
       <div class="md:w-1/3">
         <div class="bg-blue-50 rounded-lg shadow-md p-6">
           <div class="space-y-6 text-center">
@@ -66,7 +63,6 @@ import "astro-breadcrumbs/breadcrumbs.css";
         </div>
       </div>
       
-      <!-- Right column with accordion sections -->
       <div class="md:w-2/3">
         <Accordion title="What is Stage 4 Prostate Cancer?" initiallyOpen={true}>
           <div class="space-y-4 font-serif">
@@ -85,7 +81,78 @@ import "astro-breadcrumbs/breadcrumbs.css";
             <p>While Stage 4 prostate cancer is not typically curable, many men live for years with good quality of life with proper treatment and management.</p>
           </div>
         </Accordion>
-        
+        <Accordion title="Māori Men's Health and Stage 4 Prostate Cancer">
+          <div class="space-y-4 font-serif">
+            <h3 class="text-xl font-semibold">Approaching Metastatic Cancer from a Māori Perspective</h3>
+            <p>Stage 4 prostate cancer presents significant challenges that benefit from both clinical care and cultural support. For Māori men, who are more likely to be diagnosed at this advanced stage, a holistic approach that honors mātauranga Māori (Māori knowledge) alongside Western medicine can provide strength during this journey.</p>
+            
+            <h3 class="text-xl font-semibold">Weaving Together Healthcare Approaches</h3>
+            <p>At Stage 4, treatment focuses on extending life while maintaining quality of life. This approach aligns well with Māori values when:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Medical teams respect the importance of wairua (spiritual wellbeing) alongside physical treatment</li>
+              <li>Care plans acknowledge the central role of whānau in supporting the hauora (health) journey</li>
+              <li>Traditional healing practices complement medical interventions where appropriate</li>
+              <li>Opportunities exist to return to significant places and connect with whenua (land) during treatment</li>
+              <li>Cultural advisors or kaumātua can provide guidance on maintaining tikanga (customs) during treatment</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Whānau Support for Advanced Cancer</h3>
+            <p>The whānau plays an essential role in supporting Māori men with Stage 4 prostate cancer:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Consider appointing a key whānau member as the primary kaitiaki (guardian/caregiver)</li>
+              <li>Establish clear communication channels between healthcare teams and the extended whānau</li>
+              <li>Organise regular whānau hui to discuss care needs and distribute responsibilities</li>
+              <li>Create space for important conversations about preferences for care as the illness progresses</li>
+              <li>Acknowledge the impact on all whānau members and ensure they also receive support</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Managing Pain and Symptoms</h3>
+            <p>Stage 4 prostate cancer often involves managing pain and other symptoms. A culturally responsive approach may include:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Comprehensive pain management that addresses both physical and spiritual dimensions</li>
+              <li>Integration of rongoā Māori (traditional medicine) alongside conventional pain management, when appropriate</li>
+              <li>Access to healers who can provide mirimiri (massage) and romiromi (deep tissue massage) for comfort</li>
+              <li>Karakia (prayer) and waiata (songs) that provide comfort and connection</li>
+              <li>Discussion with palliative care specialists who understand Māori approaches to comfort care</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Palliative Care and End-of-Life Considerations</h3>
+            <p>While treatments aim to extend life, preparing for all possibilities is important. Māori approaches to palliative care often include:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Early discussions about preferences for care, including desired location (home, hospice, hospital)</li>
+              <li>Consideration of tikanga around the dying process and after death</li>
+              <li>Involving kaumātua or cultural advisors in palliative care planning</li>
+              <li>Creating space for important conversations and farewell rituals</li>
+              <li>Access to Māori-responsive hospice services that honor cultural protocols</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Specialised Resources for Māori Men with Advanced Cancer</h3>
+            <p>Several organisations provide culturally appropriate support for advanced cancer:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><a href="https://www.hospice.org.nz/about-hospice-nz/maori-and-hospice-care/" class="text-blue-600 hover:underline" target="_blank">Hospice New Zealand - Māori Services</a>: Provides culturally responsive end-of-life care</li>
+              <li><a href="https://www.health.govt.nz/our-work/populations/maori-health/maori-health-providers" class="text-blue-600 hover:underline" target="_blank">Māori Health Providers</a>: Offer holistic support services</li>
+              <li><a href="https://teaho.govt.nz/cancer/equity/maori/" class="text-blue-600 hover:underline" target="_blank">Te Aho o Te Kahu</a>: Cancer Control Agency with Māori-specific resources</li>
+              <li><a href="https://www.whanauora.nz/" class="text-blue-600 hover:underline" target="_blank">Whānau Ora</a>: Can provide comprehensive support for families</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold">Maintaining Dignity and Mana</h3>
+            <p>Throughout the Stage 4 cancer journey, maintaining dignity and mana (prestige/authority) remains paramount:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Ongoing involvement in decision-making about care and treatment</li>
+              <li>Respect for the patient's role within whānau and community</li>
+              <li>Opportunities to share knowledge, stories, and wisdom</li>
+              <li>Acknowledgment of the person's contribution and legacy</li>
+              <li>Support to fulfill important cultural obligations where possible</li>
+            </ul>
+            
+            <blockquote class="bg-blue-50 p-4 italic border-l-4 border-blue-500 my-4">
+              "Kia hora te marino, kia whakapapa pounamu te moana, kia tere te kārohirohi i mua i tō huarahi."<br>
+              <span class="text-sm">May the calm be widespread, may the sea glisten like greenstone, and may the shimmer of light guide you on your pathway.</span>
+            </blockquote>
+            
+            <p class="mt-4">This traditional blessing reflects the wish for peace and clear guidance through challenging times. While Stage 4 prostate cancer presents significant challenges, many men continue to find meaning, connection, and moments of joy with proper support. The integration of cultural strengths alongside quality medical care provides the best foundation for this journey.</p>
+          </div>
+        </Accordion>
         <Accordion title="Treatment Approaches in New Zealand">
           <div class="space-y-4 font-serif">
             <p>Based on New Zealand patient data, the following treatments are commonly used for Stage 4 prostate cancer:</p>
