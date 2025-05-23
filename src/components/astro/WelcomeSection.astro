@@ -5,14 +5,14 @@
   
   <div class="absolute inset-0 overflow-hidden">
     <div class="lava-blob bg-teal-400 opacity-30"></div>
-    <div class="lava-blob bg-red-400 opacity-30 animation-delay-3"></div>
-    <div class="lava-blob bg-purple-400 opacity-30 animation-delay-5"></div>
-    <div class="lava-blob bg-blue-400 opacity-30 animation-delay-7"></div>
+    <div class="lava-blob bg-red-400 opacity-30"></div>
+    <div class="lava-blob bg-purple-400 opacity-30"></div>
+    <div class="lava-blob bg-blue-400 opacity-30"></div>
     
-    <div class="lava-blob small bg-red-600 opacity-60 animation-delay-2"></div>
-    <div class="lava-blob small bg-teal-500 opacity-60 animation-delay-6"></div>
-    <div class="lava-blob small bg-purple-500 opacity-50 animation-delay-8"></div>
-    <div class="lava-blob small bg-green-500 opacity-55 animation-delay-4"></div>
+    <div class="lava-blob small bg-red-600 opacity-60"></div>
+    <div class="lava-blob small bg-teal-500 opacity-60"></div>
+    <div class="lava-blob small bg-purple-500 opacity-50"></div>
+    <div class="lava-blob small bg-green-500 opacity-55"></div>
   </div>
   
   <div class="container mx-auto relative z-10">
@@ -48,7 +48,6 @@
     mix-blend-mode: screen;
     transform-origin: center center;
     opacity: 0.3;
-    animation: float 12s ease-in-out infinite, rotate 15s linear infinite;
   }
   
   .lava-blob.small {
@@ -65,29 +64,4 @@
   .lava-blob:nth-child(6) { top: 30%; right: 25%; }
   .lava-blob:nth-child(7) { bottom: 25%; left: 5%; }
   .lava-blob:nth-child(8) { bottom: 40%; right: 5%; }
-  
-  .animation-delay-2 { animation-delay: -2s; }
-  .animation-delay-3 { animation-delay: -3s; }
-  .animation-delay-4 { animation-delay: -4s; }
-  .animation-delay-5 { animation-delay: -5s; }
-  .animation-delay-6 { animation-delay: -6s; }
-  .animation-delay-7 { animation-delay: -7s; }
-  .animation-delay-8 { animation-delay: -8s; }
-  
-@keyframes float {
-  0% {
-    transform: translate(0%, 0%);
-  }
-  50% {
-    transform: translate(10%, 5%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg) scale(1); }
-  to { transform: rotate(360deg) scale(1.1); }
-}
 </style>
